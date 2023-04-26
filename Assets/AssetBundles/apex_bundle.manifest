@@ -1,0 +1,87 @@
+ManifestFileVersion: 0
+CRC: 3874939510
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 07db2b8fb4ced88bc5d33613910fb605
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2f8060a698f382667ac56d11772645a0
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: f1d204033c4a67b4f868a9a1a2715013, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 49f41be65a774e34590d4151711a448b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 398d06ec47ad57e4289eeab1daf74507, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aac8da208adb7b94aa6e8f24590999a4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7ce586a2c93d68b46bc6b2f4ae0fd8cb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 45d2fcf7f8ba489478b6f4476783d018, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2d74ad66f8c6268448651aec0f33128a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2aefc04d4dabce848bc515e0d0639eae, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ca36c5a902b3e684a9866f0c5409ac80, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 119
+  Script: {instanceID: 0}
+- Class: 134
+  Script: {instanceID: 0}
+- Class: 146
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 241
+  Script: {instanceID: 0}
+- Class: 243
+  Script: {instanceID: 0}
+- Class: 245
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: CarConfig
+- AssemblyName: Assembly-CSharp
+  ClassName: CarDriftConfig
+- AssemblyName: Assembly-CSharp
+  ClassName: PG_Physics.Wheel.PG_WheelColliderConfig
+- AssemblyName: Assembly-CSharp
+  ClassName: Wheel
+Assets:
+- Assets/PartyKarts/Prefabs/Cars/Resources/Apex.prefab
+Dependencies: []

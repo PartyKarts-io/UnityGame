@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 4193936618
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: apex_bundle
+      Dependencies: {}

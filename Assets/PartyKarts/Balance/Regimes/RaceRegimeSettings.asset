@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205a04d1485958949a173267a2157131, type: 3}
+  m_Name: RaceRegimeSettings
+  m_EditorClassIdentifier: 
+  m_RegimeSceneName: RaceRegimeScene
+  m_AvailableCars:
+  - {fileID: 11400000, guid: 68d0a29c5dc873e46bdd248870a62876, type: 2}
+  - {fileID: 11400000, guid: c1f9e5f31478f4f41947a387072d07b3, type: 2}
+  - {fileID: 11400000, guid: b3a9983826cef5747b541619547540b2, type: 2}
+  - {fileID: 11400000, guid: afa8df00e52633942ab499de775268b0, type: 2}
+  m_AiConfog:
+    MaxSpeed: 250
+    MinSpeed: 50
+    AccelSensitivity: 1
+    BrakeSensitivity: 1
+    ReverceWaitTime: 1.5
+    ReverceTime: 1
+    BetweenReverceTimeForReset: 8
+    OffsetToFirstTargetPoint: 5
+    SpeedFactorToFirstTargetPoint: -0.4
+    OffsetToSecondTargetPoint: 8
+    SpeedFactorToSecondTargetPoint: 0.8
+    LookAngleSppedFactor: 30
+    SetSteerAngleSensitivity: 5
+  m_RegimeCaption: Race
+  m_RegimeImage: {fileID: 21300000, guid: a8fdf2860f302e14094f799b9d654ad8, type: 3}
+  m_CarDriftConfig:
+    EnableSteerAngleMultiplier: 1
+    MinSteerAngleMultiplier: 0.05
+    MaxSteerAngleMultiplier: 1
+    MaxSpeedForMinAngleMultiplier: 300
+    SteerAngleChangeSpeed: 180
+    MinSpeedForSteerHelp: 20
+    HelpSteerPower: 0.2
+    OppositeAngularVelocityHelpPower: 0.01
+    PositiveAngularVelocityHelpPower: 0
+    MaxAngularVelocityHelpAngle: 45
+    AngularVelucityInMaxAngle: 0.5
+    AngularVelucityInMinAngle: 2
+    HandBrakeForwardStiffness: 0.5
+    HandBrakeSidewaysStiffness: 0.2
+  m_FrontWheelsConfig:
+    IsFoldout: 0
+    IsFullConfig: 0
+    Mass: 0
+    Radius: 0
+    WheelDampingRate: 0
+    SuspensionDistance: 0
+    ForceAppPointDistance: 0
+    Center: {x: 0, y: 0, z: 0}
+    Spring: 0
+    Damper: 0
+    TargetPoint: 0
+    ForwardFriction: 0.3
+    SidewaysFriction: 0.7
+  m_RearWheelsConfig:
+    IsFoldout: 0
+    IsFullConfig: 0
+    Mass: 0
+    Radius: 0
+    WheelDampingRate: 0
+    SuspensionDistance: 0
+    ForceAppPointDistance: 0
+    Center: {x: 0, y: 0, z: 0}
+    Spring: 0
+    Damper: 0
+    TargetPoint: 0
+    ForwardFriction: 0.5
+    SidewaysFriction: 0.8

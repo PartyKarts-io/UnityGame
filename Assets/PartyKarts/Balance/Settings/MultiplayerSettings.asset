@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58165e04cf2eb324780cd45c01293d99, type: 3}
+  m_Name: MultiplayerSettings
+  m_EditorClassIdentifier: 
+  m_Servers:
+  - m_ServerCaption: Asia
+    m_ServerToken: asia
+  - m_ServerCaption: Australia
+    m_ServerToken: au
+  - m_ServerCaption: Canada, East
+    m_ServerToken: cae
+  - m_ServerCaption: Chinese Mainland
+    m_ServerToken: cn
+  - m_ServerCaption: Europe
+    m_ServerToken: eu
+  - m_ServerCaption: India
+    m_ServerToken: in
+  - m_ServerCaption: Japan
+    m_ServerToken: jp
+  - m_ServerCaption: Russia
+    m_ServerToken: ru
+  - m_ServerCaption: Russia, East
+    m_ServerToken: rue
+  - m_ServerCaption: South America
+    m_ServerToken: sa
+  - m_ServerCaption: South Korea
+    m_ServerToken: kr
+  - m_ServerCaption: USA, East
+    m_ServerToken: us
+  - m_ServerCaption: USA, West
+    m_ServerToken: usw
+  m_PingUpdateSettings: 1
+  m_BadPingSprite: {fileID: 21300000, guid: 99e553fe120b3be4ca3c44399068dc86, type: 3}
+  m_MediumPingSprite: {fileID: 21300002, guid: 99e553fe120b3be4ca3c44399068dc86, type: 3}
+  m_GoodPingSprite: {fileID: 21300004, guid: 99e553fe120b3be4ca3c44399068dc86, type: 3}
+  m_VeryGoodPingSprite: {fileID: 21300006, guid: 99e553fe120b3be4ca3c44399068dc86,
+    type: 3}
+  m_MediumPing: 150
+  m_GoodPing: 100
+  m_VeryGoodPing: 50
+  m_AvailableTracksForMultiplayer:
+  - {fileID: 11400000, guid: 1fc5dd5df3834774cbc30e73b49d23d0, type: 2}
+  - {fileID: 11400000, guid: 50d10d34ba451be4ba946f1846f0b217, type: 2}
+  m_AvailableCarsForMultiplayer:
+  - {fileID: 11400000, guid: 68d0a29c5dc873e46bdd248870a62876, type: 2}
+  - {fileID: 11400000, guid: c1f9e5f31478f4f41947a387072d07b3, type: 2}
+  - {fileID: 11400000, guid: b3a9983826cef5747b541619547540b2, type: 2}
+  - {fileID: 11400000, guid: afa8df00e52633942ab499de775268b0, type: 2}
+  m_MaxPlayersInRoom: 4
+  m_WaitOtherPlayersTime: 3
+  m_SecondsToEndGame: 20
+  m_SlowPosSyncLerp: 0.025
+  m_SlowRotSyncLerp: 0.1
+  m_FastPosSyncLerp: 0.08
+  m_FastRotSyncLerp: 0.3
+  m_DistanceFastSync: 4
+  m_DistanceTeleport: 8
+  m_ShowNickNameCode: 9
+  m_NickNameInWorld: {fileID: 114777481735260646, guid: 34615e2adb0b955498570b9575b70293,
+    type: 3}
+  m_NickNameY: 2.3
+  m_NickNameColors:
+  - {r: 0, g: 0.7441859, b: 1, a: 0.5882353}
+  - {r: 0, g: 1, b: 0.20155048, a: 0.5882353}
+  - {r: 0.92502785, g: 1, b: 0, a: 0.5882353}
+  - {r: 1, g: 0.085271366, b: 0, a: 0.5882353}
+  - {r: 0.80620146, g: 0, b: 1, a: 0.5882353}
+  - {r: 0.49411762, g: 0.5129093, b: 1, a: 0.5882353}
+  - {r: 1, g: 0.25, b: 0.36608672, a: 0.5882353}
+  - {r: 1, g: 0.6821705, b: 0, a: 0.5882353}
+  m_EnableAiForDebug: 1

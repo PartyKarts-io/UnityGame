@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f881d431363adab4498ba5dc4cafe6df, type: 3}
+  m_Name: ResourcesSettings
+  m_EditorClassIdentifier: 
+  m_SoundControllerInUI: {fileID: 114941408196807004, guid: 440a13f509766ee4b97c631d2d383300,
+    type: 2}
+  m_LoadingScreenUI: {fileID: 114452257090469576, guid: e13555f27d3751e46af7b592ee280301,
+    type: 2}
+  m_MessageBox: {fileID: 114529679672783842, guid: 04a63ce0c22404b4d94f3c87f1cae795,
+    type: 2}

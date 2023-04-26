@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "192520788188",
+    "project_id": "partykarts-631f6",
+    "storage_bucket": "partykarts-631f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192520788188:android:df07b22f9897a4f3837c19",
+        "android_client_info": {
+          "package_name": "com.partykarts.partykarts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192520788188-cp4bgg3bk0ici73eka5effuaijmbaq1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuhVuyoLzNUmPebgSfXq5BSdW6tzFWqa4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192520788188-cp4bgg3bk0ici73eka5effuaijmbaq1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

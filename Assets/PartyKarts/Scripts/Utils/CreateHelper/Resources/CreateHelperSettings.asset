@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2021e6f291c14c4eab494760b2dce5b, type: 3}
+  m_Name: CreateHelperSettings
+  m_EditorClassIdentifier: 
+  m_CarPresetRef: {fileID: 11400000, guid: afa8df00e52633942ab499de775268b0, type: 2}
+  m_ColorPresets:
+  - m_Color: {r: 1, g: 1, b: 1, a: 1}
+    m_Smoothness: 0
+  - m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_Smoothness: 0.8
+  - m_Color: {r: 1, g: 0, b: 0, a: 1}
+    m_Smoothness: 0.25
+  - m_Color: {r: 0, g: 0.48235297, b: 1, a: 1}
+    m_Smoothness: 0.25
+  - m_Color: {r: 0, g: 1, b: 0.25882354, a: 1}
+    m_Smoothness: 1
+  - m_Color: {r: 0.59607846, g: 0, b: 1, a: 1}
+    m_Smoothness: 0
+  - m_Color: {r: 0, g: 0, b: 0, a: 1}
+    m_Smoothness: 1
+  m_CarPrefabSavePath: Assets/ACC_Multiplayer/Prefabs/Cars/Resources/
+  m_CarAssetSavePath: Assets/ACC_Multiplayer/Balance/Cars/
+  m_DefaultRegime: {fileID: 11400000, guid: 23f28db9e4ec4e043a2cea2ee18120e0, type: 2}
+  m_FXControllerRef: {fileID: 114984856473557396, guid: 3023143f80410e345aef19db1f82c9ea,
+    type: 2}
+  m_GameControllerRef: {fileID: 114912712603281610, guid: 85e9ed10ba1f7fa48a1681e6b48c0383,
+    type: 2}
+  m_TrackSceneSavePath: Assets/ACC_Multiplayer/Scenes/
+  m_TrackAssetSavePath: Assets/ACC_Multiplayer/Balance/Tracks/
+  m_GameControllerSavePath: Assets/ACC_Multiplayer/Prefabs/GameControllers/

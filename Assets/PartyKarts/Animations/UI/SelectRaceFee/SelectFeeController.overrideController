@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SelectFeeController
+  m_Controller: {fileID: 9100000, guid: a172168dfe158e243afcf0da6149554d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 33e5f9f5020107e46821aefbd3885d92, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 780c65da3c41d480ea4d56b55cdb5bf4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2814f1c1d8ff63844a24eb13a1754b8a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 91a0d71acc2ea41efb09350891e34d63, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 63ea36283a98a5b4b818e35de42f6b24, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5873652c0bd33418cb2d3db642cda985, type: 2}

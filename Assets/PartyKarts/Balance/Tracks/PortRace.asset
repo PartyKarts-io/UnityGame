@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 885ed35712e248f4fb2c3bedccffae89, type: 3}
+  m_Name: PortRace
+  m_EditorClassIdentifier: 
+  Unlock: 0
+  Price: 2000
+  CompleteTrackForUnlock: {fileID: 11400000, guid: f9e0e6de62358fa4d850a4208a22a894,
+    type: 2}
+  ShowProperty: 1
+  m_TrackName: Seaside Speedway
+  m_TrackIcon: {fileID: 21300000, guid: a0f791e364cc1a24a91a038e459ee3b2, type: 3}
+  m_SceneName: PortForRace
+  m_GameController: {fileID: 114699102348967612, guid: 3a239393e7c7fa6438639a999efec707,
+    type: 3}
+  m_LapsCount: 3
+  m_AIsCount: 3
+  m_RegimeSettings: {fileID: 11400000, guid: 93a435292f036614f8eaf1dda24da965, type: 2}
+  m_MoneyForFirstPlace: 2000

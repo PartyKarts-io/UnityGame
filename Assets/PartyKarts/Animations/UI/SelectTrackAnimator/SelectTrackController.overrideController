@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SelectTrackController
+  m_Controller: {fileID: 9100000, guid: a172168dfe158e243afcf0da6149554d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 33e5f9f5020107e46821aefbd3885d92, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 99195e8d73aea5349863acca052c4b77, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2814f1c1d8ff63844a24eb13a1754b8a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 271bc86f15673c144bb300be7da3df15, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 63ea36283a98a5b4b818e35de42f6b24, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a14ac0ab034f73940ae0b536f0d867d3, type: 2}

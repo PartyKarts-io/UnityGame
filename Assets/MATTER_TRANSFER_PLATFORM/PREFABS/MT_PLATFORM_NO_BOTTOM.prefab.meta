@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: cd9c4e1176ca96d478c67e10284e3e11
+labels:
+- teleporter
+- spawnpoint
+- weaponspawn
+- platform
+- mech
+- holographic
+- hologram
+- pad
+NativeFormatImporter:
+  userData: 

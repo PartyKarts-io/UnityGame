@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71dd12e71698b6d49bf39193560e0028, type: 3}
+  m_Name: Settings
+  m_EditorClassIdentifier: 
+  m_GameSettings: {fileID: 11400000, guid: 65edd6bfe9e593c4786a989925782e8c, type: 2}
+  m_GraphicsSettings: {fileID: 11400000, guid: 3ee3306bf0619c24abc1236173e69301, type: 2}
+  m_LayerSettings: {fileID: 11400000, guid: 9d1ae3c29d6ce6b4d8af595b1210eeef, type: 2}
+  m_SoundSettings: {fileID: 11400000, guid: 619f7fe2b7f11174385ada6d82482969, type: 2}
+  m_ResourcesSettings: {fileID: 11400000, guid: 75929064ad3ae2c43bcae29d2dc70c0f,
+    type: 2}
+  m_MultiplayerSettings: {fileID: 11400000, guid: f9e7ce9e74c85754a8182ce099c4ea6e,
+    type: 2}

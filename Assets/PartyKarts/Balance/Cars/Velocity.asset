@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c63a8e8f34bb5447b0cf9c9cfc581b2, type: 3}
+  m_Name: Velocity
+  m_EditorClassIdentifier: 
+  Unlock: 3
+  Price: 3000
+  CompleteTrackForUnlock: {fileID: 0}
+  ShowProperty: 1
+  m_CarCaption: Velocity
+  m_CarPrefabForSelectMenu: {fileID: 1272939413320566, guid: 771c67a3bcfd2e845a89c1fc3bbe5047,
+    type: 3}
+  m_CarPrefab: {fileID: 114547505315873450, guid: 771c67a3bcfd2e845a89c1fc3bbe5047,
+    type: 3}
+  m_AvailibleColors:
+  - m_Color: {r: 1, g: 1, b: 1, a: 1}
+    m_Smoothness: 0
+  - m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_Smoothness: 0.8
+  - m_Color: {r: 1, g: 0, b: 0, a: 1}
+    m_Smoothness: 0.25
+  - m_Color: {r: 0, g: 0.4827962, b: 1, a: 1}
+    m_Smoothness: 0.25
+  - m_Color: {r: 0, g: 1, b: 0.2583518, a: 1}
+    m_Smoothness: 1
+  - m_Color: {r: 0.5974541, g: 0, b: 1, a: 1}
+    m_Smoothness: 0
+  - m_Color: {r: 0, g: 0, b: 0, a: 1}
+    m_Smoothness: 1
+  m_Description: Feel the need for speed with the Velocity. Its dynamic design and
+    lightning-fast acceleration make it the car of choice for serious racers.

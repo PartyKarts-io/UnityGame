@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f63cf633863ba4696631b0599241a7, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  m_MainMenuSceneName: MainMenuScene
+  m_DefaultRegimeSettings: {fileID: 11400000, guid: 93a435292f036614f8eaf1dda24da965,
+    type: 2}
+  m_RaceRegimeSettings: {fileID: 11400000, guid: 93a435292f036614f8eaf1dda24da965,
+    type: 2}
+  m_DriftRegimeSettings: {fileID: 11400000, guid: 23f28db9e4ec4e043a2cea2ee18120e0,
+    type: 2}
+  m_Tracks:
+  - {fileID: 11400000, guid: 1fc5dd5df3834774cbc30e73b49d23d0, type: 2}
+  - {fileID: 11400000, guid: 50d10d34ba451be4ba946f1846f0b217, type: 2}
+  m_BotNames:
+  - Mason(b)
+  - Emma(b)
+  - Sofia(b)
+  - William(b)
+  - Natalie(b)
+  - Michael(b)
+  - Emily(b)
+  - Jacob(b)

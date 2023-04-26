@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: 6bb6bd2e848158c42b4ab8c5e6cdd70a
+timeCreated: 1425476800
+licenseType: Store
+SubstanceImporter:
+  serializedVersion: 5
+  materialInstances:
+  - serializedVersion: 15
+    name: MT_PLATFORM_MAIN
+    prototypeName: MT_PLATFORM_MAIN
+    shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: 
+    renderQueue: -1
+    inputs:
+    - name: $outputsize
+      value:
+        scalar[0]: 8
+        scalar[1]: 8
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: $randomseed
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: Main_Color
+      value:
+        scalar[0]: .669117689
+        scalar[1]: .666538894
+        scalar[2]: .575637996
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: Accent_Color
+      value:
+        scalar[0]: .416822255
+        scalar[1]: .41911763
+        scalar[2]: .252703279
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: Paint_decal_color
+      value:
+        scalar[0]: 1
+        scalar[1]: 1
+        scalar[2]: 1
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: Metal_base_color
+      value:
+        scalar[0]: .674327016
+        scalar[1]: .714443028
+        scalar[2]: .741176009
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: Metal_Rough_color
+      value:
+        scalar[0]: .381734997
+        scalar[1]: .458534002
+        scalar[2]: .494118005
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: Metal_wear_level
+      value:
+        scalar[0]: .629999995
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: Metal_wear_grunge
+      value:
+        scalar[0]: .400000006
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: Dirt_level
+      value:
+        scalar[0]: .319999993
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: Dirt_grunge_amount
+      value:
+        scalar[0]: .649999976
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: emissive_color_01
+      value:
+        scalar[0]: .0537423007
+        scalar[1]: .81339699
+        scalar[2]: .913725019
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: emissive_color_02
+      value:
+        scalar[0]: .776471019
+        scalar[1]: .462424994
+        scalar[2]: .103532001
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: emissive_color_03
+      value:
+        scalar[0]: .0413367003
+        scalar[1]: .780773997
+        scalar[2]: .878431022
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: emissive_glow_04
+      value:
+        scalar[0]: .843137026
+        scalar[1]: .0562141985
+        scalar[2]: .0562141985
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: input
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {fileID: 2800000, guid: dcc30f528c1c84a4a89ddf08d70454b6, type: 3}
+    - name: input_1
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {fileID: 2800000, guid: eefe13d36a6a7524b844b12651f85143, type: 3}
+    - name: input_2
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {fileID: 2800000, guid: 24f2939df29866d4eb510be6f0acfeca, type: 3}
+    - name: Pannel_4
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {fileID: 2800000, guid: 1b331996c5522464d947732ccff0e5d1, type: 3}
+    - name: T_flap_01
+      value:
+        scalar[0]: .941176474
+        scalar[1]: .941176474
+        scalar[2]: .913494825
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: top_flap_02
+      value:
+        scalar[0]: .854902029
+        scalar[1]: .853116989
+        scalar[2]: .801266015
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: bottom_flap_01
+      value:
+        scalar[0]: .886274993
+        scalar[1]: .880720019
+        scalar[2]: .858473003
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: bottom_flap_02
+      value:
+        scalar[0]: .816176474
+        scalar[1]: .599773824
+        scalar[2]: .072015591
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    materialInformation:
+      serializedVersion: 5
+      offset: {x: 0, y: 0}
+      scale: {x: 1, y: 1}
+      generateMipmaps: 1
+      generateAllOutputs: 1
+      animationUpdateRate: 42
+    materialProperties:
+      serializedVersion: 2
+      texEnvs:
+        data:
+          first:
+            name: _MainTex
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _BumpMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailNormalMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _EmissionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _ParallaxMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _OcclusionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailMask
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailAlbedoMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+      floats:
+        data:
+          first:
+            name: _Cutoff
+          second: .5
+        data:
+          first:
+            name: _SrcBlend
+          second: 1
+        data:
+          first:
+            name: _DstBlend
+          second: 0
+        data:
+          first:
+            name: _Lightmapping
+          second: 1
+        data:
+          first:
+            name: _ZWrite
+          second: 1
+        data:
+          first:
+            name: _Glossiness
+          second: .5
+        data:
+          first:
+            name: _Metallic
+          second: 0
+        data:
+          first:
+            name: _BumpScale
+          second: 1
+        data:
+          first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
+            name: _OcclusionStrength
+          second: 1
+        data:
+          first:
+            name: _DetailNormalMapScale
+          second: 1
+        data:
+          first:
+            name: _UVSec
+          second: 0
+        data:
+          first:
+            name: _EmissionScaleUI
+          second: 1
+        data:
+          first:
+            name: _Mode
+          second: 0
+      colors:
+        data:
+          first:
+            name: _EmissionColor
+          second: {r: 1, g: 1, b: 1, a: 1}
+        data:
+          first:
+            name: _Color
+          second: {r: 1, g: 1, b: 1, a: 1}
+        data:
+          first:
+            name: _EmissionColorUI
+          second: {r: 1, g: 1, b: 1, a: 1}
+    textureParameters:
+    - name: MT_PLATFORM_MAIN_diffuse
+      alphaSource: 6
+      filterMode: 1
+      aniso: 2
+      wrapMode: 0
+    - name: MT_PLATFORM_MAIN_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 2
+      wrapMode: 0
+    - name: MT_PLATFORM_MAIN_metallic
+      alphaSource: 7
+      filterMode: 1
+      aniso: 2
+      wrapMode: 0
+    - name: MT_PLATFORM_MAIN_Emissive
+      alphaSource: 0
+      filterMode: 1
+      aniso: 2
+      wrapMode: 0
+    - name: MT_PLATFORM_MAIN_AO
+      alphaSource: 0
+      filterMode: 1
+      aniso: 2
+      wrapMode: 0
+    - name: MT_PLATFORM_MAIN_roughness
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: MT_PLATFORM_MAIN_U5_METAL_SMOOTH
+      alphaSource: 6
+      filterMode: 1
+      aniso: 2
+      wrapMode: 0
+    - name: MT_PLATFORM_MAIN_ALLOY
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    textureAssignments:
+    - shaderProp:
+        name: _MainTex
+      material: {instanceID: 0}
+      baseUID: 2105213839
+    - shaderProp:
+        name: _BumpMap
+      material: {instanceID: 0}
+      baseUID: 2105213825
+    - shaderProp:
+        name: _EmissionMap
+      material: {instanceID: 0}
+      baseUID: 1927582603
+    - shaderProp:
+        name: _MetallicGlossMap
+      material: {instanceID: 0}
+      baseUID: 2105213829
+    - shaderProp:
+        name: _OcclusionMap
+      material: {instanceID: 0}
+      baseUID: 1921872003
+    buildTargetSettings:
+    - serializedVersion: 2
+      buildTarget: 
+      textureWidth: 1024
+      textureHeight: 1024
+      textureFormat: 0
+      loadingBehavior: 1
+  deletedPrototypes: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

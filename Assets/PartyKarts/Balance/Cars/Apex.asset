@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c63a8e8f34bb5447b0cf9c9cfc581b2, type: 3}
+  m_Name: Apex
+  m_EditorClassIdentifier: 
+  Unlock: 3
+  Price: 6000
+  CompleteTrackForUnlock: {fileID: 0}
+  ShowProperty: 1
+  m_CarCaption: Apex
+  m_CarPrefabForSelectMenu: {fileID: 1176048129959544, guid: 6dbbdf74c58f1484db2e0830a35d24e2,
+    type: 3}
+  m_CarPrefab: {fileID: 114890056152976956, guid: 6dbbdf74c58f1484db2e0830a35d24e2,
+    type: 3}
+  m_AvailibleColors:
+  - m_Color: {r: 0, g: 0.5102639, b: 1, a: 1}
+    m_Smoothness: 0.6
+  - m_Color: {r: 1, g: 1, b: 1, a: 1}
+    m_Smoothness: 0
+  - m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
+    m_Smoothness: 1
+  - m_Color: {r: 1, g: 0, b: 0, a: 1}
+    m_Smoothness: 0
+  - m_Color: {r: 0.4339623, g: 0, b: 0.43253013, a: 1}
+    m_Smoothness: 0.6
+  - m_Color: {r: 1, g: 0.5003059, b: 0, a: 1}
+    m_Smoothness: 0.4
+  - m_Color: {r: 0, g: 0.8666667, b: 0.15463093, a: 1}
+    m_Smoothness: 0.7
+  m_Description: Turn heads with the Apex. This modern sports car has a bold design
+    and exceptional performance for adrenaline junkies.
