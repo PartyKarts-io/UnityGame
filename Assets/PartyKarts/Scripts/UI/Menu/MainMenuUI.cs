@@ -56,7 +56,6 @@ public class MainMenuUI : WindowWithShowHideAnimators
     public void DisableButtons()
     {
         StartMultiplayerButton.GetComponent<CustomButton>().interactable = false;
-        StartGameButton.GetComponent<CustomButton>().interactable = false;
         SettingsButton.GetComponent<CustomButton>().interactable = false;
         ResultsButton.GetComponent<CustomButton>().interactable = false;
     }
@@ -74,7 +73,7 @@ public class MainMenuUI : WindowWithShowHideAnimators
 
     private void BuyAKart()
     {
-        string url = "https://opensea.io/collection/pktest-1";
+        string url = "https://opensea.io/collection/partykarts";
         Application.OpenURL(url);
     }
 

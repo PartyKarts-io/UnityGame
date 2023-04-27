@@ -82,8 +82,17 @@ public class WindowsController : Singleton<WindowsController>
         {
             if (button.gameObject.name != "Buy a Kart")
             {
-                button.interactable = !Utils.IsWebGLBuild() ? true : shouldEnable;
-            } else
+                Debug.Log((button.gameObject.name));
+                if (button.gameObject.name == "Button_Practice")
+                {
+                    button.interactable = true;
+                }
+                else
+                {
+                    button.interactable = !Utils.IsWebGLBuild() ? true : shouldEnable;
+                }
+            }
+            else
             {
                 button.interactable = true;
             }

@@ -226,7 +226,7 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
 
     async void Exit()
     {
-        if (WorldLoading.IsMultiplayer)
+        if (!WorldLoading.IsMultiplayer)
         {
             LoadingScreenUI.LoadScene(MainMenuSceneName);
         }
