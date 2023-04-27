@@ -80,17 +80,14 @@ public class WindowsController : Singleton<WindowsController>
         // Loop through the components and do something with them
         foreach (CustomButton button in uiButtons)
         {
-            if (button.gameObject.name != "Buy a Kart")
+            Debug.Log((button.gameObject.name));
+            if (button.gameObject.name == "Button_Practice")
             {
-                Debug.Log((button.gameObject.name));
-                if (button.gameObject.name == "Button_Practice")
-                {
-                    button.interactable = true;
-                }
-                else
-                {
-                    button.interactable = !Utils.IsWebGLBuild() ? true : shouldEnable;
-                }
+                button.interactable = true;
+            }
+            else if (button.gameObject.name != "Buy a Kart")
+            {
+                button.interactable = !Utils.IsWebGLBuild() ? true : shouldEnable;
             }
             else
             {
