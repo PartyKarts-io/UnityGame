@@ -37,7 +37,7 @@ public class LockedContent: ScriptableObject
 				case UnlockType.UnlockByTrackComleted:
 					return PlayerProfile.TrackIsComplited (CompleteTrackForUnlock);
 				case UnlockType.UnlockByNFT:
-                    return Utils.IsWebGLBuild() ? PlayerProfile.OwnsCorrectNFT(this) : true;
+                    return Utils.IsWebGLBuild() ? WorldLoading.IsMultiplayer ? PlayerProfile.OwnsCorrectNFT(this) : true : true;
                default:
 					return true;
 			}
