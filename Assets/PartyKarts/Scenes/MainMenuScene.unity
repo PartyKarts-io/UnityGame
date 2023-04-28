@@ -1805,6 +1805,11 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114456652371415452, guid: 721d6dff03cf5a440bca95cabe4fd9fe,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114491865321600304, guid: 721d6dff03cf5a440bca95cabe4fd9fe,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -2875,27 +2880,27 @@ PrefabInstance:
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[1].m_Text
-      value: 0.01 MATIC
+      value: 1 MATIC
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[2].m_Text
-      value: 0.05 MATIC
+      value: 5 MATIC
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[3].m_Text
-      value: 0.1 MATIC
+      value: 10 MATIC
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[4].m_Text
-      value: 0.25 MATIC
+      value: 25 MATIC
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[5].m_Text
-      value: 0.5 MATIC
+      value: 50 MATIC
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
