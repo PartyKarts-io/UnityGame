@@ -81,7 +81,7 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
         Debug.Log(JsonUtility.ToJson(CurrentRoom.CustomProperties));
         var entryFee = CurrentRoom.CustomProperties[C.EntryFee].ToString();
         BigInteger raceFeeFromWei = BigInteger.Divide(BigInteger.Parse($"{entryFee}"), C.ONE_ETHER); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
-        EntryFeeText.text = $"{raceFeeFromWei} MATIC";
+        EntryFeeText.text = $"{raceFeeFromWei} ETH";
 
         SelectTrackButton.SetActive(IsMaster || IsRandomRoom);
         OnRoomPropertiesUpdate(CurrentRoom.CustomProperties);

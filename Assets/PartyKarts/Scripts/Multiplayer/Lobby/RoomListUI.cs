@@ -146,19 +146,19 @@ public class RoomListUI : MonoBehaviour
                 raceFee = 1;
                 break;
             case 2:
-                raceFee = 5;
+                raceFee = 2;
                 break;
             case 3:
-                raceFee = 10;
+                raceFee = 3;
                 break;
             case 4:
-                raceFee = 25;
+                raceFee = 4;
                 break;
             case 5:
-                raceFee = 50;
+                raceFee = 5;
                 break;
             default:
-                raceFee = 0;
+                raceFee = 10;
                 break;
         }
     }

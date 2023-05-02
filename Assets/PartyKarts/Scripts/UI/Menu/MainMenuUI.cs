@@ -73,7 +73,7 @@ public class MainMenuUI : WindowWithShowHideAnimators
 
     private void BuyAKart()
     {
-        string url = "https://opensea.io/collection/partykarts";
+        string url = "https://opensea.io/collection/partykarts-1";
         Application.OpenURL(url);
     }
 

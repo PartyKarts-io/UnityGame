@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 5519098888359221086, guid: c8fa21a78cc16984da9068c62a8f0e84,
         type: 3}
       propertyPath: supportedNetworks.Array.data[0]
-      value: mumbai
+      value: arbitrum
       objectReference: {fileID: 0}
     - target: {fileID: 5519098888359221086, guid: c8fa21a78cc16984da9068c62a8f0e84,
         type: 3}
@@ -2272,12 +2272,12 @@ PrefabInstance:
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
       propertyPath: chain
-      value: polygon
+      value: arbitrum
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
       propertyPath: PK_RACE_CONTRACT
-      value: 0xC95C9f8Ec01bFB0dd7D8f43a26675B89a432FEeC
+      value: 0xc262aFba57AEaD52280397CE77e52F88B4cb39a8
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
@@ -2292,12 +2292,12 @@ PrefabInstance:
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
       propertyPath: PK_NFT_CONTRACT_ADDRESS
-      value: 0xC95C9f8Ec01bFB0dd7D8f43a26675B89a432FEeC
+      value: 0xc262aFba57AEaD52280397CE77e52F88B4cb39a8
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
       propertyPath: supportedChainData.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
@@ -2316,6 +2316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
+      propertyPath: supportedChainData.Array.data[3].chainId
+      value: 42161
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
+        type: 3}
       propertyPath: supportedChainData.Array.data[0].identifier
       value: polygon
       objectReference: {fileID: 0}
@@ -2331,8 +2336,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
+      propertyPath: supportedChainData.Array.data[3].identifier
+      value: arbitrum
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
+        type: 3}
       propertyPath: supportedChainData.Array.data[2].rpcOverride
       value: 'HTTP://127.0.0.1:7545 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
+        type: 3}
+      propertyPath: supportedChainData.Array.data[3].rpcOverride
+      value: https://arbitrum.rpc.thirdweb.com
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706405, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
@@ -2870,37 +2885,42 @@ PrefabInstance:
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[0].m_Text
-      value: Free (0 MATIC)
+      value: Free (0 ETH)
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[1].m_Text
-      value: 1 MATIC
+      value: 0.01 ETH
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[2].m_Text
-      value: 5 MATIC
+      value: 0.02 ETH
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[3].m_Text
-      value: 10 MATIC
+      value: 0.03 ETH
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[4].m_Text
-      value: 25 MATIC
+      value: 0.04 ETH
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[5].m_Text
-      value: 50 MATIC
+      value: 0.05 ETH
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[6].m_Text
+      value: 0.1 ETH
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
