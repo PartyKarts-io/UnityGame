@@ -67,10 +67,8 @@ public class ThirdwebManager : MonoBehaviour
     public ThirdwebSDK SDK;
 
     public static ThirdwebManager Instance;
-    public static BigInteger ONE_ETHER = new BigInteger(1000000000000000000);
 
-    public string PK_NFT_CONTRACT_ADDRESS; 
-    public string PK_RACE_CONTRACT;
+    public string PK_CONTRACT_ADDRESS; 
     public Contract pkNftContract;
     public Contract pkRaceContract;
     public bool isLoadingNFTBalance = false;
@@ -101,11 +99,6 @@ public class ThirdwebManager : MonoBehaviour
                     quantityOwned = 0
                 }
             };
-
-    protected string FunctionsKey
-    {
-        get { return "477b7ecef6d0c6e44681f2b61a7a2b37e068d34c54e8f3941af799d1edf9cbe9"; }
-    }
 
     private async void Awake()
     {
@@ -181,8 +174,8 @@ public class ThirdwebManager : MonoBehaviour
         }
 
         SDK = new ThirdwebSDK(chainOrRPC, chainId, options);
-        pkNftContract = SDK.GetContract(PK_NFT_CONTRACT_ADDRESS);
-        pkRaceContract = SDK.GetContract(PK_RACE_CONTRACT); //, racingGameABI);
+        pkNftContract = SDK.GetContract(PK_CONTRACT_ADDRESS);
+        pkRaceContract = SDK.GetContract(PK_CONTRACT_ADDRESS); //, racingGameABI);
 
         Debug.Log("connected to contract: " + pkNftContract.address);
         Debug.Log("connected to contract: " + pkRaceContract.address);

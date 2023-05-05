@@ -251,7 +251,7 @@ public class RoomListUI : MonoBehaviour
 
             TransactionResult txnResult = await contract.Write(
                     "createRaceLobby",
-                    $"{raceFee}",
+                    raceFee,
                     raceId,
                     trackName,
                     maxRacers,
