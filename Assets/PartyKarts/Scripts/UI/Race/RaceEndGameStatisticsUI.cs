@@ -255,10 +255,14 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
 
             int myFinishPosition = raceResults.Where(r => r.Name == PhotonNetwork.NickName).FirstOrDefault().FinishPosition;
             int myRewardPercentage = myFinishPosition > 3 ? 0 : rewardTable[myFinishPosition];
-            BigInteger pot = BigInteger.Parse(PhotonNetwork.CurrentRoom.CustomProperties[C.EntryFee].ToString());
+            BigInteger playerCount = BigInteger.Parse(PhotonNetwork.CurrentRoom.MaxPlayers.ToString());
+            BigInteger entryAmount = ThirdwebManager.Instance.ConvertEtherToWei(PhotonNetwork.CurrentRoom.CustomProperties[C.EntryFee].ToString());
+
+            BigInteger pot = BigInteger.Multiply(playerCount, entryAmount);
+
             BigInteger share = BigInteger.Multiply(pot, myRewardPercentage) / 100; // this converts reward table to a % => 75 == 75%
 
-            TransactionResult submitResultsTxn = await SubmitRaceResultsTransaction(PhotonNetwork.CurrentRoom.Name, share.ToString());
+            TransactionResult submitResultsTxn = await SubmitRaceResultsTransaction(PhotonNetwork.CurrentRoom.Name, share);
 
             if (submitResultsTxn.isSuccessful())
             {
@@ -269,7 +273,7 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
 
     private async Task<TransactionResult> SubmitRaceResultsTransaction(
     string raceId,
-    string amount
+    BigInteger amount
     )
     {
         _awaitingTxn = true;
@@ -281,7 +285,7 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
         TransactionResult txnResult = await contract.Write(
                 "collectRaceRewards",
                 raceId,
-                amount
+                $"{amount}"
         );
 
         _awaitingTxn = false;

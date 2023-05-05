@@ -203,11 +203,6 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
             Contract contract = ThirdwebManager.Instance.pkRaceContract;
             Debug.Log("Join Lobby: TRANSACTION INITIATED");
 
-            var fee = room.CustomProperties[C.EntryFee];
-
-            BigInteger raceFee = BigInteger.Parse($"{fee}");
-            Debug.Log("Race fee in wei: " + raceFee);
-
             TransactionResult txnResult = await contract.Write(
                     "joinRaceLobby",
                     room.Name
@@ -229,41 +224,47 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
     private async Task<bool> ApproveKartToken(RoomInfo room)
     {
         _awaitingTxn = true;
-        string address = await ThirdwebManager.Instance.SDK.wallet.GetAddress();
-
+        string connectedWalletAddress = await ThirdwebManager.Instance.SDK.wallet.GetAddress();
+        string spenderAddress = ThirdwebManager.Instance.PK_CONTRACT_ADDRESS;
         try
         {
             Contract contract = ThirdwebManager.Instance.pkTokenContract;
-            Debug.Log("APPROVE TRANSACTION INITIATED");
-            var fee = room.CustomProperties[C.EntryFee];
+            var fee = room.CustomProperties[C.EntryFee].ToString();
 
-            BigInteger raceFee = BigInteger.Parse($"{fee}");
+            Debug.Log($"Race Fee Custom Property: {fee}");
 
-            int allowance = await contract.Read<int>(
+            BigInteger raceFee = ThirdwebManager.Instance.ConvertEtherToWei($"{fee}");
+            Debug.Log($"BigInt Race Fee in Wei: {raceFee}");
+
+            Debug.Log($"Checking Allowance for owner {connectedWalletAddress} and spender {spenderAddress}");
+
+            string allowance = await contract.Read<string>(
                     "allowance",
-                    address,
-                    ThirdwebManager.Instance.PK_CONTRACT_ADDRESS
+                   connectedWalletAddress,
+                   spenderAddress
                 );
 
-            BigInteger bigIntAllowance = BigInteger.Parse($"{allowance}");
+            Debug.Log($"Allowance is: {allowance}");
 
+            BigInteger bigIntAllowance = BigInteger.Parse(allowance);
+
+            Debug.Log($"BigIntAllowance is: {bigIntAllowance}");
 
             if (bigIntAllowance.CompareTo(raceFee) == -1)
             {
-                TransactionResult txnResult = await contract.Write(
-                   "increaseAllowance",
-                   ThirdwebManager.Instance.PK_CONTRACT_ADDRESS,
-                   raceFee
-           );
+                Debug.Log($"Allowance is insufficient, calling increaseAllowance for Race Fee: {raceFee}");
+
+                TransactionResult txnResult = await contract.Write("increaseAllowance", spenderAddress, $"{raceFee}");
 
                 _awaitingTxn = false;
 
-                return true;
-            } else
+                return txnResult.isSuccessful();
+            }
+            else
             {
                 return true;
             }
-           
+
         }
         catch (Exception e)
         {

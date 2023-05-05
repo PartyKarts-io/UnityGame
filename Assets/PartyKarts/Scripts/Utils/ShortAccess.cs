@@ -90,7 +90,7 @@ public static class C
 	public const string RandomRoom = "rr";
 
     public static BigInteger ONE_TEST_ETHER = new BigInteger(10000000000000000);
-	public static BigInteger ONE_ETHER = new BigInteger(10000000000000000);
+	public static BigInteger ONE_ETHER = new BigInteger(1000000000000000000);
 
 }
 

@@ -193,25 +193,6 @@ public class ThirdwebManager : MonoBehaviour
         }
     }
 
-    IEnumerator SendRequest(string url, string token)
-    {
-        Debug.Log("Sending Request to Firebase Functions!");
-
-        UnityWebRequest request = UnityWebRequest.Get(url);
-        request.SetRequestHeader("Authorization", "Bearer " + token);
-
-        yield return request.SendWebRequest();
-
-        if (request.result != UnityWebRequest.Result.Success)
-        {
-            Debug.Log("Error: " + request.error);
-        }
-        else
-        {
-            Debug.Log("Response: " + request.downloadHandler.text);
-        }
-    }
-
     public async Task GetNFTsForPlayer()
     {
         isLoadingNFTBalance = true;
@@ -239,6 +220,18 @@ public class ThirdwebManager : MonoBehaviour
     public string GetCurrentChainIdentifier()
     {
         return chain;
+    }
+
+    public BigInteger ConvertEtherToWei(string valueAsString)
+    {
+        BigInteger incomingValue = BigInteger.Parse(valueAsString);
+        return BigInteger.Multiply(incomingValue, C.ONE_ETHER);
+    }
+
+    public BigInteger ConvertWeiToEther(string valueAsString)
+    {
+        BigInteger incomingValue = BigInteger.Parse(valueAsString);
+        return BigInteger.Divide(incomingValue, C.ONE_ETHER);
     }
 
     public void WalletDisconnected()

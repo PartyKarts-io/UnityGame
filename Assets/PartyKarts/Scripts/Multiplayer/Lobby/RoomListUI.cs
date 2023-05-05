@@ -14,7 +14,6 @@ using System.Threading.Tasks;
 using System;
 using System.Text;
 using GameBalance;
-using Unity.VisualScripting.Antlr3.Runtime;
 
 /// <summary>
 /// List of available rooms and the ability to create a new one.
@@ -138,6 +137,7 @@ public class RoomListUI : MonoBehaviour
 
     public void SetRaceFee(int fee)
     {
+        // sets the race fee to the Qty of tokens required based on the dropdown selection
         switch (fee)
         {
             case 0:
@@ -186,11 +186,11 @@ public class RoomListUI : MonoBehaviour
         buttonText.text = "Awaiting wallet confirmation...";
 
         string trackName = (string)selectedTrack[C.TrackName];
-        BigInteger raceFee = BigInteger.Parse($"{this.raceFee}"); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
+        BigInteger bigintFee = BigInteger.Parse($"{raceFee}"); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
 
         //set custom properties.
         Hashtable customProperties = new Hashtable();
-        customProperties.Add(C.EntryFee, raceFee.ToString());
+        customProperties.Add(C.EntryFee, bigintFee.ToString());
         customProperties.Add(C.RoomCreator, PhotonNetwork.NickName);
         customProperties.Add(C.TrackName, trackName);
 
@@ -251,7 +251,7 @@ public class RoomListUI : MonoBehaviour
 
             TransactionResult txnResult = await contract.Write(
                     "createRaceLobby",
-                    raceFee,
+                    $"{ThirdwebManager.Instance.ConvertEtherToWei(raceFee.ToString())}",
                     raceId,
                     trackName,
                     maxRacers,
