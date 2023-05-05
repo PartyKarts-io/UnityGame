@@ -80,8 +80,7 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
 
         Debug.Log(JsonUtility.ToJson(CurrentRoom.CustomProperties));
         var entryFee = CurrentRoom.CustomProperties[C.EntryFee].ToString();
-        BigInteger raceFeeFromWei = BigInteger.Divide(BigInteger.Parse($"{entryFee}"), C.ONE_ETHER); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
-        EntryFeeText.text = $"{raceFeeFromWei} ETH";
+        EntryFeeText.text = $"{entryFee} KART";
 
         SelectTrackButton.SetActive(IsMaster || IsRandomRoom);
         OnRoomPropertiesUpdate(CurrentRoom.CustomProperties);
@@ -165,16 +164,25 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
         else
         {
 
-            TransactionResult joinTxnResult = await JoinLobbyTransaction(PhotonNetwork.CurrentRoom);
-
-            if (joinTxnResult.isSuccessful())
+            bool approveTxnResult = await ApproveKartToken(PhotonNetwork.CurrentRoom);
+            if (approveTxnResult)
             {
-                ReadyUp();
+                TransactionResult joinTxnResult = await JoinLobbyTransaction(PhotonNetwork.CurrentRoom);
+
+                if (joinTxnResult.isSuccessful())
+                {
+                    ReadyUp();
+                }
+                else
+                {
+                    Debug.LogError(joinTxnResult);
+                }
             }
             else
             {
-                Debug.LogError(joinTxnResult);
+                Debug.LogError("Error approving Race Fee");
             }
+
         }
     }
 
@@ -195,19 +203,8 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
             Contract contract = ThirdwebManager.Instance.pkRaceContract;
             Debug.Log("Join Lobby: TRANSACTION INITIATED");
 
-            var fee = room.CustomProperties[C.EntryFee];
-
-            BigInteger raceFeeInWei = BigInteger.Parse($"{fee}");
-            Debug.Log("Race fee in wei: " + raceFeeInWei);
-
-            TransactionRequest overrides = new TransactionRequest()
-            {
-                value = $"{raceFeeInWei}"
-            };
-
             TransactionResult txnResult = await contract.Write(
                     "joinRaceLobby",
-                    overrides,
                     room.Name
             );
 
@@ -221,6 +218,51 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
             _awaitingTxn = false;
 
             return null;
+        }
+    }
+
+    private async Task<bool> ApproveKartToken(RoomInfo room)
+    {
+        _awaitingTxn = true;
+        string connectedWalletAddress = await ThirdwebManager.Instance.SDK.wallet.GetAddress();
+        string spenderAddress = ThirdwebManager.Instance.PK_CONTRACT_ADDRESS;
+        try
+        {
+            Contract contract = ThirdwebManager.Instance.pkTokenContract;
+            var fee = room.CustomProperties[C.EntryFee].ToString();
+            BigInteger raceFee = ThirdwebManager.Instance.ConvertEtherToWei($"{fee}");
+
+            Debug.Log($"Checking Allowance for owner {connectedWalletAddress} and spender {spenderAddress}");
+
+            string allowance = await contract.Read<string>(
+                    "allowance",
+                   connectedWalletAddress,
+                   spenderAddress
+                );
+
+            BigInteger bigIntAllowance = BigInteger.Parse(allowance);
+
+            if (bigIntAllowance.CompareTo(raceFee) == -1)
+            {
+                Debug.Log($"Allowance is insufficient, calling increaseAllowance for Race Fee: {raceFee}");
+
+                TransactionResult txnResult = await contract.Write("increaseAllowance", spenderAddress, $"{raceFee}");
+
+                _awaitingTxn = false;
+
+                return txnResult.isSuccessful();
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        catch (Exception e)
+        {
+            _awaitingTxn = false;
+            Debug.LogError(e);
+            return false;
         }
     }
 

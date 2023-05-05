@@ -123,10 +123,6 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
                 });
 
                 Players[i].UpdateData(carStat.PlayerName, i + 1, raceTime);
-                Debug.Log(raceResults[i].Name);
-                Debug.Log(raceResults[i].RaceTime);
-                Debug.Log(raceResults[i].FinishPosition);
-                Debug.Log(raceResults[i].LapCount);
             }
         }
 
@@ -254,11 +250,15 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
             }
 
             int myFinishPosition = raceResults.Where(r => r.Name == PhotonNetwork.NickName).FirstOrDefault().FinishPosition;
-            int myReward = myFinishPosition > 3 ? 0 : rewardTable[myFinishPosition];
-            BigInteger pot = BigInteger.Parse(PhotonNetwork.CurrentRoom.CustomProperties[C.EntryFee].ToString());
-            BigInteger share = BigInteger.Multiply(pot, myReward) / 100; // this converts reward table to a % => 75 == 75%
+            int myRewardPercentage = myFinishPosition > 3 ? 0 : rewardTable[myFinishPosition];
+            BigInteger playerCount = BigInteger.Parse(raceResults.Count.ToString());
+            BigInteger entryAmount = ThirdwebManager.Instance.ConvertEtherToWei(PhotonNetwork.CurrentRoom.CustomProperties[C.EntryFee].ToString());
 
-            TransactionResult submitResultsTxn = await SubmitRaceResultsTransaction(PhotonNetwork.CurrentRoom.Name, share.ToString());
+            BigInteger pot = BigInteger.Multiply(playerCount, entryAmount);
+
+            BigInteger share = BigInteger.Multiply(pot, myRewardPercentage) / 100; // this converts reward table to a % => 75 == 75%
+
+            TransactionResult submitResultsTxn = await SubmitRaceResultsTransaction(PhotonNetwork.CurrentRoom.Name, share);
 
             if (submitResultsTxn.isSuccessful())
             {
@@ -269,7 +269,7 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
 
     private async Task<TransactionResult> SubmitRaceResultsTransaction(
     string raceId,
-    string amountInWei
+    BigInteger amount
     )
     {
         _awaitingTxn = true;
@@ -281,7 +281,7 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
         TransactionResult txnResult = await contract.Write(
                 "collectRaceRewards",
                 raceId,
-                amountInWei
+                $"{amount}"
         );
 
         _awaitingTxn = false;

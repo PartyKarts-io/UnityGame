@@ -703,12 +703,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This is a Web3 game that requires connection to an Arbitrum wallet
+  m_text: 'This is a Web3 game that requires connection to a wallet connected to
+    the Binance Smart Chain
 
 
-    PartyKarts
-    offers races that may require entry fees -  Always DYOR and play at your own
-    risk
+    PartyKarts offers races that may require entry
+    fees -  Always DYOR and play at your own risk
 
 
     Click anywhere to continue'
@@ -846,8 +846,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Attention, this build is designed to demonstrate the gameplay. The release
-    version of the game is in development. \n\nPress to continue."
+  m_text: 'This is a Web3 game that requires connection to a wallet connected to
+    the Binance Smart Chain
+
+
+    PartyKarts offers races that may require entry
+    fees -  Always DYOR and play at your own risk
+
+
+    Click anywhere to continue'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

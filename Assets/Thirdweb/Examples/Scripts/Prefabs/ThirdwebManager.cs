@@ -67,12 +67,12 @@ public class ThirdwebManager : MonoBehaviour
     public ThirdwebSDK SDK;
 
     public static ThirdwebManager Instance;
-    public static BigInteger ONE_ETHER = new BigInteger(1000000000000000000);
 
-    public string PK_NFT_CONTRACT_ADDRESS; 
-    public string PK_RACE_CONTRACT;
+    public string PK_CONTRACT_ADDRESS; 
+    public string PK_TOKEN_ADDRESS; 
     public Contract pkNftContract;
     public Contract pkRaceContract;
+    public Contract pkTokenContract;
     public bool isLoadingNFTBalance = false;
     public bool isLoadingNFTData = false;
     public List<NFT> walletNFTs = new List<NFT>();
@@ -101,11 +101,6 @@ public class ThirdwebManager : MonoBehaviour
                     quantityOwned = 0
                 }
             };
-
-    protected string FunctionsKey
-    {
-        get { return "477b7ecef6d0c6e44681f2b61a7a2b37e068d34c54e8f3941af799d1edf9cbe9"; }
-    }
 
     private async void Awake()
     {
@@ -181,11 +176,13 @@ public class ThirdwebManager : MonoBehaviour
         }
 
         SDK = new ThirdwebSDK(chainOrRPC, chainId, options);
-        pkNftContract = SDK.GetContract(PK_NFT_CONTRACT_ADDRESS);
-        pkRaceContract = SDK.GetContract(PK_RACE_CONTRACT); //, racingGameABI);
+        pkNftContract = SDK.GetContract(PK_CONTRACT_ADDRESS);
+        pkRaceContract = SDK.GetContract(PK_CONTRACT_ADDRESS); //, racingGameABI);
+        pkTokenContract = SDK.GetContract(PK_TOKEN_ADDRESS);
 
         Debug.Log("connected to contract: " + pkNftContract.address);
         Debug.Log("connected to contract: " + pkRaceContract.address);
+        Debug.Log("connected to contract: " + pkTokenContract.address);
         var data = await pkRaceContract.Read<string>("owner");
         Debug.Log("Owner of the Race Contract is: " + data);
 
@@ -193,25 +190,6 @@ public class ThirdwebManager : MonoBehaviour
         {
             walletNFTs = LOCAL_NFT_LIST;
             nftsLoadedEvent.Invoke(walletNFTs);
-        }
-    }
-
-    IEnumerator SendRequest(string url, string token)
-    {
-        Debug.Log("Sending Request to Firebase Functions!");
-
-        UnityWebRequest request = UnityWebRequest.Get(url);
-        request.SetRequestHeader("Authorization", "Bearer " + token);
-
-        yield return request.SendWebRequest();
-
-        if (request.result != UnityWebRequest.Result.Success)
-        {
-            Debug.Log("Error: " + request.error);
-        }
-        else
-        {
-            Debug.Log("Response: " + request.downloadHandler.text);
         }
     }
 
@@ -242,6 +220,18 @@ public class ThirdwebManager : MonoBehaviour
     public string GetCurrentChainIdentifier()
     {
         return chain;
+    }
+
+    public BigInteger ConvertEtherToWei(string valueAsString)
+    {
+        BigInteger incomingValue = BigInteger.Parse(valueAsString);
+        return BigInteger.Multiply(incomingValue, C.ONE_ETHER);
+    }
+
+    public BigInteger ConvertWeiToEther(string valueAsString)
+    {
+        BigInteger incomingValue = BigInteger.Parse(valueAsString);
+        return BigInteger.Divide(incomingValue, C.ONE_ETHER);
     }
 
     public void WalletDisconnected()
