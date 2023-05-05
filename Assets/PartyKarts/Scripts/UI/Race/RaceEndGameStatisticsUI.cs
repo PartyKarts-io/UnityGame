@@ -123,10 +123,6 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
                 });
 
                 Players[i].UpdateData(carStat.PlayerName, i + 1, raceTime);
-                Debug.Log(raceResults[i].Name);
-                Debug.Log(raceResults[i].RaceTime);
-                Debug.Log(raceResults[i].FinishPosition);
-                Debug.Log(raceResults[i].LapCount);
             }
         }
 

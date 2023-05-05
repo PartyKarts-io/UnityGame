@@ -80,7 +80,6 @@ public class WindowsController : Singleton<WindowsController>
         // Loop through the components and do something with them
         foreach (CustomButton button in uiButtons)
         {
-            Debug.Log((button.gameObject.name));
             if (button.gameObject.name == "Button_Practice")
             {
                 button.interactable = true;

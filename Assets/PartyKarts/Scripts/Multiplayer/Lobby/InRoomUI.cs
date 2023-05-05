@@ -230,11 +230,7 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
         {
             Contract contract = ThirdwebManager.Instance.pkTokenContract;
             var fee = room.CustomProperties[C.EntryFee].ToString();
-
-            Debug.Log($"Race Fee Custom Property: {fee}");
-
             BigInteger raceFee = ThirdwebManager.Instance.ConvertEtherToWei($"{fee}");
-            Debug.Log($"BigInt Race Fee in Wei: {raceFee}");
 
             Debug.Log($"Checking Allowance for owner {connectedWalletAddress} and spender {spenderAddress}");
 
@@ -244,11 +240,7 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
                    spenderAddress
                 );
 
-            Debug.Log($"Allowance is: {allowance}");
-
             BigInteger bigIntAllowance = BigInteger.Parse(allowance);
-
-            Debug.Log($"BigIntAllowance is: {bigIntAllowance}");
 
             if (bigIntAllowance.CompareTo(raceFee) == -1)
             {

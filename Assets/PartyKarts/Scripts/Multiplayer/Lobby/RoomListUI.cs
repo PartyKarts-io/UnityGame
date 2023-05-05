@@ -222,8 +222,6 @@ public class RoomListUI : MonoBehaviour
             buttonText.text = "Create Room";
             if (newRaceResult.isSuccessful())
             {
-                Debug.Log("Creating Race Lobby with ID: " + raceId);
-
                 PhotonNetwork.CreateRoom(raceId, options);
             }
             else
