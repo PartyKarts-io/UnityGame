@@ -69,8 +69,10 @@ public class ThirdwebManager : MonoBehaviour
     public static ThirdwebManager Instance;
 
     public string PK_CONTRACT_ADDRESS; 
+    public string PK_TOKEN_ADDRESS; 
     public Contract pkNftContract;
     public Contract pkRaceContract;
+    public Contract pkTokenContract;
     public bool isLoadingNFTBalance = false;
     public bool isLoadingNFTData = false;
     public List<NFT> walletNFTs = new List<NFT>();
@@ -176,9 +178,11 @@ public class ThirdwebManager : MonoBehaviour
         SDK = new ThirdwebSDK(chainOrRPC, chainId, options);
         pkNftContract = SDK.GetContract(PK_CONTRACT_ADDRESS);
         pkRaceContract = SDK.GetContract(PK_CONTRACT_ADDRESS); //, racingGameABI);
+        pkTokenContract = SDK.GetContract(PK_TOKEN_ADDRESS);
 
         Debug.Log("connected to contract: " + pkNftContract.address);
         Debug.Log("connected to contract: " + pkRaceContract.address);
+        Debug.Log("connected to contract: " + pkTokenContract.address);
         var data = await pkRaceContract.Read<string>("owner");
         Debug.Log("Owner of the Race Contract is: " + data);
 

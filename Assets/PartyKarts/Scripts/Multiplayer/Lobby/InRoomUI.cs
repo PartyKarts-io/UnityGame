@@ -164,16 +164,25 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
         else
         {
 
-            TransactionResult joinTxnResult = await JoinLobbyTransaction(PhotonNetwork.CurrentRoom);
-
-            if (joinTxnResult.isSuccessful())
+            bool approveTxnResult = await ApproveKartToken(PhotonNetwork.CurrentRoom);
+            if (approveTxnResult)
             {
-                ReadyUp();
+                TransactionResult joinTxnResult = await JoinLobbyTransaction(PhotonNetwork.CurrentRoom);
+
+                if (joinTxnResult.isSuccessful())
+                {
+                    ReadyUp();
+                }
+                else
+                {
+                    Debug.LogError(joinTxnResult);
+                }
             }
             else
             {
-                Debug.LogError(joinTxnResult);
+                Debug.LogError("Error approving Race Fee");
             }
+
         }
     }
 
@@ -199,14 +208,8 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
             BigInteger raceFee = BigInteger.Parse($"{fee}");
             Debug.Log("Race fee in wei: " + raceFee);
 
-            //TransactionRequest overrides = new TransactionRequest()
-            //{
-            //    value = $"{raceFee}"
-            //};
-
             TransactionResult txnResult = await contract.Write(
                     "joinRaceLobby",
-                    //overrides,
                     room.Name
             );
 
@@ -220,6 +223,53 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
             _awaitingTxn = false;
 
             return null;
+        }
+    }
+
+    private async Task<bool> ApproveKartToken(RoomInfo room)
+    {
+        _awaitingTxn = true;
+        string address = await ThirdwebManager.Instance.SDK.wallet.GetAddress();
+
+        try
+        {
+            Contract contract = ThirdwebManager.Instance.pkTokenContract;
+            Debug.Log("APPROVE TRANSACTION INITIATED");
+            var fee = room.CustomProperties[C.EntryFee];
+
+            BigInteger raceFee = BigInteger.Parse($"{fee}");
+
+            int allowance = await contract.Read<int>(
+                    "allowance",
+                    address,
+                    ThirdwebManager.Instance.PK_CONTRACT_ADDRESS
+                );
+
+            BigInteger bigIntAllowance = BigInteger.Parse($"{allowance}");
+
+
+            if (bigIntAllowance.CompareTo(raceFee) == -1)
+            {
+                TransactionResult txnResult = await contract.Write(
+                   "increaseAllowance",
+                   ThirdwebManager.Instance.PK_CONTRACT_ADDRESS,
+                   raceFee
+           );
+
+                _awaitingTxn = false;
+
+                return true;
+            } else
+            {
+                return true;
+            }
+           
+        }
+        catch (Exception e)
+        {
+            _awaitingTxn = false;
+            Debug.LogError(e);
+            return false;
         }
     }
 

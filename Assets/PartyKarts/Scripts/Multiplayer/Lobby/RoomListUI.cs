@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System;
 using System.Text;
 using GameBalance;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 /// <summary>
 /// List of available rooms and the ability to create a new one.
@@ -216,7 +217,6 @@ public class RoomListUI : MonoBehaviour
         }
         else
         {
-
             TransactionResult newRaceResult = await CreateRoomTransaction(raceId, trackName, maxPlayers, true, true);
 
             buttonText.text = "Create Room";
@@ -269,7 +269,6 @@ public class RoomListUI : MonoBehaviour
             Debug.LogError(e);
             return null;
         }
-
     }
 
 
