@@ -143,22 +143,22 @@ public class RoomListUI : MonoBehaviour
                 raceFee = 0;
                 break;
             case 1:
-                raceFee = 1;
+                raceFee = 10;
                 break;
             case 2:
-                raceFee = 2;
+                raceFee = 50;
                 break;
             case 3:
-                raceFee = 3;
+                raceFee = 100;
                 break;
             case 4:
-                raceFee = 4;
+                raceFee = 500;
                 break;
             case 5:
-                raceFee = 5;
+                raceFee = 1000;
                 break;
             default:
-                raceFee = 10;
+                raceFee = 5000;
                 break;
         }
     }
@@ -185,11 +185,11 @@ public class RoomListUI : MonoBehaviour
         buttonText.text = "Awaiting wallet confirmation...";
 
         string trackName = (string)selectedTrack[C.TrackName];
-        BigInteger raceFeeInWei = BigInteger.Multiply(C.ONE_ETHER, raceFee); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
+        BigInteger raceFee = BigInteger.Parse($"{this.raceFee}"); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
 
         //set custom properties.
         Hashtable customProperties = new Hashtable();
-        customProperties.Add(C.EntryFee, raceFeeInWei.ToString());
+        customProperties.Add(C.EntryFee, raceFee.ToString());
         customProperties.Add(C.RoomCreator, PhotonNetwork.NickName);
         customProperties.Add(C.TrackName, trackName);
 
@@ -249,12 +249,9 @@ public class RoomListUI : MonoBehaviour
             Contract contract = ThirdwebManager.Instance.pkRaceContract;
             Debug.Log("TRANSACTION INITIATED");
 
-            BigInteger raceFeeInWei = BigInteger.Multiply(C.ONE_ETHER, raceFee); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
-            Debug.Log("Race fee in wei: " + raceFeeInWei);
-
             TransactionResult txnResult = await contract.Write(
                     "createRaceLobby",
-                    $"{raceFeeInWei}",
+                    $"{raceFee}",
                     raceId,
                     trackName,
                     maxRacers,

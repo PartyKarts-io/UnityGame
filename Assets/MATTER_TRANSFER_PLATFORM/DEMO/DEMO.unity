@@ -160,6 +160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blaze
       objectReference: {fileID: 0}
+    - target: {fileID: 1778857951445826, guid: e57669d5e5550504bbc781323cf06468, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4636659024011504, guid: e57669d5e5550504bbc781323cf06468, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -632,7 +636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1272939413320566, guid: 771c67a3bcfd2e845a89c1fc3bbe5047, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4894286634113140, guid: 771c67a3bcfd2e845a89c1fc3bbe5047, type: 3}
       propertyPath: m_RootOrder

@@ -21,19 +21,19 @@ EditorUserSettings:
       value: 5501005704535c0c0f5d5a2640775b44414f4e787a2a27617d7e4f64b0b7673d
       flags: 0
     RecentlyUsedSceneGuid-5:
-      value: 0109575f5d545a5d0b565c7443760a44424e1d722d7b73652f7b1b36b5e4326f
-      flags: 0
-    RecentlyUsedSceneGuid-6:
-      value: 5406030556065f5a0f58082140755d4412164d7e2e2d763528704960b7e1356c
-      flags: 0
-    RecentlyUsedSceneGuid-7:
       value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
       flags: 0
-    RecentlyUsedSceneGuid-8:
+    RecentlyUsedSceneGuid-6:
       value: 540106075654085f5f5b0f7a40770a11154e197c782a7f362f7d4930b2b56368
       flags: 0
-    RecentlyUsedSceneGuid-9:
+    RecentlyUsedSceneGuid-7:
       value: 0550525703565b0d0e5e09261321074412164c797f2c23602b284464b4b1306f
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 5406030556065f5a0f58082140755d4412164d7e2e2d763528704960b7e1356c
+      flags: 0
+    RecentlyUsedSceneGuid-9:
+      value: 0109575f5d545a5d0b565c7443760a44424e1d722d7b73652f7b1b36b5e4326f
       flags: 0
     glTF.saveFilePath:
       value: 4c644703174646511f1e093016264b0419
