@@ -255,7 +255,7 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
 
             int myFinishPosition = raceResults.Where(r => r.Name == PhotonNetwork.NickName).FirstOrDefault().FinishPosition;
             int myRewardPercentage = myFinishPosition > 3 ? 0 : rewardTable[myFinishPosition];
-            BigInteger playerCount = BigInteger.Parse(PhotonNetwork.CurrentRoom.MaxPlayers.ToString());
+            BigInteger playerCount = BigInteger.Parse(raceResults.Count.ToString());
             BigInteger entryAmount = ThirdwebManager.Instance.ConvertEtherToWei(PhotonNetwork.CurrentRoom.CustomProperties[C.EntryFee].ToString());
 
             BigInteger pot = BigInteger.Multiply(playerCount, entryAmount);
