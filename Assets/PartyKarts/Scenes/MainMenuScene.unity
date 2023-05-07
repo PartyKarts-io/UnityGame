@@ -2307,7 +2307,12 @@ PrefabInstance:
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
       propertyPath: PK_NFT_CONTRACT_ADDRESS
-      value: 0x0736D3896BE1193576895e60245a5534d1A77dB8
+      value: 0x2A24A3AF8C4Ea9EC4FFe7eB9b1eE74f39c448d71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
+        type: 3}
+      propertyPath: PK_RACE_CONTRACT_ADDRESS
+      value: 0x2559efE11D7c8A9518dd1F959CecF3340a78fEE0
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
