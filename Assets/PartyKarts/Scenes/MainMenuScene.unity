@@ -2287,7 +2287,7 @@ PrefabInstance:
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
       propertyPath: PK_TOKEN_ADDRESS
-      value: 0xCf01ba6Aa133e291cBd61066d2De876474ebc4D9
+      value: 0xA5E60D30daa7225F5140F7601E08f57325465255
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
@@ -2910,7 +2910,7 @@ PrefabInstance:
     - target: {fileID: 7333377793967771631, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
