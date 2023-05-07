@@ -2287,7 +2287,7 @@ PrefabInstance:
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
       propertyPath: PK_TOKEN_ADDRESS
-      value: 0x1E35Be25741E107FDA64d3833E244F5452B48136
+      value: 0xA5E60D30daa7225F5140F7601E08f57325465255
       objectReference: {fileID: 0}
     - target: {fileID: 4404896360829706404, guid: 379ed01658d62a14484f953196ff19db,
         type: 3}
