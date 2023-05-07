@@ -225,7 +225,7 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
     {
         _awaitingTxn = true;
         string connectedWalletAddress = await ThirdwebManager.Instance.SDK.wallet.GetAddress();
-        string spenderAddress = ThirdwebManager.Instance.PK_CONTRACT_ADDRESS;
+        string spenderAddress = ThirdwebManager.Instance.PK_RACE_CONTRACT_ADDRESS;
         try
         {
             Contract contract = ThirdwebManager.Instance.pkTokenContract;
