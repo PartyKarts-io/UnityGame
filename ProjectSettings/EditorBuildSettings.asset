@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PartyKarts/Scenes/PortForRace.unity
     guid: 0c3de3b7e6c8eb64fa4ff3ff2d3de403
+  - enabled: 0
+    path: Assets/PartyKarts/Scenes/OG_RACETRACK/OG_RaceTrack.unity
+    guid: fe35d2fe55c08463ca782bf05bdd1ae6
   m_configObjects: {}
