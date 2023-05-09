@@ -19,8 +19,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3a9983826cef5747b541619547540b2, type: 2}
   - {fileID: 11400000, guid: afa8df00e52633942ab499de775268b0, type: 2}
   m_AiConfog:
-    MaxSpeed: 250
-    MinSpeed: 50
+    MaxSpeed: 150
+    MinSpeed: 30
     AccelSensitivity: 1
     BrakeSensitivity: 1
     ReverceWaitTime: 1.5
@@ -41,7 +41,7 @@ MonoBehaviour:
     MaxSpeedForMinAngleMultiplier: 300
     SteerAngleChangeSpeed: 180
     MinSpeedForSteerHelp: 20
-    HelpSteerPower: 0.2
+    HelpSteerPower: 0.3
     OppositeAngularVelocityHelpPower: 0.01
     PositiveAngularVelocityHelpPower: 0
     MaxAngularVelocityHelpAngle: 45
