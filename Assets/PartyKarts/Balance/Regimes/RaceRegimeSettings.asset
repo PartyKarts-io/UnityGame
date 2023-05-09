@@ -26,7 +26,7 @@ MonoBehaviour:
     ReverceWaitTime: 1.5
     ReverceTime: 1
     BetweenReverceTimeForReset: 8
-    OffsetToFirstTargetPoint: 5
+    OffsetToFirstTargetPoint: 10
     SpeedFactorToFirstTargetPoint: -0.4
     OffsetToSecondTargetPoint: 8
     SpeedFactorToSecondTargetPoint: 0.8
