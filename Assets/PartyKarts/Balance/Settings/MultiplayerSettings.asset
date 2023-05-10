@@ -49,6 +49,7 @@ MonoBehaviour:
   m_GoodPing: 100
   m_VeryGoodPing: 50
   m_AvailableTracksForMultiplayer:
+  - {fileID: 11400000, guid: f644b8a9aa4504c3899348ffbb2ef65a, type: 2}
   - {fileID: 11400000, guid: 1fc5dd5df3834774cbc30e73b49d23d0, type: 2}
   - {fileID: 11400000, guid: 50d10d34ba451be4ba946f1846f0b217, type: 2}
   m_AvailableCarsForMultiplayer:
@@ -56,7 +57,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1f9e5f31478f4f41947a387072d07b3, type: 2}
   - {fileID: 11400000, guid: b3a9983826cef5747b541619547540b2, type: 2}
   - {fileID: 11400000, guid: afa8df00e52633942ab499de775268b0, type: 2}
-  m_MaxPlayersInRoom: 4
+  m_MaxPlayersInRoom: 6
   m_WaitOtherPlayersTime: 3
   m_SecondsToEndGame: 20
   m_SlowPosSyncLerp: 0.025
