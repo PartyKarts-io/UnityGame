@@ -5,11 +5,14 @@
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-# [Bb]uild/
-# [Bb]uilds/
+[Bb]uild/
+[Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
 
+# Ignore temporaries from GameCI
+/[Aa]rtifacts/
+/[Cc]odeCoverage/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 ![Aa]ssets/**/*.meta
@@ -676,3 +679,11 @@ Assets/CartoonTrackMonza/Textures/tyres_monza.psd
 Assets/CartoonTrackMonza/Textures/tyres_monza.psd.meta
 Assets/CartoonTrackMonza/Textures/tyres_monza_normal.psd
 Assets/CartoonTrackMonza/Textures/tyres_monza_normal.psd.meta
+Build/.DS_Store
+Build/404.html
+Build/Build/Build.data
+Build/Build/Build.framework.js
+Build/Build/Build.wasm
+Build/Build/Build.data
+Build/Build/Build.framework.js
+Build/Build/Build.wasm

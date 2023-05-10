@@ -1,0 +1,44 @@
+[debug] [2023-05-10T02:24:09.316Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T02:24:09.317Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-05-10T02:24:09.317Z] CLI Version:   11.27.0
+[debug] [2023-05-10T02:24:09.317Z] Platform:      darwin
+[debug] [2023-05-10T02:24:09.317Z] Node Version:  v16.20.0
+[debug] [2023-05-10T02:24:09.318Z] Time:          Tue May 09 2023 19:24:09 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-05-10T02:24:09.318Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T02:24:09.351Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T02:24:09.351Z] > authorizing via signed-in user (partykarts.io@gmail.com)
+[debug] [2023-05-10T02:24:09.351Z] [iam] checking project partykarts-45d4d for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-10T02:24:09.352Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/partykarts-45d4d:testIamPermissions [none]
+[debug] [2023-05-10T02:24:09.352Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/partykarts-45d4d:testIamPermissions x-goog-quota-user=projects/partykarts-45d4d
+[debug] [2023-05-10T02:24:09.352Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/partykarts-45d4d:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-10T02:24:09.749Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/partykarts-45d4d:testIamPermissions 200
+[debug] [2023-05-10T02:24:09.749Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/partykarts-45d4d:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-10T02:24:09.751Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/partykarts-45d4d [none]
+[debug] [2023-05-10T02:24:10.039Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/partykarts-45d4d 200
+[debug] [2023-05-10T02:24:10.040Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/partykarts-45d4d {"projectId":"partykarts-45d4d","projectNumber":"498888401587","displayName":"partykarts","name":"projects/partykarts-45d4d","resources":{"hostingSite":"partykarts-45d4d"},"state":"ACTIVE","etag":"1_e5198a43-3c29-4446-94b5-3118b13f2b07"}
+[info] 
+[info] === Deploying to 'partykarts-45d4d'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-05-10T02:24:10.045Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/partykarts-45d4d/versions [none]
+[debug] [2023-05-10T02:24:10.045Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/partykarts-45d4d/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-05-10T02:24:10.945Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/partykarts-45d4d/versions 200
+[debug] [2023-05-10T02:24:10.945Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/partykarts-45d4d/versions {"name":"projects/498888401587/sites/partykarts-45d4d/versions/558565304f0a9f09","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[partykarts-45d4d]: beginning deploy... 
+[info] i  hosting[partykarts-45d4d]: found 13 files in Build 
+[debug] [2023-05-10T02:24:10.952Z] [hosting] uploading with 200 concurrency
+[debug] [2023-05-10T02:24:31.637Z] [hosting] hash cache [QnVpbGQ] stored for 13 files
+[debug] [2023-05-10T02:24:31.637Z] [hosting][hash queue][FINAL] {"max":20680,"min":1,"avg":1591.923076923077,"active":0,"complete":13,"success":13,"errored":0,"retried":0,"total":13,"elapsed":20683}
+[debug] [2023-05-10T02:24:31.638Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/498888401587/sites/partykarts-45d4d/versions/558565304f0a9f09:populateFiles [none]
+[debug] [2023-05-10T02:24:31.638Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/498888401587/sites/partykarts-45d4d/versions/558565304f0a9f09:populateFiles {"files":{"/.DS_Store":"fe58b78141327f4d51de821f7a3c8d07be17dc1f52dd0f2a74dbc9bf5e45d842","/index.html":"990930491e4cffba1af9c488abe068d9e86767c1a1c03c5f539542c69657b110","/Build/Build.framework.js":"5c3c3e18c30e65207412532eb5d1a6cbe3b4aadb2e5ab2e6ac2ef4c7c5f34089","/Build/Build.loader.js":"7a0cfbc97678152c2a02a61f3fbd01a64db4810adf3dc9f69a2634c7e2506e30","/Build/Build.wasm":"963365ff622a548dbf80cac4929c942216a133dcccb67d1d4bbd3c4b12af3e73","/StreamingAssets/Velocity_test.glb":"33886a2ff1146aba475fea2d17c1f8aec57375f5e02e86373e054775f08dc73b","/StreamingAssets/google-services-desktop.json":"bf2736be4cb305149fc512538056d0f4fb00ad57dee1c3872f956fc45410e626","/TemplateData/favicon.ico":"f314ff479bcb366354223287d003f42fc49cd1c85ec79fa70ab1baa95e5d8de3","/TemplateData/fullscreen-button.png":"881a75b8489fb7a1179e0960b19130a3461abac32769c987ad2650708a796bce","/TemplateData/style.css":"cc8b7c5b01591ed24a1a180d1ab621caee0626d4d32faf8fdee77236881bff78","/lib/thirdweb-unity-bridge.js":"aba41b419f81e901c72041b5bdf725aa4190bc0894656c8000a7588ba333df8f","/404.html":"05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3","/Build/Build.data":"112e78a51250c533721332033beea9ef64c3dabe2205ec48b6c99abcdbab6a2e"}}
+[debug] [2023-05-10T02:24:32.159Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/498888401587/sites/partykarts-45d4d/versions/558565304f0a9f09:populateFiles 200
+[debug] [2023-05-10T02:24:32.159Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/498888401587/sites/partykarts-45d4d/versions/558565304f0a9f09:populateFiles {"uploadRequiredHashes":["112e78a51250c533721332033beea9ef64c3dabe2205ec48b6c99abcdbab6a2e","05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/partykarts-45d4d/versions/558565304f0a9f09/files"}
+[debug] [2023-05-10T02:24:32.160Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/partykarts-45d4d/versions/558565304f0a9f09/files/112e78a51250c533721332033beea9ef64c3dabe2205ec48b6c99abcdbab6a2e [none]
+[debug] [2023-05-10T02:24:32.160Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/partykarts-45d4d/versions/558565304f0a9f09/files/112e78a51250c533721332033beea9ef64c3dabe2205ec48b6c99abcdbab6a2e [stream]
+[debug] [2023-05-10T02:24:32.162Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/partykarts-45d4d/versions/558565304f0a9f09/files/05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3 [none]
+[debug] [2023-05-10T02:24:32.162Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/partykarts-45d4d/versions/558565304f0a9f09/files/05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3 [stream]
+[debug] [2023-05-10T02:24:32.163Z] [hosting][populate queue][FINAL] {"max":524,"min":524,"avg":524,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":527}
+[debug] [2023-05-10T02:24:32.163Z] [hosting] uploads queued: 2
+[debug] [2023-05-10T02:24:32.820Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/partykarts-45d4d/versions/558565304f0a9f09/files/05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3 200
+[debug] [2023-05-10T02:24:32.820Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/partykarts-45d4d/versions/558565304f0a9f09/files/05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3 [stream]
