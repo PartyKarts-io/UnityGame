@@ -58,7 +58,7 @@ public class CameraController :Singleton<CameraController>
 			yield return null;
 		}
 		transform.position = TargetPoint;
-		ActivePreset.CameraHolder.rotation = new Quaternion(0,-20,0,0);
+		ActivePreset.CameraHolder.rotation = TargetCar.transform.rotation;
 	}
 
 	private void Update ()
@@ -104,7 +104,7 @@ public class CameraController :Singleton<CameraController>
 
 		if (ActivePreset.EnableRotation && (TargetPoint - transform.position).sqrMagnitude >= SqrMinDistance)
 		{
-			Quaternion rotation = Quaternion.LookRotation (TargetPoint - transform.position, new Vector3(-20,0,0));
+			Quaternion rotation = Quaternion.LookRotation (TargetPoint - transform.position, Vector3.up);
 			ActivePreset.CameraHolder.rotation = rotation;
 		}
 	}
