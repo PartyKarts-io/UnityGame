@@ -71,7 +71,7 @@ public class CameraController :Singleton<CameraController>
 			if ((position - target).sqrMagnitude >= SqrMinDistance)
 			{
 				Quaternion rotation = Quaternion.LookRotation (target - position, Vector3.up);
-				ActivePreset.CameraHolder.rotation = Quaternion.Lerp (ActivePreset.CameraHolder.rotation, rotation, Time.deltaTime * ActivePreset.SetRotationSpeed);
+				ActivePreset.CameraHolder.rotation = Quaternion.Lerp (ActivePreset.CameraHolder.rotation, rotation * Quaternion.Euler(-20, 0, 0), Time.deltaTime * ActivePreset.SetRotationSpeed);
 			}
 		}
 
