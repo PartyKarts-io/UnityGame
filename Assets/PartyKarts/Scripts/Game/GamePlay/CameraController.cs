@@ -36,6 +36,7 @@ public class CameraController :Singleton<CameraController>
 				m_TargetPoint = TargetCar.RB.velocity * ActivePreset.VelocityMultiplier;
 				m_TargetPoint += TargetCar.transform.position;
 
+
 				CurrentFrame = Time.frameCount;
 			}
 			return m_TargetPoint;
@@ -57,7 +58,7 @@ public class CameraController :Singleton<CameraController>
 			yield return null;
 		}
 		transform.position = TargetPoint;
-		ActivePreset.CameraHolder.rotation = TargetCar.transform.rotation;
+		ActivePreset.CameraHolder.rotation = new Quaternion(0,-20,0,0);
 	}
 
 	private void Update ()
@@ -103,7 +104,7 @@ public class CameraController :Singleton<CameraController>
 
 		if (ActivePreset.EnableRotation && (TargetPoint - transform.position).sqrMagnitude >= SqrMinDistance)
 		{
-			Quaternion rotation = Quaternion.LookRotation (TargetPoint - transform.position, Vector3.up);
+			Quaternion rotation = Quaternion.LookRotation (TargetPoint - transform.position, new Vector3(-20,0,0));
 			ActivePreset.CameraHolder.rotation = rotation;
 		}
 	}
