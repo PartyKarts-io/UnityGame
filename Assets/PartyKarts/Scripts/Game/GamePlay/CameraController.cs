@@ -58,8 +58,8 @@ public class CameraController :Singleton<CameraController>
 			yield return null;
 		}
 		transform.position = TargetPoint;
-		ActivePreset.CameraHolder.rotation = TargetCar.transform.rotation;
-	}
+		ActivePreset.CameraHolder.rotation = TargetCar.transform.rotation * Quaternion.Euler(-20, 0, 0);
+    }
 
 	private void Update ()
 	{
