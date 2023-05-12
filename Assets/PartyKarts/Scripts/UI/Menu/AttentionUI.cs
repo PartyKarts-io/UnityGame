@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 public class AttentionUI : MonoBehaviour
 {
     [SerializeField] AudioClip ClickClip;
-    [SerializeField] string NextSceneName = "MainMenuScene";
+    [SerializeField] string NextSceneName;
     [SerializeField] GameObject PCTextObject;
     [SerializeField] GameObject MobileTextObject;
 

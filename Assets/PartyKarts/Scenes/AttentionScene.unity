@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClickClip: {fileID: 8300000, guid: 8081277597d30084b8ae949875cf2d32, type: 3}
-  NextSceneName: MainMenuScene
+  NextSceneName: Reach_Menu
   PCTextObject: {fileID: 1921101719}
   MobileTextObject: {fileID: 2046132752}
 --- !u!1 &120069034
