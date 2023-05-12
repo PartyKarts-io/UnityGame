@@ -687,3 +687,12 @@ Build/Build/Build.wasm
 Build/Build/Build.data
 Build/Build/Build.framework.js
 Build/Build/Build.wasm
+Assets/PartyKarts/CartoonTrackMonza/Textures/dirty_tarmac_monza.psd
+Assets/PartyKarts/CartoonTrackMonza/Textures/barriers_monza_normal.psd
+Assets/PartyKarts/CartoonTrackMonza/Textures/garages_monza.psd
+Assets/PartyKarts/CartoonTrackMonza/Textures/garages_monza.psd.meta
+Assets/PartyKarts/CartoonTrackMonza/Textures/garages_monza_specular.psd
+Assets/PartyKarts/CartoonTrackMonza/Textures/grass_2_monza.psd
+*.psd
+*.png
+Assets/PartyKarts/CartoonTrackMonza/Meshes/Track_Meshes/test_monza.FBX

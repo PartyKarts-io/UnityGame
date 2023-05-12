@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "partykarts-7fb66"
-  }
+    "default": "partykarts-7fb66",
+    "staging": "partykarts-staging",
+    "prod": "partykarts-7fb66"
+  },
+  "targets": {},
+  "etags": {}
 }
