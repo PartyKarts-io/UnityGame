@@ -404,7 +404,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272939413320566}
   serializedVersion: 2
-  m_Mass: 1800
+  m_Mass: 2750
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -466,7 +466,7 @@ MonoBehaviour:
     MaxSteerAngle: 38
     DriveType: 0
     AutomaticGearBox: 1
-    MaxMotorTorque: 1000
+    MaxMotorTorque: 1200
     MotorTorqueFromRpmCurve:
       serializedVersion: 2
       m_Curve:
@@ -514,7 +514,7 @@ MonoBehaviour:
     CutOffRPM: 6600
     CutOffOffsetRPM: 500
     CutOffTime: 0.09
-    ProbabilityBackfire: 0.2
+    ProbabilityBackfire: 0.064
     RpmToNextGear: 6500
     RpmToPrevGear: 3500
     MaxForwardSlipToBlockChangeGear: 0.25
