@@ -367,3 +367,7 @@ MonoBehaviour:
       value: Oklar
     - key: PAK_Touchscreen
       value: "Peksk\xE4rm"
+    - key: TelegramDescription
+      value: "g\xE5 med i v\xE5r telegramchatt"
+    - key: OpenSeaDescription
+      value: "Kolla in v\xE5r OpenSea-kollektion!"

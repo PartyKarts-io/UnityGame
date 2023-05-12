@@ -19,12 +19,12 @@ MonoBehaviour:
   legendaryColor: {r: 1, g: 0.6862745, b: 0, a: 255}
   hoverSound: {fileID: 8300000, guid: f0cb06f9461ea8b4bba64f3f7064a702, type: 3}
   clickSound: {fileID: 8300000, guid: 4656469a7b79f5c4a84f2ecd79f129d1, type: 3}
-  accentColor: {r: 0, g: 0.78431374, b: 1, a: 1}
-  accentColorInvert: {r: 0.09803922, g: 0.13725491, b: 0.1764706, a: 1}
+  accentColor: {r: 1, g: 1, b: 1, a: 1}
+  accentColorInvert: {r: 0.098683655, g: 0.1764706, b: 0.098039225, a: 1}
   primaryColor: {r: 1, g: 1, b: 1, a: 1}
   secondaryColor: {r: 1, g: 1, b: 1, a: 1}
   negativeColor: {r: 1, g: 0.29411766, b: 0.29411766, a: 1}
-  backgroundColor: {r: 0.09803922, g: 0.13725491, b: 0.1764706, a: 1}
+  backgroundColor: {r: 0.066842705, g: 0.06452473, b: 0.09433961, a: 1}
   fontLight: {fileID: 11400000, guid: a4412f15afcccfd4591f5f064f5004b4, type: 2}
   fontRegular: {fileID: 11400000, guid: 2a97c72100ce9a34eb2d3c2e68bca265, type: 2}
   fontMedium: {fileID: 11400000, guid: 8322a83c36dbf604db8a075474b12c47, type: 2}
@@ -40,7 +40,7 @@ MonoBehaviour:
   gameLogo: {fileID: 21300000, guid: b9addf265d17a4cee8780092df9cd1c0, type: 3}
   gameLogoColor: {r: 1, g: 1, b: 1, a: 255}
   enableSplashScreen: 1
-  showSplashScreenOnce: 1
+  showSplashScreenOnce: 0
   pakType: 0
   pakText: Press {Any Key} To Start
   pakLocalizationText: PAK_Part1 {PAK_Key} PAK_Part2

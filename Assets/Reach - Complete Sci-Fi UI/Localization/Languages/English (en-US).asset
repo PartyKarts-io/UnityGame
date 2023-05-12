@@ -371,3 +371,7 @@ MonoBehaviour:
       value: Unready
     - key: PAK_Touchscreen
       value: Touchscreen
+    - key: TelegramDescription
+      value: Join our Telegram Chat!
+    - key: OpenSeaDescription
+      value: Check out our OpenSea collection!

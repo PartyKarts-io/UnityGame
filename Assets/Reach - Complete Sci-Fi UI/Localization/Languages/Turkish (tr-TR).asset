@@ -379,3 +379,7 @@ MonoBehaviour:
       value: "Haz\u0131r De\u011Fil"
     - key: PAK_Touchscreen
       value: Dokunmatik Ekrana
+    - key: TelegramDescription
+      value: "Telgraf sohbetimize kat\u0131l\u0131n"
+    - key: OpenSeaDescription
+      value: "OpenSea koleksiyonumuza g\xF6z at\u0131n!"
