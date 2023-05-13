@@ -103,7 +103,7 @@ public class ThirdwebManager : MonoBehaviour
                 }
             };
 
-    private async void Awake()
+    private void Awake()
     {
         // Single persistent instance at all times.
 
@@ -190,6 +190,24 @@ public class ThirdwebManager : MonoBehaviour
             walletNFTs = LOCAL_NFT_LIST;
             nftsLoadedEvent.Invoke(walletNFTs);
         }
+    }
+
+    public void OpenTelegramLink()
+    {
+        string url = "https://t.me/partykartsio";
+        Application.OpenURL(url);
+    }
+
+    public void OpenTwitterLink()
+    {
+        string url = "https://twitter.com/partykarts_io";
+        Application.OpenURL(url);
+    }
+
+    public void OpenOpenSeaLink()
+    {
+        string url = "https://opensea.io/collection/partykartsbsc";
+        Application.OpenURL(url);
     }
 
     public async Task GetNFTsForPlayer()
