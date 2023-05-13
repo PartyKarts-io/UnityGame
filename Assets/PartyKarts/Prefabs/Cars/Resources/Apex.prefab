@@ -59,7 +59,7 @@ MonoBehaviour:
     Damper: 0.45
     TargetPoint: 0.5
     ForwardFriction: 0.5
-    SidewaysFriction: 0
+    SidewaysFriction: 0.8
   m_WheelCollider: {fileID: 146434771617089746}
   m_RB: {fileID: 54605151748551674}
 --- !u!146 &146434771617089746
@@ -83,13 +83,13 @@ WheelCollider:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 2.6
     m_AsymptoteSlip: 0.6
-    m_AsymptoteValue: 2.325
+    m_AsymptoteValue: 2.3249998
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.4
-    m_ExtremumValue: 0.7
+    m_ExtremumValue: 3.74
     m_AsymptoteSlip: 0.6
-    m_AsymptoteValue: 0.65
+    m_AsymptoteValue: 3.33
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &1156075975909068
@@ -383,10 +383,10 @@ MonoBehaviour:
   - {fileID: 198335225541488048}
   BaseView: {fileID: 23101067327137964}
   CarConfig:
-    MaxSteerAngle: 38
+    MaxSteerAngle: 28
     DriveType: 0
     AutomaticGearBox: 1
-    MaxMotorTorque: 1200
+    MaxMotorTorque: 1500
     MotorTorqueFromRpmCurve:
       serializedVersion: 2
       m_Curve:
@@ -429,13 +429,13 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxRPM: 7000
+    MaxRPM: 8000
     MinRPM: 700
-    CutOffRPM: 6600
+    CutOffRPM: 7000
     CutOffOffsetRPM: 500
     CutOffTime: 0.09
     ProbabilityBackfire: 0.022
-    RpmToNextGear: 6500
+    RpmToNextGear: 6800
     RpmToPrevGear: 3500
     MaxForwardSlipToBlockChangeGear: 0.25
     RpmEngineToRpmWheelsLerpSpeed: 13
@@ -571,8 +571,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194861921688300}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.777, y: -0.27, z: 1.2149974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -988,8 +988,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498137387541526}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.777, y: -0.27, z: 1.2149975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1151,8 +1151,8 @@ MonoBehaviour:
     Spring: 0.5833333
     Damper: 0.45
     TargetPoint: 0.5
-    ForwardFriction: 0.4
-    SidewaysFriction: 0.4
+    ForwardFriction: 0.3
+    SidewaysFriction: 0.7
   m_WheelCollider: {fileID: 146780040130106584}
   m_RB: {fileID: 54605151748551674}
 --- !u!146 &146780040130106584
@@ -1174,15 +1174,15 @@ WheelCollider:
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
-    m_ExtremumValue: 2.22
+    m_ExtremumValue: 1.8399999
     m_AsymptoteSlip: 0.6
-    m_AsymptoteValue: 1.99
+    m_AsymptoteValue: 1.655
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.4
-    m_ExtremumValue: 2.22
+    m_ExtremumValue: 3.36
     m_AsymptoteSlip: 0.6
-    m_AsymptoteValue: 1.99
+    m_AsymptoteValue: 2.995
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &1622875212674366
@@ -1208,8 +1208,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622875212674366}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.777, y: -0.27, z: -1.3960057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1274,8 +1274,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768536285443696}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.777, y: -0.27, z: -1.3960037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1342,7 +1342,7 @@ MonoBehaviour:
     Damper: 0.45
     TargetPoint: 0.5
     ForwardFriction: 0.5
-    SidewaysFriction: 0
+    SidewaysFriction: 0.8
   m_WheelCollider: {fileID: 146350644162972208}
   m_RB: {fileID: 54605151748551674}
 --- !u!146 &146350644162972208
@@ -1366,13 +1366,13 @@ WheelCollider:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 2.6
     m_AsymptoteSlip: 0.6
-    m_AsymptoteValue: 2.325
+    m_AsymptoteValue: 2.3249998
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.4
-    m_ExtremumValue: 0.7
+    m_ExtremumValue: 3.74
     m_AsymptoteSlip: 0.6
-    m_AsymptoteValue: 0.65
+    m_AsymptoteValue: 3.33
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &1824242295107262
@@ -1464,8 +1464,8 @@ MonoBehaviour:
     Spring: 0.5833333
     Damper: 0.45
     TargetPoint: 0.5
-    ForwardFriction: 0.4
-    SidewaysFriction: 0.4
+    ForwardFriction: 0.3
+    SidewaysFriction: 0.7
   m_WheelCollider: {fileID: 146487360531445940}
   m_RB: {fileID: 54605151748551674}
 --- !u!146 &146487360531445940
@@ -1487,15 +1487,15 @@ WheelCollider:
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
-    m_ExtremumValue: 2.22
+    m_ExtremumValue: 1.8399999
     m_AsymptoteSlip: 0.6
-    m_AsymptoteValue: 1.99
+    m_AsymptoteValue: 1.655
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.4
-    m_ExtremumValue: 2.22
+    m_ExtremumValue: 3.36
     m_AsymptoteSlip: 0.6
-    m_AsymptoteValue: 1.99
+    m_AsymptoteValue: 2.995
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &1843546548039362
