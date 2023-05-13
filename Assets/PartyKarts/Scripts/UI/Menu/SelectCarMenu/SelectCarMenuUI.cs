@@ -127,8 +127,10 @@ public class SelectCarMenuUI :WindowWithShopLogic
 		CarInScene = GameObject.Instantiate (prefabRef);
 		CarInScene.transform.position = CarPosition.position;
 		CarInScene.transform.rotation = CarPosition.rotation;
+        Rigidbody carRigidbody = CarInScene.GetComponent<Rigidbody>();
+        carRigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
 
-		CarParammsPanel.SelectCar (newCar);
+        CarParammsPanel.SelectCar (newCar);
 		CarSetColorPanel.SelectCar (newCar, CarInScene.GetComponent<ISetColor> ());
 	}
 
