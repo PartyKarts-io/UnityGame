@@ -38,32 +38,12 @@ public class WindowsController : Singleton<WindowsController>
 
     private void Start()
     {
-        if (MainWindow != null)
-        {
-            MainWindow.Open();
-            CurrentWindow = MainWindow;
-        }
         sdk = ThirdwebManager.Instance.SDK;
         ThirdwebManager.Instance.walletDisconnectedEvent.AddListener(OnWalletDisconnect);
         ThirdwebManager.Instance.walletConnectedEvent.AddListener(WalletConnected);
         ThirdwebManager.Instance.walletNetworkChangeEvent.AddListener(OnNetworkChange);
         ThirdwebManager.Instance.nftsLoadedEvent.AddListener(NFTsLoaded);
     }
-
-    private void Update()
-    {
-        if (HasNewWindowInFrame)
-        {
-            HasNewWindowInFrame = false;
-        }
-        else if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button1)) && CurrentWindow != null && CurrentWindow != MainWindow)
-        {
-            OnBack();
-        }
-
-        BackButton.SetActive(HasWindowsHistory);
-    }
-
 
     private void ToggleAllButtons(bool shouldEnable)
     {
@@ -97,10 +77,7 @@ public class WindowsController : Singleton<WindowsController>
 
     public void NFTsLoaded(List<NFT> nfts)
     {
-        if (nfts.Count > 0)
-        {
-            StartMultiplayerButton.GetComponentInChildren<TMP_Text>().text = "Lets Party!";
-        }
+
         ToggleAllButtons(nfts.Count > 0);
     }
 
@@ -112,8 +89,6 @@ public class WindowsController : Singleton<WindowsController>
             Debug.Log("Getting NFTs for: " + address);
 
             PlayerProfile.NickName = address;
-
-            StartMultiplayerButton.GetComponentInChildren<TMP_Text>().text = "Loading your NFTs...";
 
             await ThirdwebManager.Instance.GetNFTsForPlayer();
         }
