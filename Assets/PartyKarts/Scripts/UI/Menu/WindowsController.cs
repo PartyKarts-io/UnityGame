@@ -80,7 +80,7 @@ public class WindowsController : Singleton<WindowsController>
         // Loop through the components and do something with them
         foreach (CustomButton button in uiButtons)
         {
-            if (button.gameObject.name == "Button_Practice")
+            if (button.gameObject.name == "Button_Practice" || button.gameObject.name == "Settings")
             {
                 button.interactable = true;
             }

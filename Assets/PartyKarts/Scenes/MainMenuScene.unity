@@ -879,7 +879,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 794ef4b7040f84c72bea2e2f3e1cee59, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3162,7 +3162,7 @@ PrefabInstance:
     - target: {fileID: 7333377793967771631, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
