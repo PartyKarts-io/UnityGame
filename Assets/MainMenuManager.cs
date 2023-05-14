@@ -45,6 +45,16 @@ public class MainMenuManager : MonoBehaviour
         MultiplayerButton.UpdateUI();
     }
 
+    public void OnSinglePlayerSelected()
+    {
+        WorldLoading.IsMultiplayer = false;
+    }
+
+    public void OnMultiplayerSelected()
+    {
+        WorldLoading.IsMultiplayer = true;
+    }
+
 
     public void OnWalletDisconnect(bool disconnected)
     {

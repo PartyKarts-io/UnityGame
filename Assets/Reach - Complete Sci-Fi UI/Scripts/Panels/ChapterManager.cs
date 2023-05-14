@@ -96,6 +96,8 @@ namespace Michsky.UI.Reach
 
         private void ToggleAllButtons(bool shouldEnable)
         {
+            if (!WorldLoading.IsMultiplayer) return;
+
             GameObject[] uiButtons = GameObject.FindGameObjectsWithTag("WalletRequiredButton");
 
             foreach (GameObject buttonObject in uiButtons)
