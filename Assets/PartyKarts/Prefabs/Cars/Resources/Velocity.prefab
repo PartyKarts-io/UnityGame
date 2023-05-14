@@ -404,7 +404,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272939413320566}
   serializedVersion: 2
-  m_Mass: 2750
+  m_Mass: 3000
   m_Drag: 0.1
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -463,10 +463,10 @@ MonoBehaviour:
   - {fileID: 198449695214841112}
   BaseView: {fileID: 23948679149976188}
   CarConfig:
-    MaxSteerAngle: 38
+    MaxSteerAngle: 20
     DriveType: 0
     AutomaticGearBox: 1
-    MaxMotorTorque: 1200
+    MaxMotorTorque: 1500
     MotorTorqueFromRpmCurve:
       serializedVersion: 2
       m_Curve:
@@ -509,13 +509,13 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxRPM: 7000
+    MaxRPM: 8000
     MinRPM: 700
-    CutOffRPM: 6600
+    CutOffRPM: 7500
     CutOffOffsetRPM: 500
     CutOffTime: 0.09
     ProbabilityBackfire: 0.064
-    RpmToNextGear: 6500
+    RpmToNextGear: 7000
     RpmToPrevGear: 3500
     MaxForwardSlipToBlockChangeGear: 0.25
     RpmEngineToRpmWheelsLerpSpeed: 13

@@ -132,7 +132,7 @@ public class SelectCarMenuUI :WindowWithShopLogic
 		CarSetColorPanel.SelectCar (newCar, CarInScene.GetComponent<ISetColor> ());
 	}
 
-	protected override void OnSelect ()
+	public void Select ()
 	{
 		WorldLoading.PlayerCar = SelectedCar;
 
@@ -147,13 +147,13 @@ public class SelectCarMenuUI :WindowWithShopLogic
 		}
 	}
 
-	void NextCar ()
+	public void NextCar ()
 	{
 		CurrentCarIndex = MathExtentions.LoopClamp (CurrentCarIndex + 1, 0, (Cars.Count));
 		SelectCar (Cars[CurrentCarIndex]);
 	}
 
-	void PrevCar ()
+	public void PrevCar ()
 	{
 		CurrentCarIndex = MathExtentions.LoopClamp (CurrentCarIndex - 1, 0, (Cars.Count));
 		SelectCar (Cars[CurrentCarIndex]);

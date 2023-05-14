@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/PartyKarts/Scenes/Reach_Menu.unity
     guid: 5e02b31b040bbf5428960bf3ff9c63d0
   - enabled: 1
-    path: Assets/PartyKarts/Scenes/MainMenuScene.unity
-    guid: b8c98a3ff806355449e8a355b2fe7df7
-  - enabled: 1
-    path: Assets/PartyKarts/Scenes/Regimes/DriftRegimeScene.unity
-    guid: 03a646b2861514d48a6a642744db3d64
-  - enabled: 1
     path: Assets/PartyKarts/Scenes/Regimes/RaceRegimeScene.unity
     guid: 6041af57b36d04d478626ba10727273e
   - enabled: 1
