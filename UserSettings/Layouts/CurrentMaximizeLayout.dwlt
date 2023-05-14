@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 909
+  controlID: 24063
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1281, y: 821}
+  m_TargetSize: {x: 1281, y: 721}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
@@ -80,8 +80,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -320.25
     m_HBaseRangeMax: 320.25
-    m_VBaseRangeMin: -205.25
-    m_VBaseRangeMax: 205.25
+    m_VBaseRangeMin: -180.25
+    m_VBaseRangeMax: 180.25
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 910
+  controlID: 24064
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -432,9 +432,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 640.5, y: 410.5, z: 0}
+    m_Target: {x: 967.496, y: 399.03494, z: 12.447673}
     speed: 2
-    m_Value: {x: 640.5, y: 410.5, z: 0}
+    m_Value: {x: 967.496, y: 399.03494, z: 12.447673}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -485,9 +485,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 760.75653
+    m_Target: 400.49622
     speed: 2
-    m_Value: 760.75653
+    m_Value: 400.49622
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -586,7 +586,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 641.5
     y: 0
-    width: 233.5
+    width: 299.5
     height: 929
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -618,7 +618,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 641.5
     y: 96
-    width: 231.5
+    width: 297.5
     height: 908
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -627,10 +627,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ae630000
+      scrollPos: {x: 0, y: 89}
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6cedfeff9cedfeffa0edfeffdaedfeffd67effff0c7fffff90daffffc0daffffc4dafffffadaffffcee1ffffc68c0000d88d00000a8e00003494000048940000d69400006c96000082970000c2970000c8970000
+      m_ExpandedIDs: 30ccfaff92ccfaffbeccfaffd8ccfaffecccfaff0acdfaff14cdfaff5acdfaff74cdfaff8ecdfaffa8cdfaffc2cdfaffd0cdfaffe2cdfaffe8cdfafff4cdfaff86d8fafff22efbffc434fbffd635fbff6cedfeff9cedfeffa0edfeffdaedfeffd67efffff87effff0c7fffff90daffffc0daffffe6dafffffadaffffcee1ffffc68c0000d88d00000a8e0000588f0000d69400006c96000082970000c2970000c8970000201b06009a1b0600de1c0600241d0600ac230600a62406002a25060078260600
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -669,9 +669,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 875
+    x: 941
     y: 0
-    width: 303.5
+    width: 410.5
     height: 929
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
@@ -701,9 +701,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 875
+    x: 941
     y: 96
-    width: 301.5
+    width: 408.5
     height: 908
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -723,22 +723,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/PartyKarts/Prefabs/Cars/Resources
+    - Assets/Reach - Complete Sci-Fi UI/Textures/Borders/Special
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/PartyKarts/Prefabs/Cars/Resources
+  - Assets/Reach - Complete Sci-Fi UI/Textures/Borders/Special
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/jrperfetto/PK_OFFICIAL/UnityGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 54.005188}
-    m_SelectedIDs: e4f40400
-    m_LastClickedID: 324836
-    m_ExpandedIDs: 00000000368b0000388b00003a8b00003c8b00003e8b0000408b0000428b0000448b0000468b0000488b00004a8b00004c8b00004e8b0000508b0000528b0000548b0000568b0000588b00005a8b00005c8b00005e8b0000608b0000628b0000648b0000a88b0000b28b00001e8c0000768c000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 1432}
+    m_SelectedIDs: 4ac70d00
+    m_LastClickedID: 902986
+    m_ExpandedIDs: 00000000368b0000388b00003a8b00003c8b00003e8b0000408b0000428b0000448b0000468b0000488b00004a8b00004c8b00004e8b0000508b0000528b0000548b0000568b0000588b00005a8b00005c8b00005e8b0000608b0000628b0000648b0000a88b0000b28b00001e8c0000308c0000328c00005c8c0000768c000006c70d0008c70d0000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -766,7 +766,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000368b0000388b00003a8b00003c8b00003e8b0000408b0000428b0000448b0000468b0000488b00004a8b00004c8b00004e8b0000508b0000528b0000548b0000568b0000588b00005a8b00005c8b00005e8b0000608b0000628b0000648b000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000368b0000388b00003a8b00003c8b00003e8b0000408b0000428b0000448b0000468b0000488b00004a8b00004c8b00004e8b0000508b0000528b0000548b0000568b0000588b00005a8b00005c8b00005e8b0000608b0000628b0000648b0000a88b0000b28b00001e8c0000768c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -791,10 +791,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ae630000
-    m_LastClickedInstanceID: 25518
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 7a720000
+    m_ExpandedInstanceIDs: 7a7200004a7200006a720000d46b0000526a0000306c000066c70d00
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -837,9 +837,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1178.5
+    x: 1351.5
     y: 0
-    width: 549.5
+    width: 376.5
     height: 929
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
@@ -869,9 +869,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1178.5
+    x: 1351.5
     y: 96
-    width: 548.5
+    width: 375.5
     height: 908
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -885,7 +885,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 1359.9003
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

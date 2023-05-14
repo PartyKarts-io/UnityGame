@@ -618,6 +618,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114558128282517634, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
+        type: 3}
+      propertyPath: MainMenuSceneName
+      value: Reach_Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 114604817984570578, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
         type: 3}
       propertyPath: m_havePropertiesChanged
