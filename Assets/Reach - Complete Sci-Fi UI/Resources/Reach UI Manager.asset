@@ -41,6 +41,6 @@ MonoBehaviour:
   gameLogoColor: {r: 1, g: 1, b: 1, a: 255}
   enableSplashScreen: 1
   showSplashScreenOnce: 1
-  pakType: 0
+  pakType: 1
   pakText: Press {Any Key} To Start
   pakLocalizationText: PAK_Part1 {PAK_Key} PAK_Part2
