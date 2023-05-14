@@ -31,7 +31,7 @@ public class MainMenuManager : MonoBehaviour
     {
         //uiButtons = GameObject.FindObjectsOfType<CustomButton>();
 
-        string buttonText = "Racing Requires a Kart!";
+        string buttonText = "No NFTs Detected";
         if (ThirdwebManager.Instance.isLoadingNFTBalance)
         {
             buttonText = "Loading your NFTs...";
@@ -40,7 +40,7 @@ public class MainMenuManager : MonoBehaviour
             buttonText = "Race Online";
         }
 
-        MultiplayerButton.Interactable(shouldEnable);
+        MultiplayerButton.isInteractable = shouldEnable;
         MultiplayerButton.buttonText = buttonText;
         MultiplayerButton.UpdateUI();
     }

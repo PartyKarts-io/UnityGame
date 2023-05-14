@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
+using Thirdweb;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -25,14 +27,14 @@ namespace Michsky.UI.Reach
         [SerializeField] private bool setPanelAuto = true;
         [SerializeField] private bool checkChapterData = true;
         [SerializeField] private bool useLocalization = true;
-        [SerializeField] [Range(0.5f, 10)] private float barCurveSpeed = 2f;
+        [SerializeField][Range(0.5f, 10)] private float barCurveSpeed = 2f;
         [SerializeField] private AnimationCurve barCurve = new AnimationCurve(new Keyframe(0.0f, 0.0f), new Keyframe(1.0f, 1.0f));
-        [SerializeField] [Range(0.75f, 2)] private float animationSpeed = 1;
+        [SerializeField][Range(0.75f, 2)] private float animationSpeed = 1;
 
         // Background Animation
         [SerializeField] private bool backgroundStretch = true;
-        [SerializeField] [Range(0, 100)] private float maxStretch = 75;
-        [SerializeField] [Range(0.02f, 0.5f)] private float stretchCurveSpeed = 0.1f;
+        [SerializeField][Range(0, 100)] private float maxStretch = 75;
+        [SerializeField][Range(0.02f, 0.5f)] private float stretchCurveSpeed = 0.1f;
         [SerializeField] private AnimationCurve stretchCurve = new AnimationCurve(new Keyframe(0.0f, 0.0f), new Keyframe(1.0f, 1.0f));
 
         // Events
@@ -65,6 +67,8 @@ namespace Michsky.UI.Reach
             public UnityEvent onReplay;
         }
 
+        ThirdwebSDK sdk;
+
         void Awake()
         {
             InitializeChapters();
@@ -72,6 +76,12 @@ namespace Michsky.UI.Reach
 
         void OnEnable()
         {
+            ThirdwebManager.Instance.walletDisconnectedEvent.AddListener(OnWalletDisconnect);
+            ThirdwebManager.Instance.walletConnectedEvent.AddListener(WalletConnected);
+            ThirdwebManager.Instance.walletNetworkChangeEvent.AddListener(OnNetworkChange);
+            ThirdwebManager.Instance.nftsLoadedEvent.AddListener(NFTsLoaded);
+
+            ToggleAllButtons(ThirdwebManager.Instance.walletNFTs.Count > 0);
             OpenCurrentPanel();
         }
 
@@ -82,6 +92,61 @@ namespace Michsky.UI.Reach
 
             StopCoroutine("StretchPhaseOne");
             StopCoroutine("StretchPhaseTwo");
+        }
+
+        private void ToggleAllButtons(bool shouldEnable)
+        {
+            GameObject[] uiButtons = GameObject.FindGameObjectsWithTag("WalletRequiredButton");
+
+            foreach (GameObject buttonObject in uiButtons)
+            {
+                string buttonText = "No NFTs Detected";
+                if (ThirdwebManager.Instance.isLoadingNFTBalance)
+                {
+                    buttonText = "Loading your NFTs...";
+                }
+                else if (ThirdwebManager.Instance.walletNFTs.Count > 0)
+                {
+                    buttonText = "Select";
+                }
+
+                ButtonManager button = buttonObject.GetComponent<ButtonManager>();
+
+                button.isInteractable = shouldEnable;
+                button.buttonText = buttonText;
+                button.UpdateUI();
+            }
+        }
+
+        public void OnWalletDisconnect(bool disconnected)
+        {
+            Debug.Log("Disabling Game");
+            ToggleAllButtons(false);
+        }
+
+        public void OnNetworkChange(int chainId)
+        {
+            if (chainId != 137 || chainId != 80001)
+                ToggleAllButtons(false);
+        }
+
+        public void NFTsLoaded(List<NFT> nfts)
+        {
+
+            ToggleAllButtons(nfts.Count > 0);
+        }
+
+        public async void WalletConnected(bool connected)
+        {
+            if (connected)
+            {
+                string address = await sdk.wallet.GetAddress();
+                Debug.Log("Getting NFTs for: " + address);
+
+                PlayerProfile.NickName = address;
+
+                await ThirdwebManager.Instance.GetNFTsForPlayer();
+            }
         }
 
         public void DoStretch()
@@ -131,7 +196,7 @@ namespace Michsky.UI.Reach
                 else
                 {
                     LocalizedObject tempLoc = item.titleObject.GetComponent<LocalizedObject>();
-                    if (tempLoc != null) 
+                    if (tempLoc != null)
                     {
                         tempLoc.tableIndex = localizedObject.tableIndex;
                         tempLoc.localizationKey = chapters[i].titleKey;
@@ -144,9 +209,9 @@ namespace Michsky.UI.Reach
                 else
                 {
                     LocalizedObject tempLoc = item.descriptionObject.GetComponent<LocalizedObject>();
-                    if (tempLoc != null) 
+                    if (tempLoc != null)
                     {
-                        tempLoc.tableIndex = localizedObject.tableIndex; 
+                        tempLoc.tableIndex = localizedObject.tableIndex;
                         tempLoc.localizationKey = chapters[i].descriptionKey;
                         tempLoc.UpdateItem();
                     }
@@ -280,9 +345,9 @@ namespace Michsky.UI.Reach
             }
 
             if (progressFill != null && gameObject.activeInHierarchy == true)
-            { 
-                StopCoroutine("PlayProgressFill"); 
-                StartCoroutine("PlayProgressFill"); 
+            {
+                StopCoroutine("PlayProgressFill");
+                StartCoroutine("PlayProgressFill");
             }
 
             onChapterPanelChanged.Invoke(currentChapterIndex);

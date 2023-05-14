@@ -19,6 +19,8 @@ namespace Michsky.UI.Reach
 
         void Awake()
         {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+
             if (initializeResolutions == true && resolutionDropdown != null)
             {
                 InitializeResolutions();

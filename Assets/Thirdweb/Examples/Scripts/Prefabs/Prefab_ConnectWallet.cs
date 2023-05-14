@@ -191,6 +191,7 @@ public class Prefab_ConnectWallet : MonoBehaviour
         try
         {
             await ThirdwebManager.Instance.SDK.wallet.Disconnect();
+            ThirdwebManager.Instance.walletNFTs = new();
             OnDisconnected();
             OnDisconnectedCallback?.Invoke();
             print($"Disconnected successfully.");
