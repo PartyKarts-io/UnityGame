@@ -14,7 +14,6 @@ public class LoadingScreenUI :MonoBehaviour
 {
 
 	[SerializeField] TextMeshProUGUI LoadedProcentText;
-	[SerializeField] Image BackGroundInage;
 	[SerializeField] float HideObjectsTime = 0.5f;
 
 	IEnumerator LoadSceneCoroutine (AsyncOperation asyncOperation, float startProcent = 0, float procentMultiplier = 1f, bool needDestroyObject = true, System.Action onCompleteAction = null)
@@ -50,7 +49,6 @@ public class LoadingScreenUI :MonoBehaviour
 			while (timer > 0)
 			{
 				float newAlpha = timer / HideObjectsTime;
-				BackGroundInage.SetAlpha (newAlpha);
 				LoadedProcentText.SetAlpha (newAlpha);
 				timer -= Time.deltaTime;
 				yield return null;
