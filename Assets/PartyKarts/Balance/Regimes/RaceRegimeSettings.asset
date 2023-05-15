@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3a9983826cef5747b541619547540b2, type: 2}
   - {fileID: 11400000, guid: afa8df00e52633942ab499de775268b0, type: 2}
   m_AiConfog:
-    MaxSpeed: 200
+    MaxSpeed: 175
     MinSpeed: 50
     AccelSensitivity: 1
     BrakeSensitivity: 1
@@ -62,7 +62,7 @@ MonoBehaviour:
     Damper: 0
     TargetPoint: 0
     ForwardFriction: 0.3
-    SidewaysFriction: 0.7
+    SidewaysFriction: 0.608
   m_RearWheelsConfig:
     IsFoldout: 0
     IsFullConfig: 0
@@ -76,4 +76,4 @@ MonoBehaviour:
     Damper: 0
     TargetPoint: 0
     ForwardFriction: 0.5
-    SidewaysFriction: 0.8
+    SidewaysFriction: 0.731
