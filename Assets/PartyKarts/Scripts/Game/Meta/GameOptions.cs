@@ -131,7 +131,13 @@ public static class GameOptions
 			}
 		}
 
-		snapshot.TransitionTo (0.5f);
+        AudioSource[] audioSources = GameObject.FindObjectsOfType<AudioSource>();
+        foreach (AudioSource audio in audioSources)
+        {
+            audio.mute = SoundIsMute;
+        }
+
+        snapshot.TransitionTo (0.5f);
 	}
 
 	#endregion //Audio
