@@ -22,6 +22,8 @@ public class MainMenuManager : MonoBehaviour
         ThirdwebManager.Instance.walletNetworkChangeEvent.AddListener(OnNetworkChange);
         ThirdwebManager.Instance.nftsLoadedEvent.AddListener(NFTsLoaded);
 
+        if (!Utils.IsWebGLBuild()) return;
+
         MultiplayerButton.Interactable(false);
         MultiplayerButton.buttonText = "Wallet Not Connected";
         MultiplayerButton.UpdateUI();
@@ -29,7 +31,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void ToggleAllButtons(bool shouldEnable)
     {
-        //uiButtons = GameObject.FindObjectsOfType<CustomButton>();
+        if (!Utils.IsWebGLBuild()) return;
 
         string buttonText = "No NFTs Detected";
         if (ThirdwebManager.Instance.isLoadingNFTBalance)

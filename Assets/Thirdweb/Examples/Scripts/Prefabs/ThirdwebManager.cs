@@ -8,6 +8,7 @@ using System.Collections;
 using UnityEngine.Networking;
 using Org.BouncyCastle.Bcpg;
 using System.Numerics;
+using Michsky.UI.Reach;
 
 [System.Serializable]
 public class ChainData
@@ -77,6 +78,7 @@ public class ThirdwebManager : MonoBehaviour
     public bool isLoadingNFTBalance = false;
     public bool isLoadingNFTData = false;
     public List<NFT> walletNFTs = new List<NFT>();
+    [SerializeField] public UIPopup uiPopup;
 
     public WalletDisconnectedEvent walletDisconnectedEvent = new WalletDisconnectedEvent();
     public WalletConnectEvent walletConnectedEvent = new WalletConnectEvent();
@@ -213,6 +215,7 @@ public class ThirdwebManager : MonoBehaviour
     public async Task GetNFTsForPlayer()
     {
         isLoadingNFTBalance = true;
+        uiPopup.PlayIn();
 
         // Address of the wallet to get the NFTs of
         var address = await SDK.wallet.GetAddress();
@@ -221,6 +224,7 @@ public class ThirdwebManager : MonoBehaviour
 
         walletNFTs = nfts;
         isLoadingNFTBalance = false;
+        uiPopup.PlayOut();
         nftsLoadedEvent.Invoke(nfts);
     }
 
