@@ -122,7 +122,7 @@ public static class GameOptions
 		if (SoundIsMute)
 		{
 			snapshot = B.SoundSettings.MuteSnapshot;
-		}
+        }
 		else
 		{
 			if (Mathf.Approximately (Time.timeScale, 0))
@@ -131,7 +131,13 @@ public static class GameOptions
 			}
 		}
 
-		snapshot.TransitionTo (0.5f);
+        AudioSource[] audioSources = GameObject.FindObjectsOfType<AudioSource>();
+        foreach (AudioSource audio in audioSources)
+        {
+            audio.mute = SoundIsMute;
+        }
+
+        snapshot.TransitionTo (0.5f);
 	}
 
 	#endregion //Audio

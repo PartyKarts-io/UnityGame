@@ -879,7 +879,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 794ef4b7040f84c72bea2e2f3e1cee59, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIManagerAsset: {fileID: 0}
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: fd2e95e311c5b5e4da32b572f6628427, type: 2}
   audioSource: {fileID: 0}
   masterSlider: {fileID: 0}
   musicSlider: {fileID: 0}
@@ -1975,7 +1975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1421052704961930, guid: 721d6dff03cf5a440bca95cabe4fd9fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114021201683280112, guid: 721d6dff03cf5a440bca95cabe4fd9fe,
         type: 3}
@@ -2155,17 +2155,17 @@ PrefabInstance:
     - target: {fileID: 224835931818347980, guid: 721d6dff03cf5a440bca95cabe4fd9fe,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224835931818347980, guid: 721d6dff03cf5a440bca95cabe4fd9fe,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224835931818347980, guid: 721d6dff03cf5a440bca95cabe4fd9fe,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224835931818347980, guid: 721d6dff03cf5a440bca95cabe4fd9fe,
         type: 3}
@@ -2843,7 +2843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1711260923951434, guid: 4dc9a41b5ef9446c69eac7b475f55cf9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4938623196664704, guid: 4dc9a41b5ef9446c69eac7b475f55cf9, type: 3}
       propertyPath: m_RootOrder
@@ -3032,7 +3032,7 @@ PrefabInstance:
     - target: {fileID: 1553930528146796278, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 3715195895587754267, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
@@ -3147,7 +3147,7 @@ PrefabInstance:
     - target: {fileID: 7001806901969147044, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7001806901969147044, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
@@ -3162,7 +3162,7 @@ PrefabInstance:
     - target: {fileID: 7333377793967771631, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 8508964817136794270, guid: 4dc9a41b5ef9446c69eac7b475f55cf9,
         type: 3}
