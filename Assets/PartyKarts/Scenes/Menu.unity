@@ -76962,7 +76962,7 @@ PrefabInstance:
     - target: {fileID: 5595760888200726116, guid: 4e46bcabfb041c84290b54a983c27e11,
         type: 3}
       propertyPath: items.Array.data[1].description
-      value: There are 4 Karts to collect in Seasonn 1, with many more planned for
+      value: There are 4 Karts to collect in Season 1, with many more planned for
         the near future. Visit our OpenSea collection to unlock new Karts.
       objectReference: {fileID: 0}
     - target: {fileID: 5595760888200726116, guid: 4e46bcabfb041c84290b54a983c27e11,
