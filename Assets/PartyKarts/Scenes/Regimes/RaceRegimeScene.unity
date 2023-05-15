@@ -531,6 +531,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 462288647}
     m_Modifications:
+    - target: {fileID: 1486663158936490, guid: dfe5744ef7b970f4f9f30c4472bf07b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1503690749194132, guid: dfe5744ef7b970f4f9f30c4472bf07b0, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -631,7 +635,7 @@ PrefabInstance:
     - target: {fileID: 114558128282517634, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
         type: 3}
       propertyPath: MainMenuSceneName
-      value: Reach_Menu
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 114604817984570578, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
         type: 3}
@@ -701,7 +705,7 @@ PrefabInstance:
     - target: {fileID: 224193385146128002, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.000017
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224193385146128002, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
         type: 3}
@@ -721,7 +725,7 @@ PrefabInstance:
     - target: {fileID: 224367709640254446, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.000017
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224367709640254446, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
         type: 3}
@@ -751,7 +755,7 @@ PrefabInstance:
     - target: {fileID: 224601573868601638, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.000017
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224601573868601638, guid: dfe5744ef7b970f4f9f30c4472bf07b0,
         type: 3}

@@ -24,9 +24,9 @@ public class MainMenuManager : MonoBehaviour
 
         if (!Utils.IsWebGLBuild()) return;
 
-        MultiplayerButton.Interactable(false);
-        MultiplayerButton.buttonText = "Wallet Not Connected";
-        MultiplayerButton.UpdateUI();
+        //MultiplayerButton.Interactable(false);
+        //MultiplayerButton.buttonText = "Wallet Not Connected";
+        //MultiplayerButton.UpdateUI();
     }
 
     private void ToggleAllButtons(bool shouldEnable)
@@ -42,7 +42,7 @@ public class MainMenuManager : MonoBehaviour
             buttonText = "Lobbies (Coming 5/21/2023)";
         }
 
-        MultiplayerButton.isInteractable = shouldEnable;
+        // MultiplayerButton.isInteractable = shouldEnable;
         MultiplayerButton.buttonText = buttonText;
         MultiplayerButton.UpdateUI();
     }

@@ -211,6 +211,12 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
     {
         gameObject.SetActive(true);
         ExitToMainMenuButton.Select();
+
+        if (!WorldLoading.IsMultiplayer)
+        {
+            ExitToMainMenuButton.GetComponent<TMP_Text>().text = "Exit";
+        }
+
         EndGameStatisticHolder.SetTrigger(C.ShowTrigger);
         StartCoroutine(ShowEndGameCoroutine());
     }

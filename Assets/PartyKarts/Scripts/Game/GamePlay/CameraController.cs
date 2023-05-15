@@ -58,7 +58,7 @@ public class CameraController :Singleton<CameraController>
 			yield return null;
 		}
 		transform.position = TargetPoint;
-		ActivePreset.CameraHolder.rotation = TargetCar.transform.rotation * Quaternion.Euler(-20, 0, 0);
+		ActivePreset.CameraHolder.rotation = ActivePresetIndex == 0 ? TargetCar.transform.rotation * Quaternion.Euler(-23, 0, 0) : TargetCar.transform.rotation;
     }
 
 	private void Update ()
@@ -71,7 +71,7 @@ public class CameraController :Singleton<CameraController>
 			if ((position - target).sqrMagnitude >= SqrMinDistance)
 			{
 				Quaternion rotation = Quaternion.LookRotation (target - position, Vector3.up);
-				ActivePreset.CameraHolder.rotation = Quaternion.Lerp (ActivePreset.CameraHolder.rotation, rotation * Quaternion.Euler(-20, 0, 0), Time.deltaTime * ActivePreset.SetRotationSpeed);
+				ActivePreset.CameraHolder.rotation = Quaternion.Lerp (ActivePreset.CameraHolder.rotation, ActivePresetIndex == 0 ? rotation * Quaternion.Euler(-23, 0, 0) : rotation, Time.deltaTime * ActivePreset.SetRotationSpeed);
 			}
 		}
 

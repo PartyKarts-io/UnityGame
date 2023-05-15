@@ -24,11 +24,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f644b8a9aa4504c3899348ffbb2ef65a, type: 2}
   - {fileID: 11400000, guid: 44843e666427a40e4a4a73a32739e8c6, type: 2}
   m_BotNames:
-  - Mason(b)
-  - Emma(b)
-  - Sofia(b)
-  - William(b)
-  - Natalie(b)
-  - Michael(b)
-  - Emily(b)
-  - Jacob(b)
+  - Hamilton(b)
+  - Sainz(b)
+  - Alonso(b)
+  - Bottas(b)
+  - Rossi(b)
+  - Fittipaldi(b)
+  - Fangio(b)
+  - Schumacher(b)

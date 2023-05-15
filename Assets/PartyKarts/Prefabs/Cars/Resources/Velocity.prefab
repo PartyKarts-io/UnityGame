@@ -463,7 +463,7 @@ MonoBehaviour:
   - {fileID: 198449695214841112}
   BaseView: {fileID: 23948679149976188}
   CarConfig:
-    MaxSteerAngle: 20
+    MaxSteerAngle: 21
     DriveType: 0
     AutomaticGearBox: 1
     MaxMotorTorque: 1500

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/PartyKarts/Scenes/Reach_Menu.unity
+    path: Assets/PartyKarts/Scenes/Menu.unity
     guid: 5e02b31b040bbf5428960bf3ff9c63d0
   - enabled: 1
     path: Assets/PartyKarts/Scenes/Regimes/RaceRegimeScene.unity
