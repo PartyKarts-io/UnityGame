@@ -192,6 +192,8 @@ public class ThirdwebManager : MonoBehaviour
             walletNFTs = LOCAL_NFT_LIST;
             nftsLoadedEvent.Invoke(walletNFTs);
         }
+
+        uiPopup.PlayOut();
     }
 
     public void OpenTelegramLink()
