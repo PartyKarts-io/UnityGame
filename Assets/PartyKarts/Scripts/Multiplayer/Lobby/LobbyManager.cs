@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 /// Control the logic of the multiplayer in the main menu.
 /// </summary>
 
-public class LobbyManager : WindowWithShowHideAnimators, ILobbyCallbacks, IMatchmakingCallbacks, IConnectionCallbacks
+public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallbacks, IConnectionCallbacks
 {
 
     [SerializeField] RoomListUI RoomListHolder;
@@ -55,20 +55,23 @@ public class LobbyManager : WindowWithShowHideAnimators, ILobbyCallbacks, IMatch
             LeaveLobby();
         };
 
-        CustomBackAction = () =>
-        {
-            if (PhotonNetwork.IsConnected && PhotonNetwork.InRoom)
-            {
-                if (!MessageBox.HasActiveMessageBox)
-                {
-                    MessageBox.Show(LeaveRoomMessage, leaveAction, null, "Yes", "Cancel");
-                }
-            }
-            else
-            {
-                WindowsController.Instance.OnBack(ignoreCustomBackAction: true);
-            }
-        };
+
+        // TODO - Prompt Are you sure? before leaving this screen
+
+        //CustomBackAction = () =>
+        //{
+        //    if (PhotonNetwork.IsConnected && PhotonNetwork.InRoom)
+        //    {
+        //        if (!MessageBox.HasActiveMessageBox)
+        //        {
+        //            MessageBox.Show(LeaveRoomMessage, leaveAction, null, "Yes", "Cancel");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        WindowsController.Instance.OnBack(ignoreCustomBackAction: true);
+        //    }
+        //};
     }
 
     void LeaveLobby()
@@ -105,8 +108,6 @@ public class LobbyManager : WindowWithShowHideAnimators, ILobbyCallbacks, IMatch
     {
         if (InRoom)
         {
-            WindowsController.Instance.OpenWindow(this);
-
             if (PhotonNetwork.LocalPlayer.IsMasterClient)
             {
                 PhotonNetwork.CurrentRoom.IsOpen = true;
