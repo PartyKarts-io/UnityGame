@@ -14,28 +14,22 @@ using Unity.VisualScripting;
 using System.Numerics;
 using System.Threading.Tasks;
 using System;
+using Michsky.UI.Reach;
 
 /// <summary>
 /// To display and control the parameters in the room.
 /// </summary>
 public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
 {
-
     [SerializeField] PlayerItemInRoomUI PlayerItemUIRef;
-    [SerializeField] Button SelectCarButton;
-    [SerializeField] Button SelectTrackButton;
-    [SerializeField] Button BackButton;
-    [SerializeField] Image SelectedTrackIcon;
-    [SerializeField] Image RegimeIcon;
-    [SerializeField] TextMeshProUGUI SelectedTrackText;
-    [SerializeField] TextMeshProUGUI EntryFeeText;
-    [SerializeField] SelectTrackUI SelectTrackUI;
-    [SerializeField] SelectCarMenuUI SelectCarMenuUI;
+    [SerializeField] TMP_Text EntryFeeText;
+    [SerializeField] ButtonManager ReadyButton;
+    [SerializeField] ModeSelector CarSelector;
+    [SerializeField] ModeSelector TrackSelector;
+    [SerializeField] UIPopup TxnPendingToast;
+
     [SerializeField] int MinimumPlayersForStart = 2;
-    [SerializeField] Button ReadyButton;
-    [SerializeField] ColorBlock DisabledColors;
-    [SerializeField] ColorBlock ReadyColors;
-    [SerializeField] ColorBlock NotReadyColors;
+
 
     private bool _awaitingTxn = false;
 
@@ -54,18 +48,9 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         //Initialized all buttons.
 
         PlayerItemUIRef.SetActive(false);
-        SelectTrackButton.SetActive(false);
-        SelectTrackButton.onClick.AddListener(() =>
-        {
-            WindowsController.Instance.OpenWindow(SelectTrackUI);
-            SelectTrackUI.OnSelectTrackAction = OnSelectTrack;
-        });
-        SelectCarButton.onClick.AddListener(() =>
-        {
-            WindowsController.Instance.OpenWindow(SelectCarMenuUI);
-            SelectCarMenuUI.OnSelectCarAction = OnSelectCar;
-        });
-
+        TrackSelector.Interactable(false);
+        CarSelector.Interactable(false);
+        ReadyButton.Interactable(false);
         ReadyButton.onClick.AddListener(OnReadyClick);
     }
 
@@ -78,11 +63,10 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
             return;
         }
 
-        Debug.Log(JsonUtility.ToJson(CurrentRoom.CustomProperties));
         var entryFee = CurrentRoom.CustomProperties[C.EntryFee].ToString();
-        EntryFeeText.text = $"{entryFee} KART";
+        EntryFeeText.text = $"{entryFee} $KART";
 
-        SelectTrackButton.SetActive(IsMaster || IsRandomRoom);
+        TrackSelector.SetActive(IsMaster || IsRandomRoom);
         OnRoomPropertiesUpdate(CurrentRoom.CustomProperties);
 
         foreach (var playerKV in Players)
@@ -117,13 +101,12 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
             hashtable.Add(C.TrackName, B.GameSettings.Tracks.First().name);
             CurrentRoom.SetCustomProperties(hashtable);
         }
-
-        ReadyButton.Select();
     }
 
     public void Update()
     {
-        ReadyButton.interactable = !_awaitingTxn;
+        ReadyButton.Interactable(!_awaitingTxn);
+        ReadyButton.UpdateUI();
     }
 
     public virtual void OnDisable()
@@ -188,7 +171,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
     private void ReadyUp()
     {
-        if ((bool)LocalPlayer.CustomProperties[C.IsReady]) BackButton.interactable = false;
+       // if ((bool)LocalPlayer.CustomProperties[C.IsReady]) BackButton.interactable = false;
 
         LocalPlayer.SetCustomProperties(C.IsReady, !(bool)LocalPlayer.CustomProperties[C.IsReady], C.CarColorIndex, PlayerProfile.GetCarColorIndex(WorldLoading.PlayerCar));
     }
@@ -348,9 +331,10 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         playerItem.SetActive(true);
         playerItem.UpdateProperties(targetPlayer, kickAction);
 
+        // TODO - Make ready button or some other icon Red / Green
         if (targetPlayer.IsLocal)
         {
-            ReadyButton.colors = _awaitingTxn ? DisabledColors : idReady ? ReadyColors : NotReadyColors;
+           // ReadyButton.colors = _awaitingTxn ? DisabledColors : idReady ? ReadyColors : NotReadyColors;
         }
 
         //We inform all players about the start of the game.
@@ -419,7 +403,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
     public void OnMasterClientSwitched(Player newMasterClient)
     {
         Debug.LogFormat("New master is player [{0}]", newMasterClient.NickName);
-        SelectTrackButton.SetActive(IsMaster);
+        TrackSelector.SetActive(IsMaster);
 
         foreach (var player in CurrentRoom.Players)
         {
@@ -458,18 +442,14 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
             var track = B.GameSettings.Tracks.FirstOrDefault(t => t.name == trackName);
 
-            SelectedTrackIcon.sprite = track.TrackIcon;
-            RegimeIcon.sprite = track.RegimeSettings.RegimeImage;
-            SelectedTrackText.text = string.Format("{0}: {1}", track.TrackName, track.RegimeSettings.RegimeCaption);
+            //SelectedTrackIcon.sprite = track.TrackIcon;
+            //RegimeIcon.sprite = track.RegimeSettings.RegimeImage;
+            //SelectedTrackText.text = string.Format("{0}: {1}", track.TrackName, track.RegimeSettings.RegimeCaption);
         }
         else if (propertiesThatChanged.ContainsKey(C.EntryFee))
         {
             var entryFee = (string)propertiesThatChanged[C.EntryFee];
-            Debug.Log(entryFee);
-            //BigInteger raceFeeFromWei = BigInteger.Divide(int.Parse(entryFee), C.ONE_ETHER); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
-
-            EntryFeeText.text = $"{entryFee} WEI";
-
+            EntryFeeText.SetText($"{entryFee} $KART");
         }
     }
 

@@ -134,7 +134,7 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
         Debug.Log("On joined room");
 
         // TODO - Analytics - Log Joined Room
-
+        RaceLobbyController.enabled = true;
         UpdateHolders();
     }
 
