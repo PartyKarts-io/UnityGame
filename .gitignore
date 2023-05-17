@@ -696,3 +696,5 @@ Assets/PartyKarts/CartoonTrackMonza/Textures/grass_2_monza.psd
 *.psd
 *.png
 Assets/PartyKarts/CartoonTrackMonza/Meshes/Track_Meshes/test_monza.FBX
+Assets/google-services.json.meta
+Assets/google-services.json
