@@ -17,7 +17,7 @@ MonoBehaviour:
   CompleteTrackForUnlock: {fileID: 0}
   ShowProperty: 1
   m_TrackName: Belgian Hills (Spa)
-  m_TrackIcon: {fileID: 21300000, guid: 25b11d4e7c6074414afe950be71b207d, type: 3}
+  m_TrackIcon: {fileID: 21300000, guid: 671211533112c4123bbaa0d08a01abb5, type: 3}
   m_SceneName: SpaRace
   m_GameController: {fileID: 4301245436727929991, guid: 41aea0e646dea4b25ad82e5047507614,
     type: 3}
