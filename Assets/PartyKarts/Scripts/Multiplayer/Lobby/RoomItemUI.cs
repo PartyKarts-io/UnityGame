@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Photon.Realtime;
-using Michsky.UI.Reach;
 
 /// <summary>
 /// To display room information in the room list.
@@ -17,7 +16,7 @@ public class RoomItemUI : MonoBehaviour {
 	[SerializeField] TextMeshProUGUI FeeText;
 	[SerializeField] TextMeshProUGUI SelectedTrackText;
 	[SerializeField] TextMeshProUGUI PlayersText;
-	[SerializeField] SettingsElement OnClickButton;
+	[SerializeField] Button OnClickButton;
 
 	public RoomInfo Room { get; private set; }
 

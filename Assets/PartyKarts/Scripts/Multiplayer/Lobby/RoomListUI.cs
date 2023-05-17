@@ -14,7 +14,6 @@ using System.Threading.Tasks;
 using System;
 using System.Text;
 using GameBalance;
-using Michsky.UI.Reach;
 
 /// <summary>
 /// List of available rooms and the ability to create a new one.
@@ -23,7 +22,7 @@ public class RoomListUI : MonoBehaviour
 {
     [SerializeField] RoomItemUI RoomItemUIRef;
     [SerializeField] Button ConnectToRandomRoomButton;
-    [SerializeField] ButtonManager CreateRoomButton;
+    [SerializeField] Button CreateRoomButton;
     [SerializeField] Button CancelFeeSelectionButton;
     [SerializeField] Button ConfirmFeeButton;
     [SerializeField] TMP_Dropdown ServerList;
@@ -60,7 +59,7 @@ public class RoomListUI : MonoBehaviour
         FeeSelector.onValueChanged.AddListener(SetRaceFee);
 
         RoomItemUIRef.SetActive(false);
-        CreateRoomButton.isInteractable = false;
+        CreateRoomButton.interactable = false;
         sdk = ThirdwebManager.Instance.SDK;
     }
 
@@ -78,7 +77,7 @@ public class RoomListUI : MonoBehaviour
         bool enableButtons = !awaitingTransaction && photonIsConnected && (Utils.IsWebGLBuild() ? walletIsConnected : true);
 
         // TOGGLE THIS FOR LOCAL DEV
-        CreateRoomButton.isInteractable = enableButtons;
+        CreateRoomButton.interactable = enableButtons;
         ConnectToRandomRoomButton.interactable = enableButtons;
 
         var firstOption = ServerList.options[0];
