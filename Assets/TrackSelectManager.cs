@@ -6,6 +6,7 @@ using GameBalance;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Michsky.UI.Reach;
 
 public class TrackSelectManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class TrackSelectManager : MonoBehaviour
     int CurrentTrackIndex = 0;
     bool SubmitIsPressed = true;
     bool HorizontalIsPressed = true;
+    [SerializeField] ChapterManager TrackSelectMgr;
 
     const string LapCaption = "Lap";
     const string LapsCaption = "Laps";
@@ -25,11 +27,6 @@ public class TrackSelectManager : MonoBehaviour
     public Action<TrackPreset> OnSelectTrackAction { get; set; }
 
     List<TrackPreset> Tracks { get { return WorldLoading.IsMultiplayer ? B.MultiplayerSettings.AvailableTracksForMultiplayer : B.GameSettings.Tracks; } }
-
-    void Awake()
-    {
-        SelectTrack(0);
-    }
 
     TrackPreset GetTrackByIndex(int index)
     {
@@ -46,26 +43,15 @@ public class TrackSelectManager : MonoBehaviour
         }
     }
 
-    public void NextTrack()
+    public void OnPanelChanged()
     {
-        if (CurrentTrackIndex < 2)
-        {
-            SelectTrack(CurrentTrackIndex + 1);
-        }
+        SelectTrack();
     }
 
-    public void PreviousTrack()
+    public void SelectTrack()
     {
-        if (CurrentTrackIndex > 0)
-        {
-            SelectTrack(CurrentTrackIndex - 1);
-        }
-    }
-
-    public void SelectTrack(int trackIndex)
-    {
-        CurrentTrackIndex = trackIndex;
-        TrackPreset track = GetTrackByIndex(trackIndex);
+        CurrentTrackIndex = TrackSelectMgr.currentChapterIndex;
+        TrackPreset track = GetTrackByIndex(CurrentTrackIndex);
 
         Debug.Log(track.TrackName);
 

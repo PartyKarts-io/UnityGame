@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameBalance;
 using TMPro;
+using Michsky.UI.Reach;
 
 /// <summary>
 /// Select car menu.
@@ -20,6 +21,7 @@ public class SelectCarMenuUI :WindowWithShopLogic
 	[SerializeField] CarSetColorUI CarSetColorPanel;
 	[SerializeField] Button SelectParamsPanelButton;
 	[SerializeField] Button SelectColorPanelButton;
+	[SerializeField] ChapterManager CarSelectManager;
 
 	[SerializeField] Transform SelectedButtonBackground;
 	[SerializeField] RectTransform ShownPanelPos;
@@ -134,7 +136,10 @@ public class SelectCarMenuUI :WindowWithShopLogic
 
 	public void Select ()
 	{
-		WorldLoading.PlayerCar = SelectedCar;
+		CurrentCarIndex = CarSelectManager.currentChapterIndex;
+		SelectCar(Cars[CurrentCarIndex]);
+
+        WorldLoading.PlayerCar = SelectedCar;
 
 		if (OnSelectCarAction != null)
 		{
