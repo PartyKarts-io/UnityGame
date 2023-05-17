@@ -5,6 +5,9 @@ using UnityEngine;
 using Photon.Realtime;
 using Thirdweb;
 using System.Threading.Tasks;
+using Michsky.UI.Reach;
+using TMPro;
+using System.Threading;
 
 /// <summary>
 /// Control the logic of the multiplayer in the main menu.
@@ -13,14 +16,12 @@ using System.Threading.Tasks;
 public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallbacks, IConnectionCallbacks
 {
 
-    [SerializeField] RoomListUI RoomListHolder;
-    [SerializeField] InRoomUI InRoomHolder;
-    [SerializeField] InRoomUI InRandomRoomHolder;
-    private const string BASE_LEAVE_ROOM_MESSAGE = "Leave Lobby? You may withdraw your entry fee but you must pay gas for this transaction.";
-    [SerializeField] string LeaveRoomMessage = BASE_LEAVE_ROOM_MESSAGE;
-    CustomButton[] uiButtons;
-
-    private bool _awaitingTransaction = false;
+    [SerializeField] PanelManager MainMenuManager;
+    [SerializeField] RoomListController RoomListHolder;
+    [SerializeField] RaceLobbyController RaceLobbyController;
+    [SerializeField] UIPopup LobbyMessageToast;
+    [SerializeField] TMP_Text LobbyMessageText;
+    [SerializeField] string LeaveRoomMessage;
 
     public bool InRoom
     {
@@ -44,10 +45,6 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
 
     void Start()
     {
-        uiButtons = GameObject.FindObjectsOfType<CustomButton>();
-
-        //Initialize custom back action.
-
         PhotonNetwork.EnableCloseConnection = true;
 
         System.Action leaveAction = () =>
@@ -77,6 +74,7 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
     void LeaveLobby()
     {
         PhotonNetwork.LeaveRoom();
+        MainMenuManager.OpenPanel("Home Panel");
     }
 
     void OnEnable()
@@ -119,16 +117,21 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
     public void UpdateHolders()
     {
         bool inRoom = PhotonNetwork.InRoom;
-        bool inRandomRoom = inRoom && PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(C.RandomRoom);
-
-        RoomListHolder.SetActive(!inRoom);
-        InRoomHolder.SetActive(inRoom && !inRandomRoom);
-        InRandomRoomHolder.SetActive(inRandomRoom);
+        if (!inRoom)
+        {
+            MainMenuManager.OpenPanel("Home Menu");
+        }
+        else
+        {
+            MainMenuManager.OpenPanel("Race Lobby");
+        }
     }
 
     public void OnJoinedRoom()
     {
         Debug.Log("On joined room");
+
+        // TODO - Analytics - Log Joined Room
 
         UpdateHolders();
     }
@@ -137,9 +140,11 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
     {
         Debug.Log("On left room");
 
+        // TODO - Analytics - Log Left Room
+
         UpdateHolders();
 
-        InRoomHolder.RemoveAllPlayers();
+        RaceLobbyController.RemoveAllPlayers();
     }
 
     public void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -153,27 +158,23 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
     public void OnCreateRoomFailed(short returnCode, string message)
     {
         Debug.LogErrorFormat("Create room failed, error message: {0}", message);
-        MessageBox.Show(message);
+        //LobbyMessageText.text = "Failed to create room. Please try again.";
+        //LobbyMessageToast.PlayIn();
+        //Thread.Sleep(4000);
+        //LobbyMessageToast.PlayOut();
     }
 
     public void OnJoinRoomFailed(short returnCode, string message)
     {
         Debug.LogErrorFormat("Join room failed, error message: {0}", message);
-        MessageBox.Show(message);
+        //LobbyMessageText.text = "Failed to join room. Please try again.";
+        //LobbyMessageToast.PlayIn();
+        //Thread.Sleep(4000);
+        //LobbyMessageToast.PlayOut();
     }
 
     public void OnJoinRandomFailed(short returnCode, string message)
     {
-        //Create room if not found available
-        if (returnCode == 32760)
-        {
-            RoomListHolder.CreateRandomRoom();
-        }
-        else
-        {
-            Debug.LogErrorFormat("Join random room failed, error message: {0}", message);
-            MessageBox.Show(message);
-        }
     }
 
     #region Callbacks for log
