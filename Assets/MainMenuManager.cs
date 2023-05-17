@@ -7,11 +7,13 @@ using WalletConnectSharp.Unity;
 using Thirdweb;
 using TMPro;
 using Michsky.UI.Reach;
+using Photon.Pun;
 
 public class MainMenuManager : MonoBehaviour
 {
     ThirdwebSDK sdk;
     [SerializeField] private ButtonManager MultiplayerButton;
+    [SerializeField] private PanelManager MainPanelManager;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,14 @@ public class MainMenuManager : MonoBehaviour
         //MultiplayerButton.Interactable(false);
         //MultiplayerButton.buttonText = "Wallet Not Connected";
         //MultiplayerButton.UpdateUI();
+    }
+
+    public void OnPanelChanged()
+    {
+        if (MainPanelManager.currentPanelIndex != 4 && PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+        }
     }
 
     private void ToggleAllButtons(bool shouldEnable)

@@ -50,8 +50,8 @@ public class RoomListController : MonoBehaviour
         CreateRoomButton.onClick.AddListener(CreateRoom);
         FeeSelector.onValueChanged.AddListener(SetRaceFee);
 
-        RoomItemUIRef.SetActive(false);
-        CreateRoomButton.isInteractable = false;
+        // RoomItemUIRef.SetActive(false);
+        CreateRoomButton.Interactable(false);
         sdk = ThirdwebManager.Instance.SDK;
     }
 
@@ -68,13 +68,6 @@ public class RoomListController : MonoBehaviour
 
         // TOGGLE THIS FOR LOCAL DEV
         CreateRoomButton.Interactable(enableButtons);
-
-        var firstOption = ServerSelector.items[0];
-        if (photonIsConnected && ServerSelector.currentModeIndex == 0)
-        {
-            var server = B.MultiplayerSettings.Servers.FirstOrDefault();
-        }
-
         if (Timer <= 0 && photonIsConnected)
         {
             UpdatePing();

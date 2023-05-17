@@ -118,6 +118,7 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
     public void UpdateHolders()
     {
         bool inRoom = PhotonNetwork.InRoom;
+        Debug.Log($"In Room: {inRoom}");
         if (!inRoom)
         {
             MainMenuManager.OpenPanel("Home Menu");
