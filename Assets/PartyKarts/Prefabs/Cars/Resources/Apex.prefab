@@ -291,10 +291,10 @@ MonoBehaviour:
   - {fileID: 198335225541488048}
   BaseView: {fileID: 7507112016425508414}
   CarConfig:
-    MaxSteerAngle: 21
+    MaxSteerAngle: 24
     DriveType: 0
     AutomaticGearBox: 1
-    MaxMotorTorque: 1500
+    MaxMotorTorque: 1600
     MotorTorqueFromRpmCurve:
       serializedVersion: 2
       m_Curve:
@@ -337,14 +337,14 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxRPM: 8000
+    MaxRPM: 7000
     MinRPM: 700
-    CutOffRPM: 7500
+    CutOffRPM: 6600
     CutOffOffsetRPM: 500
     CutOffTime: 0.09
     ProbabilityBackfire: 0.022
-    RpmToNextGear: 7000
-    RpmToPrevGear: 3500
+    RpmToNextGear: 6500
+    RpmToPrevGear: 3700
     MaxForwardSlipToBlockChangeGear: 0.25
     RpmEngineToRpmWheelsLerpSpeed: 13
     GearsRatio:
