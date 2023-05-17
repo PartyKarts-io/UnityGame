@@ -25,6 +25,7 @@ public class RoomListController : MonoBehaviour
     [SerializeField] ButtonManager CreateRoomButton;
     [SerializeField] Michsky.UI.Reach.Dropdown FeeSelector;
     [SerializeField] PanelManager MenuPanelManager;
+    [SerializeField] ModeSelector ServerSelector;
 
     [Space(10)]
     [SerializeField] Image PingIndicatorImage;
@@ -56,7 +57,6 @@ public class RoomListController : MonoBehaviour
     void OnEnable()
     {
         Timer = 0;
-        UpdateServerList();
     }
 
     async void Update()
@@ -66,16 +66,13 @@ public class RoomListController : MonoBehaviour
         bool enableButtons = !awaitingTransaction && photonIsConnected && (Utils.IsWebGLBuild() ? walletIsConnected : true);
 
         // TOGGLE THIS FOR LOCAL DEV
-        CreateRoomButton.isInteractable = enableButtons;
+        CreateRoomButton.Interactable(enableButtons);
 
-        //TODO - Make Server List Work with Mode Selector
-
-        //var firstOption = ServerList.options[0];
-        //if (photonIsConnected && firstOption.text == AutoText && ServerList.value == 0)
-        //{
-        //    var server = B.MultiplayerSettings.Servers.FirstOrDefault(s => s.ServerToken == PhotonNetwork.NetworkingClient.CloudRegion);
-        //    UpdateServerList(server.ServerCaption);
-        //}
+        var firstOption = ServerSelector.items[0];
+        if (photonIsConnected && ServerSelector.currentModeIndex == 0)
+        {
+            var server = B.MultiplayerSettings.Servers.FirstOrDefault();
+        }
 
         if (Timer <= 0 && photonIsConnected)
         {
@@ -284,31 +281,12 @@ public class RoomListController : MonoBehaviour
         PhotonNetwork.JoinRoom(room.Room.Name);
     }
 
-
-    void UpdateServerList(string autoRegion = "")
+    public void SelectServer()
     {
-        //Tokens = new List<string>();
-
-        //ServerList.ClearOptions();
-        //var options = new List<TMP_Dropdown.OptionData>();
-
-        //options.Add(new TMP_Dropdown.OptionData(AutoText + autoRegion));
-        //Tokens.Add("");
-
-        //foreach (var server in B.MultiplayerSettings.Servers)
-        //{
-        //    options.Add(new TMP_Dropdown.OptionData(server.ServerCaption));
-        //    Tokens.Add(server.ServerToken);
-        //}
-
-        //ServerList.AddOptions(options);
-        //ServerList.value = Tokens.FindIndex(t => t == PlayerProfile.ServerToken);
-        //ServerList.onValueChanged.AddListener((int value) =>
-        //{
-        //    PlayerProfile.ServerToken = Tokens[value];
-        //    LobbyManager.ConnectToServer();
-        //    Timer = 0;
-        //});
+        var selection = ServerSelector.items[ServerSelector.currentModeIndex];
+        PlayerProfile.ServerToken = selection.titleKey;
+        LobbyManager.ConnectToServer();
+        Timer = 0;
     }
 
     void UpdatePing()

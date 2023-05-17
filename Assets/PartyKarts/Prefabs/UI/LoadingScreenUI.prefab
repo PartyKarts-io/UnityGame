@@ -255,7 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadedProcentText: {fileID: 114737673497916900}
-  BackGroundInage: {fileID: 0}
   HideObjectsTime: 0.5
 --- !u!1 &1345337649530626939
 GameObject:
@@ -574,7 +573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 658e08753a2f74023add0c179168f59b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d687856d4a4ec4e848c8263e10bea2af, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -926,7 +925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bdb85b0082a064ca7ab006f00819a3d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 032ca2b0f96db4426ab23ac5129f5f20, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

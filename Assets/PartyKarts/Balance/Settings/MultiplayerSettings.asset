@@ -13,32 +13,30 @@ MonoBehaviour:
   m_Name: MultiplayerSettings
   m_EditorClassIdentifier: 
   m_Servers:
+  - m_ServerCaption: USA, West
+    m_ServerToken: usw
+  - m_ServerCaption: USA, East
+    m_ServerToken: us
   - m_ServerCaption: Asia
     m_ServerToken: asia
+  - m_ServerCaption: Europe
+    m_ServerToken: eu
+  - m_ServerCaption: India
+    m_ServerToken: in
+  - m_ServerCaption: Russia
+    m_ServerToken: ru
+  - m_ServerCaption: South America
+    m_ServerToken: sa
+  - m_ServerCaption: South Korea
+    m_ServerToken: kr
   - m_ServerCaption: Australia
     m_ServerToken: au
   - m_ServerCaption: Canada, East
     m_ServerToken: cae
   - m_ServerCaption: Chinese Mainland
     m_ServerToken: cn
-  - m_ServerCaption: Europe
-    m_ServerToken: eu
-  - m_ServerCaption: India
-    m_ServerToken: in
   - m_ServerCaption: Japan
     m_ServerToken: jp
-  - m_ServerCaption: Russia
-    m_ServerToken: ru
-  - m_ServerCaption: Russia, East
-    m_ServerToken: rue
-  - m_ServerCaption: South America
-    m_ServerToken: sa
-  - m_ServerCaption: South Korea
-    m_ServerToken: kr
-  - m_ServerCaption: USA, East
-    m_ServerToken: us
-  - m_ServerCaption: USA, West
-    m_ServerToken: usw
   m_PingUpdateSettings: 1
   m_BadPingSprite: {fileID: 21300000, guid: 99e553fe120b3be4ca3c44399068dc86, type: 3}
   m_MediumPingSprite: {fileID: 21300002, guid: 99e553fe120b3be4ca3c44399068dc86, type: 3}
