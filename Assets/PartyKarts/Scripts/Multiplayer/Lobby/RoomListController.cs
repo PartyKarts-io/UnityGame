@@ -26,6 +26,7 @@ public class RoomListController : MonoBehaviour
     [SerializeField] Michsky.UI.Reach.Dropdown FeeSelector;
     [SerializeField] PanelManager MenuPanelManager;
     [SerializeField] ModeSelector ServerSelector;
+    [SerializeField] UIPopup TxnPendingToast;
 
     [Space(10)]
     [SerializeField] Image PingIndicatorImage;
@@ -118,14 +119,14 @@ public class RoomListController : MonoBehaviour
                 raceFee = 0;
                 break;
         }
+
+        Debug.Log($"Race Fee Selected: {raceFee}");
     }
 
     async void CreateRoom()
     {
         string raceId = System.Guid.NewGuid().ToString();
-
-        TMP_Text buttonText = CreateRoomButton.GetComponentInChildren<TMP_Text>();
-        buttonText.text = "Awaiting wallet confirmation...";
+        CreateRoomButton.SetText("Awaiting wallet confirmation...");
 
         string trackName = (string)selectedTrack[C.TrackName];
         BigInteger bigintFee = BigInteger.Parse($"{raceFee}"); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
@@ -161,13 +162,17 @@ public class RoomListController : MonoBehaviour
         {
             TransactionResult newRaceResult = await CreateRoomTransaction(raceId, trackName, maxPlayers, true, true);
 
-            buttonText.text = "Create Room";
+            CreateRoomButton.SetText("Create Room");
+
             if (newRaceResult.isSuccessful())
             {
+                // TODO - Analytics - Log Create Room 
                 PhotonNetwork.CreateRoom(raceId, options);
             }
             else
             {
+                // TODO - Analytics - Log Create Room Failed
+
                 // show error message popup or something
                 Debug.LogError(newRaceResult);
             }
@@ -183,7 +188,7 @@ public class RoomListController : MonoBehaviour
     )
     {
         awaitingTransaction = true;
-
+        TxnPendingToast.PlayIn();
         try
         {
             Contract contract = ThirdwebManager.Instance.pkRaceContract;
@@ -199,12 +204,14 @@ public class RoomListController : MonoBehaviour
                     isOpen
             );
 
+            TxnPendingToast.PlayOut();
             awaitingTransaction = false;
 
             return txnResult;
         }
         catch (Exception e)
         {
+            TxnPendingToast.PlayOut();
             awaitingTransaction = false;
             Debug.LogError(e);
             return null;
