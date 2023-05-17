@@ -24,7 +24,6 @@ public class RoomListController : MonoBehaviour
     [SerializeField] RoomItemController RoomItemUIRef;
     [SerializeField] ButtonManager CreateRoomButton;
     [SerializeField] Michsky.UI.Reach.Dropdown FeeSelector;
-    [SerializeField] PanelManager MenuPanelManager;
     [SerializeField] ModeSelector ServerSelector;
     [SerializeField] UIPopup TxnPendingToast;
 
@@ -48,6 +47,7 @@ public class RoomListController : MonoBehaviour
 
     private void Start()
     {
+        CreateRoomButton.onClick.AddListener(CreateRoom);
         FeeSelector.onValueChanged.AddListener(SetRaceFee);
 
         RoomItemUIRef.SetActive(false);
@@ -126,8 +126,6 @@ public class RoomListController : MonoBehaviour
     async void CreateRoom()
     {
         string raceId = System.Guid.NewGuid().ToString();
-        CreateRoomButton.SetText("Awaiting wallet confirmation...");
-
         string trackName = (string)selectedTrack[C.TrackName];
         BigInteger bigintFee = BigInteger.Parse($"{raceFee}"); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
 

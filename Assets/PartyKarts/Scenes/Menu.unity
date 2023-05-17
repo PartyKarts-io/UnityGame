@@ -13044,7 +13044,7 @@ PrefabInstance:
     - target: {fileID: 1210611347975514613, guid: fa9f6539ccf9b2341bd36df84516d79e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1525.6353
+      value: 1940.6353
       objectReference: {fileID: 0}
     - target: {fileID: 1210611347975514613, guid: fa9f6539ccf9b2341bd36df84516d79e,
         type: 3}
@@ -13311,6 +13311,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 338647839}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &338647841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4015463763631151131, guid: fa9f6539ccf9b2341bd36df84516d79e,
+    type: 3}
+  m_PrefabInstance: {fileID: 338647839}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b802ad4a4b7423d4dad4fbd75775e08f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &343592881
 GameObject:
   m_ObjectHideFlags: 0
@@ -53654,7 +53666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1343862100
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53671,10 +53683,10 @@ RectTransform:
   m_Father: {fileID: 366473345}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1940.6353, y: 0}
-  m_SizeDelta: {x: 0, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1940.6353, y: -25}
+  m_SizeDelta: {x: 265, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1343862101
 MonoBehaviour:
@@ -61928,7 +61940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panels:
-  - panelName: Home
+  - panelName: Home Panel
     panelObject: {fileID: 1265928326}
     panelButton: {fileID: 0}
     altPanelButton: {fileID: 0}
@@ -70787,9 +70799,8 @@ MonoBehaviour:
   RoomItemUIRef: {fileID: 7539475247505218635}
   CreateRoomButton: {fileID: 1801223353}
   FeeSelector: {fileID: 571716391}
-  MenuPanelManager: {fileID: 1579231287}
   ServerSelector: {fileID: 1760196680}
-  TxnPendingToast: {fileID: 0}
+  TxnPendingToast: {fileID: 338647841}
   PingIndicatorImage: {fileID: 171164688}
   AutoText: '(Auto) '
 --- !u!224 &1779713931 stripped
@@ -71560,19 +71571,7 @@ MonoBehaviour:
   fadingMultiplier: 8
   onClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1739618827}
-        m_TargetAssemblyTypeName: Michsky.UI.Reach.UIPopup, Assembly-CSharp
-        m_MethodName: PlayIn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDoubleClick:
     m_PersistentCalls:
       m_Calls: []
@@ -95504,10 +95503,10 @@ RectTransform:
   m_Father: {fileID: 1343862100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 140, y: -25}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &998589026237456540
 CanvasRenderer:
@@ -104807,7 +104806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &5028720084973584861
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -112446,13 +112445,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef0b1ade5bc94620baaf020e8806828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrackIcon: {fileID: 0}
-  RegimeIcon: {fileID: 0}
-  HostNickNameText: {fileID: 0}
-  FeeText: {fileID: 0}
-  SelectedTrackText: {fileID: 0}
-  PlayersText: {fileID: 0}
-  OnClickButton: {fileID: 0}
+  HostNickNameText: {fileID: 827113031}
+  FeeText: {fileID: 1176749855}
+  SelectedTrackText: {fileID: 1651229733895061560}
+  PlayersText: {fileID: 212232165}
 --- !u!1 &7562698576083606349
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,11 +46,12 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
     void Start()
     {
         PhotonNetwork.EnableCloseConnection = true;
-
-        System.Action leaveAction = () =>
-        {
-            LeaveLobby();
-        };
+        PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "usw";
+        PhotonNetwork.ConnectUsingSettings();
+        //System.Action leaveAction = () =>
+        //{
+        //    LeaveLobby();
+        //};
 
 
         // TODO - Prompt Are you sure? before leaving this screen
