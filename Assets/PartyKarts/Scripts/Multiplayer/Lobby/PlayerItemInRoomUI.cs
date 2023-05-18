@@ -37,7 +37,7 @@ public class PlayerItemInRoomUI : MonoBehaviour {
 			LobbyPlayer.SetNotReady();
 		}
 
-		LobbyPlayer.SetPlayerName(targetPlayer.TruncatedName);
+		LobbyPlayer.SetPlayerName(targetPlayer.NickName);
 		LobbyPlayer.SetAdditionalText((string)customProperties[C.CarName]);
 	}
 }
