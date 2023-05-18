@@ -325,13 +325,9 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         var customProps = targetPlayer.CustomProperties;
 
         //SetActive(false) if player without any property.
-        if (customProps == null ||
-            !customProps.ContainsKey(C.CarName) ||
-            !customProps.ContainsKey(C.IsReady)
-            )
+        if (customProps == null || !customProps.ContainsKey(C.IsReady))
         {
-            playerItem.SetActive(false);
-            return;
+            targetPlayer.SetCustomProperties(C.IsReady, false);
         }
 
         var idReady = (bool)customProps[C.IsReady];
