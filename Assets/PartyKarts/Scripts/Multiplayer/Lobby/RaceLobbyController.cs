@@ -181,10 +181,12 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
     private void ReadyUp()
     {
+        BackButton.Interactable(false);
         ReadyButton.Interactable(false);
         TrackSelector.Interactable(false);
         CarSelector.Interactable(false);
         ReadyButton.UpdateUI();
+        BackButton.UpdateUI();
 
         // THIS IS WHERE YOU SET THE CAR COLOR
         LocalPlayer.SetCustomProperties(C.IsReady, true, C.CarColorIndex, PlayerProfile.GetCarColorIndex(WorldLoading.PlayerCar));

@@ -72,10 +72,10 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
         //};
     }
 
-    void LeaveLobby()
+    public void LeaveLobby()
     {
         PhotonNetwork.LeaveRoom();
-        MainMenuManager.OpenPanel("Home Panel");
+        MainMenuManager.OpenPanel("Lobby List");
     }
 
     void OnEnable()

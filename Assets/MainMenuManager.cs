@@ -31,14 +31,6 @@ public class MainMenuManager : MonoBehaviour
         //MultiplayerButton.UpdateUI();
     }
 
-    public void OnPanelChanged()
-    {
-        if (MainPanelManager.currentPanelIndex != 4 && PhotonNetwork.InRoom)
-        {
-            PhotonNetwork.LeaveRoom();
-        }
-    }
-
     private void ToggleAllButtons(bool shouldEnable)
     {
         if (!Utils.IsWebGLBuild()) return;

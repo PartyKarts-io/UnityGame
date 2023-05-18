@@ -18,6 +18,7 @@ public class PlayerItemInRoomUI : MonoBehaviour {
 
 	void Update ()
 	{
+		if (TargetPlayer == null) return;
 		if (!TargetPlayer.IsLocal) return;
 	}
 
