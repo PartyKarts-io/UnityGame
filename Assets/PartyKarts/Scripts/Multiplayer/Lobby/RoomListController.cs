@@ -49,8 +49,7 @@ public class RoomListController : MonoBehaviour
     {
         CreateRoomButton.onClick.AddListener(CreateRoom);
         FeeSelector.onValueChanged.AddListener(SetRaceFee);
-
-        // RoomItemUIRef.SetActive(false);
+        RoomItemUIRef.SetActive(false);
         CreateRoomButton.Interactable(false);
         sdk = ThirdwebManager.Instance.SDK;
     }

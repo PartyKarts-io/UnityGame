@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398d06ec47ad57e4289eeab1daf74507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Body: {fileID: 0}
+  Body: {fileID: 2499766290534683535}
   MaxAngle: 10
   AngleVelocityMultiplier: 0.2
   RearAngleVelocityMultiplier: 0.4

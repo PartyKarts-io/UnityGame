@@ -62,8 +62,7 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
         });
         SelectCarButton.onClick.AddListener(() =>
         {
-            WindowsController.Instance.OpenWindow(SelectCarMenuUI);
-            SelectCarMenuUI.OnSelectCarAction = OnSelectCar;
+            //SelectCarMenuUI.OnSelectCarAction = OnSelectCar;
         });
 
         ReadyButton.onClick.AddListener(OnReadyClick);
