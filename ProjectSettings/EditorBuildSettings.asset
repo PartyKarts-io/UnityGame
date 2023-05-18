@@ -14,10 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PartyKarts/Scenes/RaceTrack.unity
     guid: 4854a3fd49b9bfc4d92015809f70203a
-  - enabled: 1
-    path: Assets/PartyKarts/Scenes/RaceMonza.unity
-    guid: 9582af926b91142f1948c75422199979
-  - enabled: 1
-    path: Assets/PartyKarts/Scenes/SpaRace.unity
-    guid: ded407905f91b094b91a7fa4de46239b
   m_configObjects: {}

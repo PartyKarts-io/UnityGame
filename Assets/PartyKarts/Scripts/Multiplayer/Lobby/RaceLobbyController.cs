@@ -39,7 +39,6 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
     Room CurrentRoom { get { return PhotonNetwork.CurrentRoom; } }
     bool IsMaster { get { return PhotonNetwork.IsMasterClient; } }
-    bool IsRandomRoom { get { return CurrentRoom.CustomProperties.ContainsKey(C.RandomRoom); } }
     Player LocalPlayer { get { return PhotonNetwork.LocalPlayer; } }
 
     bool WaitStartGame;
@@ -129,11 +128,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
         Debug.Log($"Selected Track: {track.name}");
 
-        if (IsRandomRoom)
-        {
-            LocalPlayer.SetCustomProperties(hashtable);
-        }
-        else if (IsMaster)
+        if (IsMaster)
         {
             CurrentRoom.SetCustomProperties(hashtable);
         }
@@ -334,7 +329,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         var idReady = (bool)customProps[C.IsReady];
 
         System.Action kickAction = null;
-        if (PhotonNetwork.IsMasterClient && !IsRandomRoom)
+        if (PhotonNetwork.IsMasterClient)
         {
             kickAction = () =>
             {
