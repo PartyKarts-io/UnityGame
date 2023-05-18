@@ -30,9 +30,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
     [SerializeField] ModeSelector TrackSelector;
     [SerializeField] UIPopup TxnPendingToast;
 
-
     [SerializeField] int MinimumPlayersForStart = 2;
-
 
     private bool _awaitingTxn = false;
 
@@ -50,12 +48,11 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
     {
         //Initialized all buttons.
         PlayerItemUIRef.SetActive(false);
-
+        ReadyButton.Interactable(false);
         TrackSelector.Interactable(true);
         CarSelector.Interactable(true);
-
-        ReadyButton.Interactable(false);
         ReadyButton.onClick.AddListener(OnReadyClick);
+        ReadyButton.UpdateUI();
     }
 
     void OnEnable()
@@ -70,7 +67,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         var entryFee = CurrentRoom.CustomProperties[C.EntryFee].ToString();
         EntryFeeText.text = $"{entryFee} $KART";
 
-        TrackSelector.SetActive(IsMaster || IsRandomRoom);
+        TrackSelector.SetActive(IsMaster);
         OnRoomPropertiesUpdate(CurrentRoom.CustomProperties);
 
         foreach (var playerKV in Players)
@@ -105,12 +102,8 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
             hashtable.Add(C.TrackName, B.GameSettings.Tracks.First().name);
             CurrentRoom.SetCustomProperties(hashtable);
         }
-    }
 
-    public void Update()
-    {
-        ReadyButton.Interactable(!_awaitingTxn);
-        ReadyButton.UpdateUI();
+        localPlayer.SetCustomProperties(C.IsReady, false);
     }
 
     public virtual void OnDisable()
@@ -155,10 +148,8 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         }
         else
         {
-            if ((bool)LocalPlayer.CustomProperties[C.IsReady])
-            {
-                BackButton.Interactable(false);
-            }
+            BackButton.Interactable(false);
+            BackButton.UpdateUI();
 
             if (!(bool)LocalPlayer.CustomProperties[C.IsReady])
             {
@@ -182,6 +173,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
                     BackButton.Interactable(true);
                     Debug.LogError("Error approving Race Fee");
                 }
+                BackButton.UpdateUI();
             }
         }
     }
@@ -190,12 +182,16 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
     private void ReadyUp()
     {
         ReadyButton.Interactable(false);
+        TrackSelector.Interactable(false);
+        CarSelector.Interactable(false);
+        ReadyButton.UpdateUI();
+
+        // THIS IS WHERE YOU SET THE CAR COLOR
         LocalPlayer.SetCustomProperties(C.IsReady, true, C.CarColorIndex, PlayerProfile.GetCarColorIndex(WorldLoading.PlayerCar));
     }
 
     private async Task<TransactionResult> JoinLobbyTransaction(RoomInfo room)
     {
-
         try
         {
             _awaitingTxn = true;
@@ -296,7 +292,6 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
     async void LeaveContractLobby()
     {
-
         TransactionResult leaveLobbyResult = await LeaveLobbyTransaction();
 
         if (leaveLobbyResult.isSuccessful())
@@ -325,9 +320,13 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         var customProps = targetPlayer.CustomProperties;
 
         //SetActive(false) if player without any property.
-        if (customProps == null || !customProps.ContainsKey(C.IsReady))
+        if (customProps == null ||
+            !customProps.ContainsKey(C.CarName) ||
+            !customProps.ContainsKey(C.IsReady)
+            )
         {
-            targetPlayer.SetCustomProperties(C.IsReady, false);
+            playerItem.SetActive(false);
+            return;
         }
 
         var idReady = (bool)customProps[C.IsReady];
@@ -344,7 +343,6 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         playerItem.SetActive(true);
         playerItem.UpdateProperties(targetPlayer, kickAction);
 
-        // TODO - Make ready button or some other icon Red / Green
         if (targetPlayer.IsLocal)
         {
             if (_awaitingTxn || !idReady)
@@ -355,6 +353,8 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
             {
                 ReadyButton.Interactable(false);
             }
+            ReadyButton.UpdateUI();
+
         }
 
         //We inform all players about the start of the game.
