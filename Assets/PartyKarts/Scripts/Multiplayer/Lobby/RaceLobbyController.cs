@@ -22,11 +22,14 @@ using Michsky.UI.Reach;
 public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
 {
     [SerializeField] PlayerItemInRoomUI PlayerItemUIRef;
+
     [SerializeField] TMP_Text EntryFeeText;
     [SerializeField] ButtonManager ReadyButton;
+    [SerializeField] ButtonManager BackButton;
     [SerializeField] ModeSelector CarSelector;
     [SerializeField] ModeSelector TrackSelector;
     [SerializeField] UIPopup TxnPendingToast;
+
 
     [SerializeField] int MinimumPlayersForStart = 2;
 
@@ -46,10 +49,11 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
     void Awake()
     {
         //Initialized all buttons.
-
         PlayerItemUIRef.SetActive(false);
-        TrackSelector.Interactable(false);
-        CarSelector.Interactable(false);
+
+        TrackSelector.Interactable(true);
+        CarSelector.Interactable(true);
+
         ReadyButton.Interactable(false);
         ReadyButton.onClick.AddListener(OnReadyClick);
     }
@@ -114,18 +118,23 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         PhotonNetwork.RemoveCallbackTarget(this);
     }
 
-    void OnSelectCar(CarPreset selectedCar)
+    public void OnSelectCar(string selectedCarName)
     {
-        WindowsController.Instance.OnBack();
-        WorldLoading.PlayerCar = selectedCar;
-        LocalPlayer.SetCustomProperties(C.CarName, selectedCar.CarCaption, C.CarColorIndex, PlayerProfile.GetCarColorIndex(selectedCar));
+        CarPreset car = B.MultiplayerSettings.AvailableCarsForMultiplayer.Find(c => c.name == selectedCarName);
+        WorldLoading.PlayerCar = car;
+
+        Debug.Log($"Selected Car: {car.name}");
+
+        LocalPlayer.SetCustomProperties(C.CarName, car.CarCaption, C.CarColorIndex, PlayerProfile.GetCarColorIndex(car));
     }
 
-    void OnSelectTrack(TrackPreset selectedTrack)
+    public void OnSelectTrack(string selectedTrackName)
     {
-        WindowsController.Instance.OnBack();
+        TrackPreset track = B.MultiplayerSettings.AvailableTracksForMultiplayer.Find(t => t.name == selectedTrackName);
         var hashtable = new Hashtable();
-        hashtable.Add(C.TrackName, selectedTrack.name);
+        hashtable.Add(C.TrackName, track.name);
+
+        Debug.Log($"Selected Track: {track.name}");
 
         if (IsRandomRoom)
         {
@@ -146,34 +155,42 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         }
         else
         {
-
-            bool approveTxnResult = await ApproveKartToken(PhotonNetwork.CurrentRoom);
-            if (approveTxnResult)
+            if ((bool)LocalPlayer.CustomProperties[C.IsReady])
             {
-                TransactionResult joinTxnResult = await JoinLobbyTransaction(PhotonNetwork.CurrentRoom);
+                BackButton.Interactable(false);
+            }
 
-                if (joinTxnResult.isSuccessful())
+            if (!(bool)LocalPlayer.CustomProperties[C.IsReady])
+            {
+                bool approveTxnResult = await ApproveKartToken(PhotonNetwork.CurrentRoom);
+                if (approveTxnResult)
                 {
-                    ReadyUp();
+                    TransactionResult joinTxnResult = await JoinLobbyTransaction(PhotonNetwork.CurrentRoom);
+
+                    if (joinTxnResult.isSuccessful())
+                    {
+                        ReadyUp();
+                    }
+                    else
+                    {
+                        BackButton.Interactable(true);
+                        Debug.LogError(joinTxnResult);
+                    }
                 }
                 else
                 {
-                    Debug.LogError(joinTxnResult);
+                    BackButton.Interactable(true);
+                    Debug.LogError("Error approving Race Fee");
                 }
             }
-            else
-            {
-                Debug.LogError("Error approving Race Fee");
-            }
-
         }
     }
 
+
     private void ReadyUp()
     {
-       // if ((bool)LocalPlayer.CustomProperties[C.IsReady]) BackButton.interactable = false;
-
-        LocalPlayer.SetCustomProperties(C.IsReady, !(bool)LocalPlayer.CustomProperties[C.IsReady], C.CarColorIndex, PlayerProfile.GetCarColorIndex(WorldLoading.PlayerCar));
+        ReadyButton.Interactable(false);
+        LocalPlayer.SetCustomProperties(C.IsReady, true, C.CarColorIndex, PlayerProfile.GetCarColorIndex(WorldLoading.PlayerCar));
     }
 
     private async Task<TransactionResult> JoinLobbyTransaction(RoomInfo room)
@@ -334,7 +351,14 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         // TODO - Make ready button or some other icon Red / Green
         if (targetPlayer.IsLocal)
         {
-           // ReadyButton.colors = _awaitingTxn ? DisabledColors : idReady ? ReadyColors : NotReadyColors;
+            if (_awaitingTxn || !idReady)
+            {
+                ReadyButton.Interactable(true);
+            }
+            else
+            {
+                ReadyButton.Interactable(false);
+            }
         }
 
         //We inform all players about the start of the game.
@@ -346,45 +370,6 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
                 (bool)p.Value.CustomProperties[C.IsReady]
             ))
         {
-            //Calculate votes
-            if (CurrentRoom.CustomProperties.ContainsKey(C.RandomRoom))
-            {
-                Dictionary<string, int> votesForTracks = new Dictionary<string, int>();
-
-                foreach (var track in B.MultiplayerSettings.AvailableTracksForMultiplayer)
-                {
-                    votesForTracks.Add(track.name, 0);
-                }
-
-                //Get all votes.
-                foreach (var player in CurrentRoom.Players)
-                {
-                    var track = player.Value.CustomProperties.ContainsKey(C.TrackName) ? (string)player.Value.CustomProperties[C.TrackName] : "";
-                    if (!string.IsNullOrEmpty(track))
-                    {
-                        votesForTracks[track]++;
-                    }
-                }
-
-                //Get max votes.
-                int maxVotes = votesForTracks.Max(kv => kv.Value);
-
-                //Get tracks with max votes.
-                List<string> selectedTracks = new List<string>();
-                foreach (var track in votesForTracks)
-                {
-                    if (track.Value >= maxVotes)
-                    {
-                        selectedTracks.Add(track.Key);
-                    }
-                }
-
-                //Random choice
-                var customProperties = new Hashtable();
-                customProperties.Add(C.TrackName, selectedTracks.RandomChoice());
-                CurrentRoom.SetCustomProperties(customProperties);
-            }
-
             PhotonNetwork.RaiseEvent(PE.StartGame, null, new RaiseEventOptions() { Receivers = ReceiverGroup.All }, SendOptions.SendReliable);
             WaitStartGame = true;
         }
