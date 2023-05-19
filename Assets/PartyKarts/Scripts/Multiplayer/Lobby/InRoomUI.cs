@@ -154,7 +154,7 @@ public class InRoomUI : MonoBehaviour, IInRoomCallbacks, IOnEventCallback
     }
 
 
-    async void OnReadyClick()
+    public async void OnReadyClick()
     {
         if (!Utils.IsWebGLBuild())
         {

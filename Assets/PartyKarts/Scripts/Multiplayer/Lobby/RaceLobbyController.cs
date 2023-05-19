@@ -58,6 +58,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
         if (CurrentRoom == null)
         {
+            MainMenuPanel.OpenPanel("Lobby List");
             return;
         }
 
@@ -132,7 +133,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
     }
 
 
-    async void OnReadyClick()
+   public async void OnReadyClick()
     {
         if (!Utils.IsWebGLBuild())
         {
@@ -472,7 +473,6 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
                 CurrentRoom.IsVisible = false;
             }
 
-            MainMenuPanel.OpenFirstPanel();
         }
     }
 }

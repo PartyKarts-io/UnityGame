@@ -222,8 +222,9 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
 
     async void Exit()
     {
-        if (!WorldLoading.IsMultiplayer)
+        if (!WorldLoading.IsMultiplayer || !Utils.IsWebGLBuild())
         {
+            PhotonNetwork.LeaveRoom();
             LoadingScreenUI.LoadScene(MainMenuSceneName);
         }
         else
@@ -262,6 +263,7 @@ public class RaceEndGameStatisticsUI : MonoBehaviour
 
             if (submitResultsTxn.isSuccessful())
             {
+                PhotonNetwork.LeaveRoom();
                 LoadingScreenUI.LoadScene(MainMenuSceneName);
             }
         }

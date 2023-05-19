@@ -41,7 +41,7 @@ public class MainMenuManager : MonoBehaviour
             buttonText = "Loading your NFTs...";
         } else if (ThirdwebManager.Instance.walletNFTs.Count > 0)
         {
-            buttonText = "Lobbies (Coming 5/21/2023)";
+            buttonText = "Lobbies";
         }
 
         // MultiplayerButton.isInteractable = shouldEnable;
