@@ -13,11 +13,16 @@ public class MainMenuManager : MonoBehaviour
 {
     ThirdwebSDK sdk;
     [SerializeField] private ButtonManager MultiplayerButton;
+    [SerializeField] private GameObject MultiplayerTextReplacement;
     [SerializeField] private PanelManager MainPanelManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        MultiplayerButton.isInteractable = false;
+        MultiplayerButton.UpdateUI();
+        MultiplayerTextReplacement.SetActive(true);
+
         sdk = ThirdwebManager.Instance.SDK;
         ThirdwebManager.Instance.walletDisconnectedEvent.AddListener(OnWalletDisconnect);
         ThirdwebManager.Instance.walletConnectedEvent.AddListener(WalletConnected);
@@ -26,7 +31,6 @@ public class MainMenuManager : MonoBehaviour
 
         if (!Utils.IsWebGLBuild()) return;
 
-        MultiplayerButton.Interactable(false);
     }
 
     private void ToggleAllButtons(bool shouldEnable)
@@ -42,11 +46,11 @@ public class MainMenuManager : MonoBehaviour
             buttonText = "Lobbies";
         }
 
-        // MultiplayerButton.isInteractable = shouldEnable;
-        MultiplayerButton.buttonText = buttonText;
+        MultiplayerButton.isInteractable = shouldEnable;
 
-        if (buttonText != "Lobbies")
-            MultiplayerButton.isInteractable = false;
+        MultiplayerTextReplacement.SetActive(shouldEnable == false);
+
+        MultiplayerButton.buttonText = buttonText;
 
         MultiplayerButton.UpdateUI();
     }
