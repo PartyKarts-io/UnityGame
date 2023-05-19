@@ -38,7 +38,7 @@ public class RoomListController : MonoBehaviour
 
     List<string> Tokens = new List<string>();
 
-    private int raceFee = 0;
+    private int raceFee = 1;
     private bool awaitingTransaction = false;
     Hashtable selectedTrack = new();
 
@@ -81,7 +81,7 @@ public class RoomListController : MonoBehaviour
         switch (fee)
         {
             case 0:
-                raceFee = 0;
+                raceFee = 1;
                 break;
             case 1:
                 raceFee = 5000;
@@ -108,7 +108,7 @@ public class RoomListController : MonoBehaviour
                 raceFee = 500000;
                 break;
             default:
-                raceFee = 0;
+                raceFee = 1;
                 break;
         }
 
@@ -265,8 +265,8 @@ public class RoomListController : MonoBehaviour
         Debug.Log("Fee for formatting: " + fee);
         switch (fee)
         {
-            case "0":
-                return "Free";
+            case "1":
+                return "1 $KART";
             case "5000":
                 return "5k $KART";
             case "10000":
@@ -284,7 +284,7 @@ public class RoomListController : MonoBehaviour
             case "500000":
                 return "500k $KART";
             default:
-                return "Free";
+                return "1 $KART";
         }
     }
 

@@ -20870,6 +20870,15 @@ MonoBehaviour:
   saveSelected: 0
   saveKey: My Dropdown
   items:
+  - itemName: 1 $KART
+    localizationKey: 
+    itemIcon: {fileID: 21300000, guid: f81728b9d24538d4eb8bddeb4fbdfc30, type: 3}
+    itemIndex: 0
+    isInvisible: 0
+    itemButton: {fileID: 0}
+    onItemSelection:
+      m_PersistentCalls:
+        m_Calls: []
   - itemName: 5,000 $KART
     localizationKey: 
     itemIcon: {fileID: 21300000, guid: f81728b9d24538d4eb8bddeb4fbdfc30, type: 3}
@@ -36073,7 +36082,7 @@ MonoBehaviour:
   CarSelector: {fileID: 1290783011}
   TrackSelector: {fileID: 1564020959}
   TxnPendingToast: {fileID: 338647841}
-  MinimumPlayersForStart: 2
+  MinimumPlayersForStart: 1
 --- !u!1 &953573604
 GameObject:
   m_ObjectHideFlags: 0

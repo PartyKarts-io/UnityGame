@@ -23,6 +23,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 {
     [SerializeField] PlayerItemInRoomUI PlayerItemUIRef;
 
+    [SerializeField] PanelManager MainMenuPanel;
     [SerializeField] TMP_Text EntryFeeText;
     [SerializeField] ButtonManager ReadyButton;
     [SerializeField] ButtonManager BackButton;
@@ -190,6 +191,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         try
         {
             _awaitingTxn = true;
+            TxnPendingToast.PlayIn();
 
             Contract contract = ThirdwebManager.Instance.pkRaceContract;
             Debug.Log("Join Lobby: TRANSACTION INITIATED");
@@ -199,6 +201,8 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
                     room.Name
             );
 
+            TxnPendingToast.PlayOut();
+
             _awaitingTxn = false;
 
             return txnResult;
@@ -206,6 +210,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         catch (Exception e)
         {
             Debug.LogError(e);
+            TxnPendingToast.PlayOut();
             _awaitingTxn = false;
 
             return null;
@@ -236,10 +241,12 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
             if (bigIntAllowance.CompareTo(raceFee) == -1)
             {
                 Debug.Log($"Allowance is insufficient, calling increaseAllowance for Race Fee: {raceFee}");
+                TxnPendingToast.PlayIn();
 
                 TransactionResult txnResult = await contract.Write("increaseAllowance", spenderAddress, $"{raceFee}");
 
                 _awaitingTxn = false;
+                TxnPendingToast.PlayOut();
 
                 return txnResult.isSuccessful();
             }
@@ -251,6 +258,8 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         }
         catch (Exception e)
         {
+            TxnPendingToast.PlayOut();
+
             _awaitingTxn = false;
             Debug.LogError(e);
             return false;
@@ -462,6 +471,8 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
                 CurrentRoom.IsOpen = false;
                 CurrentRoom.IsVisible = false;
             }
+
+            MainMenuPanel.OpenFirstPanel();
         }
     }
 }
