@@ -21,7 +21,7 @@ MonoBehaviour:
   m_SceneName: RaceTrack
   m_GameController: {fileID: 114912712603281610, guid: fbac2616d829f2640a19e0d7cdb49745,
     type: 3}
-  m_LapsCount: 1
+  m_LapsCount: 3
   m_AIsCount: 4
   m_RegimeSettings: {fileID: 11400000, guid: 93a435292f036614f8eaf1dda24da965, type: 2}
   m_MoneyForFirstPlace: 2000

@@ -75,4 +75,4 @@ MonoBehaviour:
   - {r: 0.49411762, g: 0.5129093, b: 1, a: 0.5882353}
   - {r: 1, g: 0.25, b: 0.36608672, a: 0.5882353}
   - {r: 1, g: 0.6821705, b: 0, a: 0.5882353}
-  m_EnableAiForDebug: 1
+  m_EnableAiForDebug: 0

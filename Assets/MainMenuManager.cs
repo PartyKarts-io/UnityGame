@@ -30,7 +30,6 @@ public class MainMenuManager : MonoBehaviour
         ThirdwebManager.Instance.nftsLoadedEvent.AddListener(NFTsLoaded);
 
         if (!Utils.IsWebGLBuild()) return;
-
     }
 
     private void ToggleAllButtons(bool shouldEnable)
