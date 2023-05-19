@@ -10,17 +10,13 @@ using Michsky.UI.Reach;
 
 public class TrackSelectManager : MonoBehaviour
 {
-    [Header("Path settings")]
-    [SerializeField] float MaxRadius = 1.5f;
-    [SerializeField] float PathStep = 10;
+    [SerializeField] ChapterManager TrackSelectMgr;
 
     bool IsMultiplayer;
     TrackPreset CurrentTrackPreset;
     int CurrentTrackIndex = 0;
     bool SubmitIsPressed = true;
     bool HorizontalIsPressed = true;
-    [SerializeField] ChapterManager TrackSelectMgr;
-
     const string LapCaption = "Lap";
     const string LapsCaption = "Laps";
 
@@ -51,11 +47,7 @@ public class TrackSelectManager : MonoBehaviour
     public void SelectTrack()
     {
         CurrentTrackIndex = TrackSelectMgr.currentChapterIndex;
-        TrackPreset track = GetTrackByIndex(CurrentTrackIndex);
-
-        Debug.Log(track.TrackName);
-
-        CurrentTrackPreset = track;
+        CurrentTrackPreset = GetTrackByIndex(CurrentTrackIndex);
         WorldLoading.LoadingTrack = CurrentTrackPreset;
     }
 }

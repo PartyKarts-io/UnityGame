@@ -22,6 +22,7 @@ using Michsky.UI.Reach;
 public class RoomListController : MonoBehaviour
 {
     [SerializeField] RoomItemController RoomItemUIRef;
+    [SerializeField] PanelManager MainPanelManager;
     [SerializeField] ButtonManager CreateRoomButton;
     [SerializeField] Michsky.UI.Reach.Dropdown FeeSelector;
     [SerializeField] ModeSelector ServerSelector;
@@ -47,7 +48,6 @@ public class RoomListController : MonoBehaviour
 
     private void Start()
     {
-        CreateRoomButton.onClick.AddListener(CreateRoom);
         FeeSelector.onValueChanged.AddListener(SetRaceFee);
         RoomItemUIRef.SetActive(false);
         CreateRoomButton.Interactable(false);
@@ -115,13 +115,11 @@ public class RoomListController : MonoBehaviour
         Debug.Log($"Race Fee Selected: {raceFee}");
     }
 
-    async void CreateRoom()
+    public async void CreateRoom()
     {
         string raceId = System.Guid.NewGuid().ToString();
-        string trackName = (string)selectedTrack[C.TrackName];
-        BigInteger bigintFee = BigInteger.Parse($"{raceFee}"); // convert race fee option to wei (10^16 wei = 0.01 MATIC)
-
-        //set custom properties.
+        string trackName = "RaceTrackRace"; //(string)selectedTrack[C.TrackName];
+        BigInteger bigintFee = BigInteger.Parse($"{raceFee}");
         Hashtable customProperties = new Hashtable();
         customProperties.Add(C.EntryFee, bigintFee.ToString());
         customProperties.Add(C.RoomCreator, PhotonNetwork.NickName);
@@ -151,8 +149,6 @@ public class RoomListController : MonoBehaviour
         else
         {
             TransactionResult newRaceResult = await CreateRoomTransaction(raceId, trackName, maxPlayers, true, true);
-
-            CreateRoomButton.SetText("Create Room");
 
             if (newRaceResult.isSuccessful())
             {
@@ -223,11 +219,6 @@ public class RoomListController : MonoBehaviour
 
         foreach (RoomInfo room in roomList)
         {
-            if (room.CustomProperties != null && room.CustomProperties.ContainsKey(C.RandomRoom))
-            {
-                continue;
-            }
-
             //Get or create room item.
             RoomItemController lobbyItem = RoomItems.FirstOrDefault(r => r.Room != null && r.Room.Name == room.Name);
 
@@ -236,8 +227,6 @@ public class RoomListController : MonoBehaviour
                 lobbyItem = Instantiate(RoomItemUIRef, RoomItemUIRef.transform.parent);
                 RoomItems.Add(lobbyItem);
             }
-
-
 
             //Check custom properties.
             if (room.CustomProperties == null ||
@@ -252,7 +241,7 @@ public class RoomListController : MonoBehaviour
             }
 
             var fee = (string)room.CustomProperties[C.EntryFee];
-            var trackName = (string)room.CustomProperties[C.TrackName];
+            var trackName = "RaceTrackRace"; // (string)room.CustomProperties[C.TrackName];
             var track = B.MultiplayerSettings.AvailableTracksForMultiplayer.Find(t => t.name == trackName);
 
             string creatorName = (string)room.CustomProperties[C.RoomCreator];
@@ -262,20 +251,41 @@ public class RoomListController : MonoBehaviour
                 track.TrackIcon,
                 track.RegimeSettings.RegimeImage,
                 creatorName,
-                $"{fee} WEI" ?? "NO FEE",
+                FormatFeeText(fee),
                 track.TrackName,
-                string.Format("{0}/{1}", room.PlayerCount, room.MaxPlayers),
-                () => JoinRoom(lobbyItem)
-
+                string.Format("{0} / {1}", room.PlayerCount, room.MaxPlayers)
             );
 
             lobbyItem.SetActive(true);
         }
     }
 
-    private void JoinRoom(RoomItemController room)
+    private string FormatFeeText(string fee)
     {
-        PhotonNetwork.JoinRoom(room.Room.Name);
+        Debug.Log("Fee for formatting: " + fee);
+        switch (fee)
+        {
+            case "0":
+                return "Free";
+            case "5000":
+                return "5k $KART";
+            case "10000":
+                return "10k $KART";
+            case "20000":
+                return "20k $KART";
+            case "50000":
+                return "50k $KART";
+            case "100000":
+                return "100k $KART";
+            case "150000":
+                return "150k $KART";
+            case "250000":
+                return "250k $KART";
+            case "500000":
+                return "500k $KART";
+            default:
+                return "Free";
+        }
     }
 
     public void SelectServer()

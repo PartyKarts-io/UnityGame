@@ -143,6 +143,9 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         }
         else
         {
+            ReadyButton.Interactable(false);
+            ReadyButton.UpdateUI();
+
             BackButton.Interactable(false);
             BackButton.UpdateUI();
 
@@ -172,7 +175,6 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
             }
         }
     }
-
 
     private void ReadyUp()
     {
@@ -418,11 +420,9 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         {
             var trackName = (string)propertiesThatChanged[C.TrackName];
 
-            var track = B.GameSettings.Tracks.FirstOrDefault(t => t.name == trackName);
+            int index = B.GameSettings.Tracks.FindIndex(t => t.name == trackName);
 
-            //SelectedTrackIcon.sprite = track.TrackIcon;
-            //RegimeIcon.sprite = track.RegimeSettings.RegimeImage;
-            //SelectedTrackText.text = string.Format("{0}: {1}", track.TrackName, track.RegimeSettings.RegimeCaption);
+            TrackSelector.SelectMode(index > -1 ? index : 0);
         }
         else if (propertiesThatChanged.ContainsKey(C.EntryFee))
         {

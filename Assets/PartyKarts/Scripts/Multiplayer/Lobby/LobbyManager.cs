@@ -48,28 +48,6 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
         PhotonNetwork.EnableCloseConnection = true;
         PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "usw";
         PhotonNetwork.ConnectUsingSettings();
-        //System.Action leaveAction = () =>
-        //{
-        //    LeaveLobby();
-        //};
-
-
-        // TODO - Prompt Are you sure? before leaving this screen
-
-        //CustomBackAction = () =>
-        //{
-        //    if (PhotonNetwork.IsConnected && PhotonNetwork.InRoom)
-        //    {
-        //        if (!MessageBox.HasActiveMessageBox)
-        //        {
-        //            MessageBox.Show(LeaveRoomMessage, leaveAction, null, "Yes", "Cancel");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        WindowsController.Instance.OnBack(ignoreCustomBackAction: true);
-        //    }
-        //};
     }
 
     public void LeaveLobby()
@@ -154,19 +132,19 @@ public class LobbyManager : MonoBehaviour, ILobbyCallbacks, IMatchmakingCallback
     public void OnCreateRoomFailed(short returnCode, string message)
     {
         Debug.LogErrorFormat("Create room failed, error message: {0}", message);
-        //LobbyMessageText.text = "Failed to create room. Please try again.";
-        //LobbyMessageToast.PlayIn();
-        //Thread.Sleep(4000);
-        //LobbyMessageToast.PlayOut();
+        LobbyMessageText.text = "Failed to create room. Please try again.";
+        LobbyMessageToast.PlayIn();
+        Thread.Sleep(4000);
+        LobbyMessageToast.PlayOut();
     }
 
     public void OnJoinRoomFailed(short returnCode, string message)
     {
         Debug.LogErrorFormat("Join room failed, error message: {0}", message);
-        //LobbyMessageText.text = "Failed to join room. Please try again.";
-        //LobbyMessageToast.PlayIn();
-        //Thread.Sleep(4000);
-        //LobbyMessageToast.PlayOut();
+        LobbyMessageText.text = "Failed to join room. Please try again.";
+        LobbyMessageToast.PlayIn();
+        Thread.Sleep(4000);
+        LobbyMessageToast.PlayOut();
     }
 
     public void OnJoinRandomFailed(short returnCode, string message)
