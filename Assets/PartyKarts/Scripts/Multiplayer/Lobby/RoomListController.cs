@@ -62,7 +62,7 @@ public class RoomListController : MonoBehaviour
     async void Update()
     {
         bool photonIsConnected = PhotonNetwork.IsConnectedAndReady && PhotonNetwork.InLobby;
-        bool walletIsConnected = await ThirdwebManager.Instance.SDK.wallet.IsConnected();
+        bool walletIsConnected = await ThirdwebManager.Instance.SDK.wallet.IsConnected() && ThirdwebManager.Instance.walletNFTs.Count > 0;
         bool enableButtons = !awaitingTransaction && photonIsConnected && (Utils.IsWebGLBuild() ? walletIsConnected : true);
 
         // TOGGLE THIS FOR LOCAL DEV

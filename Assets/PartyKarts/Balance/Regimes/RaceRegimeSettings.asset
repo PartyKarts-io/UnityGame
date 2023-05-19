@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RegimeSceneName: RaceRegimeScene
   m_AvailableCars:
-  - {fileID: 11400000, guid: 68d0a29c5dc873e46bdd248870a62876, type: 2}
-  - {fileID: 11400000, guid: c1f9e5f31478f4f41947a387072d07b3, type: 2}
-  - {fileID: 11400000, guid: b3a9983826cef5747b541619547540b2, type: 2}
   - {fileID: 11400000, guid: afa8df00e52633942ab499de775268b0, type: 2}
+  - {fileID: 11400000, guid: b3a9983826cef5747b541619547540b2, type: 2}
+  - {fileID: 11400000, guid: c1f9e5f31478f4f41947a387072d07b3, type: 2}
+  - {fileID: 11400000, guid: 68d0a29c5dc873e46bdd248870a62876, type: 2}
   m_AiConfog:
     MaxSpeed: 175
     MinSpeed: 50

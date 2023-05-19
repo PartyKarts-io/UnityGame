@@ -9,6 +9,7 @@ using UnityEngine.Networking;
 using Org.BouncyCastle.Bcpg;
 using System.Numerics;
 using Michsky.UI.Reach;
+using System.Net.NetworkInformation;
 
 [System.Serializable]
 public class ChainData

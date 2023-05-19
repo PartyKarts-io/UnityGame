@@ -76,12 +76,6 @@ namespace Michsky.UI.Reach
 
         void OnEnable()
         {
-            ThirdwebManager.Instance.walletDisconnectedEvent.AddListener(OnWalletDisconnect);
-            ThirdwebManager.Instance.walletConnectedEvent.AddListener(WalletConnected);
-            ThirdwebManager.Instance.walletNetworkChangeEvent.AddListener(OnNetworkChange);
-            ThirdwebManager.Instance.nftsLoadedEvent.AddListener(NFTsLoaded);
-
-            ToggleAllButtons(ThirdwebManager.Instance.walletNFTs.Count > 0);
             OpenCurrentPanel();
         }
 

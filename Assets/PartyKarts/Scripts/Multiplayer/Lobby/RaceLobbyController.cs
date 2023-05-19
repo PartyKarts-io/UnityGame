@@ -43,20 +43,17 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
     bool WaitStartGame;
 
-    void Awake()
-    {
-        //Initialized all buttons.
-        PlayerItemUIRef.SetActive(false);
-        ReadyButton.Interactable(false);
-        TrackSelector.Interactable(true);
-        CarSelector.Interactable(true);
-        ReadyButton.onClick.AddListener(OnReadyClick);
-        ReadyButton.UpdateUI();
-    }
-
     void OnEnable()
     {
         PhotonNetwork.AddCallbackTarget(this);
+
+        //Initialized all buttons.
+        PlayerItemUIRef.SetActive(false);
+        ReadyButton.Interactable(false);
+        TrackSelector.Interactable(false);
+        CarSelector.Interactable(true);
+        ReadyButton.onClick.AddListener(OnReadyClick);
+        ReadyButton.UpdateUI();
 
         if (CurrentRoom == null)
         {
@@ -66,7 +63,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         var entryFee = CurrentRoom.CustomProperties[C.EntryFee].ToString();
         EntryFeeText.text = $"{entryFee} $KART";
 
-        TrackSelector.SetActive(IsMaster);
+        TrackSelector.Interactable(IsMaster);
         OnRoomPropertiesUpdate(CurrentRoom.CustomProperties);
 
         foreach (var playerKV in Players)
@@ -83,16 +80,15 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
         var localPlayer = PhotonNetwork.LocalPlayer;
 
-        //Choosing the first car at the entrance to the room.
-        List<NFT> nfts = ThirdwebManager.Instance.walletNFTs;
 
-        if (WorldLoading.PlayerCar == null || !LocalPlayer.CustomProperties.ContainsKey(C.CarName))
-        {
-            var selectedCar = WorldLoading.AvailableCars.FirstOrDefault(c => nfts.Any(n => n.metadata.name == c.name));
-            WorldLoading.PlayerCar = selectedCar;
-            LocalPlayer.SetCustomProperties(C.CarName, selectedCar.CarCaption);
-            LocalPlayer.SetCustomProperties(C.CarName, selectedCar.CarCaption, C.CarColorIndex, PlayerProfile.GetCarColorIndex(selectedCar), C.IsReady, false);
-        }
+        List<NFT> nfts = ThirdwebManager.Instance.walletNFTs;
+        var selectedCar = WorldLoading.AvailableCars.FirstOrDefault(c => c.name == nfts[0].metadata.name);
+        WorldLoading.PlayerCar = selectedCar;
+
+        CarSelector.SelectMode(WorldLoading.AvailableCars.IndexOf(selectedCar));
+
+        LocalPlayer.SetCustomProperties(C.CarName, selectedCar.CarCaption);
+        LocalPlayer.SetCustomProperties(C.CarName, selectedCar.CarCaption, C.CarColorIndex, PlayerProfile.GetCarColorIndex(selectedCar), C.IsReady, false);
 
         //Choosing the first track when create the room.
         if (PhotonNetwork.IsMasterClient && (CurrentRoom.CustomProperties == null || !CurrentRoom.CustomProperties.ContainsKey(C.TrackName)))
@@ -383,7 +379,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
     public void OnMasterClientSwitched(Player newMasterClient)
     {
         Debug.LogFormat("New master is player [{0}]", newMasterClient.NickName);
-        TrackSelector.SetActive(IsMaster);
+        // TrackSelector.Interactable(IsMaster);
 
         foreach (var player in CurrentRoom.Players)
         {
@@ -422,7 +418,7 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
 
             int index = B.GameSettings.Tracks.FindIndex(t => t.name == trackName);
 
-            TrackSelector.SelectMode(index > -1 ? index : 0);
+            // TrackSelector.SelectMode(index > -1 ? index : 0);
         }
         else if (propertiesThatChanged.ContainsKey(C.EntryFee))
         {
