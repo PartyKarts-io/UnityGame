@@ -53,7 +53,6 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
         ReadyButton.Interactable(false);
         TrackSelector.Interactable(false);
         CarSelector.Interactable(true);
-        ReadyButton.onClick.AddListener(OnReadyClick);
         ReadyButton.UpdateUI();
 
         if (CurrentRoom == null)
