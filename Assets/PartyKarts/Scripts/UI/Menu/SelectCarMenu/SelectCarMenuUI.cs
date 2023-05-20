@@ -17,11 +17,11 @@ public class SelectCarMenuUI : MonoBehaviour
 
     int CurrentCarIndex;
     CarPreset SelectedCar;
-    List<CarPreset> Cars { get { return WorldLoading.IsMultiplayer ? B.MultiplayerSettings.AvailableCarsForMultiplayer : WorldLoading.AvailableCars; } }
+    List<CarPreset> Cars { get { return B.MultiplayerSettings.AvailableCarsForMultiplayer; } }
 
     private void OnEnable()
     {
-        SelectCar(Cars.FirstOrDefault());
+        SelectCar(Cars.FirstOrDefault(c => c.name == "Velocity"));
     }
 
     void SelectCar(CarPreset newCar)
