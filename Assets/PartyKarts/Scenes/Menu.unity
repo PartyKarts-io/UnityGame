@@ -13326,12 +13326,12 @@ PrefabInstance:
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
@@ -13341,7 +13341,7 @@ PrefabInstance:
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
@@ -13351,7 +13351,7 @@ PrefabInstance:
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 2393741488666459667, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
@@ -53409,43 +53409,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chapters:
-  - chapterID: Velocity
-    title: Velocity
-    background: {fileID: 21300000, guid: b5def92312444452588c4b7f2b083b6b, type: 3}
-    description: Feel the need for speed with the Velocity. Its dynamic design and
-      lightning-fast acceleration make it the car of choice for serious racers.
+  - chapterID: Apex
+    title: Apex
+    background: {fileID: 21300000, guid: d91528a97e3604009af26db7bb6b8b79, type: 3}
+    description: Turn heads with the Apex. This modern sports car has a bold design
+      and exceptional performance for adrenaline junkies.
     defaultState: 1
-    titleKey: Chapter1Title
-    descriptionKey: Chapter1Description
-    onContinue:
-      m_PersistentCalls:
-        m_Calls: []
-    onPlay:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1469415352}
-          m_TargetAssemblyTypeName: SelectCarMenuUI, Assembly-CSharp
-          m_MethodName: LoadRace
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    onReplay:
-      m_PersistentCalls:
-        m_Calls: []
-  - chapterID: Phantom
-    title: Phantom
-    background: {fileID: 21300000, guid: 78e15bc1d39744bd7a9563f45c023e0a, type: 3}
-    description: Indulge in luxury driving with the Phantom. Its elegant curves and
-      superior performance make it perfect for those who demand the best.
-    defaultState: 1
-    titleKey: Chapter3Title
-    descriptionKey: Chapter3Description
+    titleKey: Chapter2Title
+    descriptionKey: Chapter2Description
     onContinue:
       m_PersistentCalls:
         m_Calls: []
@@ -53496,14 +53467,43 @@ MonoBehaviour:
     onReplay:
       m_PersistentCalls:
         m_Calls: []
-  - chapterID: Apex
-    title: Apex
-    background: {fileID: 21300000, guid: d91528a97e3604009af26db7bb6b8b79, type: 3}
-    description: Turn heads with the Apex. This modern sports car has a bold design
-      and exceptional performance for adrenaline junkies.
+  - chapterID: Phantom
+    title: Phantom
+    background: {fileID: 21300000, guid: 78e15bc1d39744bd7a9563f45c023e0a, type: 3}
+    description: Indulge in luxury driving with the Phantom. Its elegant curves and
+      superior performance make it perfect for those who demand the best.
     defaultState: 1
-    titleKey: Chapter2Title
-    descriptionKey: Chapter2Description
+    titleKey: Chapter3Title
+    descriptionKey: Chapter3Description
+    onContinue:
+      m_PersistentCalls:
+        m_Calls: []
+    onPlay:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1469415352}
+          m_TargetAssemblyTypeName: SelectCarMenuUI, Assembly-CSharp
+          m_MethodName: LoadRace
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onReplay:
+      m_PersistentCalls:
+        m_Calls: []
+  - chapterID: Velocity
+    title: Velocity
+    background: {fileID: 21300000, guid: b5def92312444452588c4b7f2b083b6b, type: 3}
+    description: Feel the need for speed with the Velocity. Its dynamic design and
+      lightning-fast acceleration make it the car of choice for serious racers.
+    defaultState: 1
+    titleKey: Chapter1Title
+    descriptionKey: Chapter1Description
     onContinue:
       m_PersistentCalls:
         m_Calls: []
@@ -53696,6 +53696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarSelectManager: {fileID: 1469415348}
+  SelectedCar: {fileID: 11400000, guid: 68d0a29c5dc873e46bdd248870a62876, type: 2}
 --- !u!1 &1471422893
 GameObject:
   m_ObjectHideFlags: 0
@@ -54378,12 +54379,12 @@ PrefabInstance:
     - target: {fileID: 1092508658043868931, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1092508658043868931, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1092508658043868931, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
@@ -54393,7 +54394,7 @@ PrefabInstance:
     - target: {fileID: 1092508658043868931, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1092508658043868931, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
@@ -54403,7 +54404,7 @@ PrefabInstance:
     - target: {fileID: 1092508658043868931, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1249299603817676907, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
@@ -54838,7 +54839,7 @@ PrefabInstance:
     - target: {fileID: 9222785168694434464, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222785168694434464, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
@@ -54848,7 +54849,7 @@ PrefabInstance:
     - target: {fileID: 9222785168694434464, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222785168694434464, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
@@ -54858,7 +54859,7 @@ PrefabInstance:
     - target: {fileID: 9222785168694434464, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222785168694434464, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
@@ -54903,7 +54904,7 @@ PrefabInstance:
     - target: {fileID: 9222785168694434464, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222785168694434464, guid: 41ab1084db0416847aa346afff005130,
         type: 3}
@@ -61073,12 +61074,12 @@ PrefabInstance:
     - target: {fileID: 5042148382741975237, guid: 2da758493bb9a96409448335d0c59538,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5042148382741975237, guid: 2da758493bb9a96409448335d0c59538,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5042148382741975237, guid: 2da758493bb9a96409448335d0c59538,
         type: 3}
@@ -61088,7 +61089,7 @@ PrefabInstance:
     - target: {fileID: 5042148382741975237, guid: 2da758493bb9a96409448335d0c59538,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 31.65
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6384426575886088328, guid: 2da758493bb9a96409448335d0c59538,
         type: 3}
@@ -69539,12 +69540,12 @@ PrefabInstance:
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
@@ -69554,7 +69555,7 @@ PrefabInstance:
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
@@ -69564,7 +69565,7 @@ PrefabInstance:
     - target: {fileID: 2393741488666459665, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 2393741488666459667, guid: a58adb5252f8b5447ace87508e27b7d3,
         type: 3}

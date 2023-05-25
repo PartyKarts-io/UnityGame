@@ -14,14 +14,14 @@ using Michsky.UI.Reach;
 public class SelectCarMenuUI : MonoBehaviour
 {
     [SerializeField] ChapterManager CarSelectManager;
+    [SerializeField] CarPreset SelectedCar;
 
     int CurrentCarIndex;
-    CarPreset SelectedCar;
     List<CarPreset> Cars { get { return B.MultiplayerSettings.AvailableCarsForMultiplayer; } }
 
-    private void OnEnable()
+    private void Start()
     {
-        SelectCar(Cars.FirstOrDefault(c => c.name == "Velocity"));
+        SelectCar(SelectedCar);
     }
 
     void SelectCar(CarPreset newCar)
