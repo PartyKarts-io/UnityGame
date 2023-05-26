@@ -21,6 +21,8 @@ MonoBehaviour:
     type: 2}
   m_Tracks:
   - {fileID: 11400000, guid: 1fc5dd5df3834774cbc30e73b49d23d0, type: 2}
+  - {fileID: 11400000, guid: cfbab997ae03a4df8ac901cffe0fcbea, type: 2}
+  - {fileID: 11400000, guid: 0e198d468884e498e964282bcc867f9a, type: 2}
   m_BotNames:
   - Hamilton(b)
   - Sainz(b)

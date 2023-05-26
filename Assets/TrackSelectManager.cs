@@ -31,9 +31,11 @@ public class TrackSelectManager : MonoBehaviour
             case 0:
                 return Tracks.FirstOrDefault(t => t.TrackName == "Party Park");
             case 1:
-                return Tracks.FirstOrDefault(t => t.TrackName == "Belgian Hills (Spa)");
+                return Tracks.FirstOrDefault(t => t.TrackName == "Iceland Festival");
+
+                // return Tracks.FirstOrDefault(t => t.TrackName == "Epstein Island");
             case 2:
-                return Tracks.FirstOrDefault(t => t.TrackName == "Temple of Speed");
+                return Tracks.FirstOrDefault(t => t.TrackName == "Iceland Festival");
             default:
                 return Tracks.FirstOrDefault(t => t.TrackName == "Party Park");
         }
