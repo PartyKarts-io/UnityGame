@@ -10,6 +10,7 @@ using Org.BouncyCastle.Bcpg;
 using System.Numerics;
 using Michsky.UI.Reach;
 using System.Net.NetworkInformation;
+using System.Linq;
 
 [System.Serializable]
 public class ChainData
@@ -30,6 +31,7 @@ public class WalletDisconnectedEvent : UnityEvent<bool> { }
 public class WalletConnectEvent : UnityEvent<bool> { }
 public class NetworkChangeEvent : UnityEvent<int> { }
 public class NFTsLoadedEvent : UnityEvent<List<NFT>> { }
+public class NFTCountLoadedEvent : UnityEvent<int> { }
 
 public class ThirdwebManager : MonoBehaviour
 {
@@ -85,6 +87,7 @@ public class ThirdwebManager : MonoBehaviour
     public WalletConnectEvent walletConnectedEvent = new WalletConnectEvent();
     public NetworkChangeEvent walletNetworkChangeEvent = new NetworkChangeEvent();
     public NFTsLoadedEvent nftsLoadedEvent = new NFTsLoadedEvent();
+    public NFTCountLoadedEvent nftCountLoadedEvent = new NFTCountLoadedEvent();
 
     private List<NFT> LOCAL_NFT_LIST = new List<NFT>()
             {
@@ -192,6 +195,7 @@ public class ThirdwebManager : MonoBehaviour
         {
             walletNFTs = LOCAL_NFT_LIST;
             nftsLoadedEvent.Invoke(walletNFTs);
+            nftCountLoadedEvent.Invoke(1);
         }
 
         uiPopup.PlayOut();
@@ -222,13 +226,16 @@ public class ThirdwebManager : MonoBehaviour
 
         // Address of the wallet to get the NFTs of
         var address = await SDK.wallet.GetAddress();
-        var nfts = SDK.currentChainData.chainId == "1337" ? LOCAL_NFT_LIST : await pkNftContract.ERC721.GetOwned(address);
+        var nfts = await pkNftContract.ERC721.GetOwned(address);
+        var nftBalance = await pkNftContract.ERC721.BalanceOf(address);
         Debug.Log("NFT Count: " + nfts.Count);
+        Debug.Log("NFT Balance: " + nftBalance);
 
         walletNFTs = nfts;
         isLoadingNFTBalance = false;
         uiPopup.PlayOut();
         nftsLoadedEvent.Invoke(nfts);
+        nftCountLoadedEvent.Invoke(int.Parse(nftBalance));
     }
 
     public ChainData GetChainData(string chainIdentifier)

@@ -27,7 +27,7 @@ public class MainMenuManager : MonoBehaviour
         ThirdwebManager.Instance.walletDisconnectedEvent.AddListener(OnWalletDisconnect);
         ThirdwebManager.Instance.walletConnectedEvent.AddListener(WalletConnected);
         ThirdwebManager.Instance.walletNetworkChangeEvent.AddListener(OnNetworkChange);
-        ThirdwebManager.Instance.nftsLoadedEvent.AddListener(NFTsLoaded);
+        ThirdwebManager.Instance.nftCountLoadedEvent.AddListener(NFTsLoaded);
 
         if (!Utils.IsWebGLBuild()) return;
     }
@@ -77,10 +77,10 @@ public class MainMenuManager : MonoBehaviour
             ToggleAllButtons(false);
     }
 
-    public void NFTsLoaded(List<NFT> nfts)
+    public void NFTsLoaded(int count)
     {
 
-        ToggleAllButtons(nfts.Count > 0);
+        ToggleAllButtons(count > 0);
     }
 
     public async void WalletConnected(bool connected)
