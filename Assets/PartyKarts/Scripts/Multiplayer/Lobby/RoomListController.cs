@@ -15,6 +15,8 @@ using System;
 using System.Text;
 using GameBalance;
 using Michsky.UI.Reach;
+using UnityEngine.Networking;
+using System.Web;
 
 /// <summary>
 /// List of available rooms and the ability to create a new one.
@@ -152,6 +154,8 @@ public class RoomListController : MonoBehaviour
 
             if (newRaceResult.isSuccessful())
             {
+                StartCoroutine(SendTelegramBotMessage(trackName, maxPlayers));
+
                 // TODO - Analytics - Log Create Room 
                 PhotonNetwork.CreateRoom(raceId, options);
             }
@@ -162,6 +166,33 @@ public class RoomListController : MonoBehaviour
                 // show error message popup or something
                 Debug.LogError(newRaceResult);
             }
+        }
+    }
+
+    private IEnumerator SendTelegramBotMessage(
+        string trackName,
+        uint maxRacers
+    )
+    {
+        string url = $"https://sendracecreatedmessage-uh2pn54dca-uc.a.run.app/?serverRegion={HttpUtility.UrlEncode(PlayerProfile.ServerToken.ToString())}&maxRacers={maxRacers}&trackName={HttpUtility.UrlEncode(trackName)}&entryFee={raceFee}";
+
+        Debug.Log(url);
+
+        UnityWebRequest request = UnityWebRequest.Get(url);
+        request.SetRequestHeader("Content-Type", "application/json"); // Set the appropriate content type header
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            // Request succeeded
+            string responseText = request.downloadHandler.text;
+            Debug.Log("Response: " + responseText);
+        }
+        else
+        {
+            // Request failed
+            Debug.LogError("Error: " + request.error);
         }
     }
 

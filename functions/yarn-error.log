@@ -1,0 +1,66 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add Telegraf
+
+PATH: 
+  /Users/jrperfetto/Downloads/google-cloud-sdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/jrperfetto/Downloads/google-cloud-sdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jrperfetto/.foundry/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  18.16.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/Telegraf: Not found
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:67029:18)
+      at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "functions",
+    "scripts": {
+      "lint": "eslint --ext .js,.ts .",
+      "build": "tsc",
+      "build:watch": "tsc --watch",
+      "serve": "npm run build && firebase emulators:start --only functions",
+      "shell": "npm run build && firebase functions:shell",
+      "start": "npm run shell",
+      "deploy": "firebase deploy --only functions",
+      "logs": "firebase functions:log"
+    },
+    "engines": {
+      "node": "18"
+    },
+    "main": "lib/index.js",
+    "dependencies": {
+      "firebase-admin": "^11.8.0",
+      "firebase-functions": "^4.3.1"
+    },
+    "devDependencies": {
+      "@typescript-eslint/eslint-plugin": "^5.12.0",
+      "@typescript-eslint/parser": "^5.12.0",
+      "eslint": "^8.9.0",
+      "eslint-config-google": "^0.14.0",
+      "eslint-plugin-import": "^2.25.4",
+      "firebase-functions-test": "^3.1.0",
+      "typescript": "^4.9.0"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
