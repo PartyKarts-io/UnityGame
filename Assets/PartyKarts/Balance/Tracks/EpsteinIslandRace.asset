@@ -19,9 +19,9 @@ MonoBehaviour:
   m_TrackName: Epstein Island
   m_TrackIcon: {fileID: 21300000, guid: 2a4a20903b2654e2ab121a8c9a7b6307, type: 3}
   m_SceneName: EpsteinIslandRace
-  m_GameController: {fileID: 605463352286607427, guid: c313b3e49c45c4be7b9bcfd61ac36128,
+  m_GameController: {fileID: 7022905424892656539, guid: da61369cc52d045509ee07430b7052c9,
     type: 3}
-  m_LapsCount: 2
+  m_LapsCount: 1
   m_AIsCount: 7
   m_RegimeSettings: {fileID: 11400000, guid: 93a435292f036614f8eaf1dda24da965, type: 2}
   m_MoneyForFirstPlace: 2000

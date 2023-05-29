@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 9a53a8a11a3107f42b662ef14d782e89
+timeCreated: 1531909149
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: pasted__Road_bit16
+    100002: pasted__Road_bit6
+    100004: polySurface18
+    100006: polySurface2
+    100008: pPlane1
+    100010: pPlane2
+    100012: pPlane3
+    100014: Track_1
+    100016: //RootNode
+    100018: New_Track_1
+    100020: New_Track_2
+    100022: New_Track_3
+    100024: Track_bit
+    100026: Track_bit1
+    100028: Side_wall_Ads
+    100030: Side_wall_Ads1
+    100032: Side_wall_Ads2
+    100034: Side_wall_Ads3
+    100036: Flag_1
+    100038: New_track_4
+    100040: Turn_line
+    100042: New_Track_5
+    100044: New_Track_6
+    100046: New_Track_7
+    100048: New_Track_8
+    400000: pasted__Road_bit16
+    400002: pasted__Road_bit6
+    400004: polySurface18
+    400006: polySurface2
+    400008: pPlane1
+    400010: pPlane2
+    400012: pPlane3
+    400014: Track_1
+    400016: //RootNode
+    400018: New_Track_1
+    400020: New_Track_2
+    400022: New_Track_3
+    400024: Track_bit
+    400026: Track_bit1
+    400028: Side_wall_Ads
+    400030: Side_wall_Ads1
+    400032: Side_wall_Ads2
+    400034: Side_wall_Ads3
+    400036: Flag_1
+    400038: New_track_4
+    400040: Turn_line
+    400042: New_Track_5
+    400044: New_Track_6
+    400046: New_Track_7
+    400048: New_Track_8
+    2300000: pasted__Road_bit16
+    2300002: pasted__Road_bit6
+    2300004: polySurface18
+    2300006: polySurface2
+    2300008: pPlane1
+    2300010: pPlane2
+    2300012: pPlane3
+    2300014: Track_1
+    2300016: New_Track_1
+    2300018: New_Track_2
+    2300020: New_Track_3
+    2300022: Track_bit
+    2300024: Track_bit1
+    2300026: Side_wall_Ads
+    2300028: Side_wall_Ads1
+    2300030: Side_wall_Ads2
+    2300032: Side_wall_Ads3
+    2300034: Flag_1
+    2300036: New_track_4
+    2300038: Turn_line
+    2300040: New_Track_5
+    2300042: New_Track_6
+    2300044: New_Track_7
+    2300046: New_Track_8
+    3300000: pasted__Road_bit16
+    3300002: pasted__Road_bit6
+    3300004: polySurface18
+    3300006: polySurface2
+    3300008: pPlane1
+    3300010: pPlane2
+    3300012: pPlane3
+    3300014: Track_1
+    3300016: New_Track_1
+    3300018: New_Track_2
+    3300020: New_Track_3
+    3300022: Track_bit
+    3300024: Track_bit1
+    3300026: Side_wall_Ads
+    3300028: Side_wall_Ads1
+    3300030: Side_wall_Ads2
+    3300032: Side_wall_Ads3
+    3300034: Flag_1
+    3300036: New_track_4
+    3300038: Turn_line
+    3300040: New_Track_5
+    3300042: New_Track_6
+    3300044: New_Track_7
+    3300046: New_Track_8
+    4300000: Track_1
+    4300002: pPlane1
+    4300004: pPlane2
+    4300006: pPlane3
+    4300008: polySurface2
+    4300010: pasted__Road_bit6
+    4300012: pasted__Road_bit16
+    4300014: polySurface18
+    4300016: Track_bit1
+    4300018: Track_bit
+    4300020: New_Track_1
+    4300022: New_Track_2
+    4300024: New_Track_3
+    4300026: Side_wall_Ads
+    4300028: Side_wall_Ads1
+    4300030: Side_wall_Ads2
+    4300032: Side_wall_Ads3
+    4300034: Flag_1
+    4300036: New_track_4
+    4300038: Turn_line
+    4300040: New_Track_5
+    4300042: New_Track_8
+    4300044: New_Track_6
+    4300046: New_Track_7
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

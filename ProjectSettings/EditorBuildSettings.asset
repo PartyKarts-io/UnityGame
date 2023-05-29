@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/PartyKarts/Scenes/RaceTrack.unity
     guid: 4854a3fd49b9bfc4d92015809f70203a
   - enabled: 1
-    path: Assets/PartyKarts/Scenes/EpsteinIslandRace.unity
+    path: Assets/PartyKarts/Scenes/BigCityRace.unity
     guid: 69da5ad445ee64472bf575a900388274
   - enabled: 1
     path: Assets/PartyKarts/Scenes/IcelandFestivalRace.unity
     guid: 46a253e8172c873458bf378cc42dea9f
+  - enabled: 1
+    path: Assets/PartyKarts/Scenes/EpsteinIslandRace.unity
+    guid: 9ddd3fb4797e48140ba211f21736f288
   m_configObjects: {}

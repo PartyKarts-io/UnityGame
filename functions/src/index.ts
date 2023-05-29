@@ -17,8 +17,8 @@ import { Markup, Telegraf } from 'telegraf';
 export const sendRaceCreatedMessage = onRequest(async (req, res) => {
     logger.info("A Race Has Been Created!", { structuredData: true });
     try {
-        const chatId = '';
-        const botToken = '';
+        const chatId = '-1001924144786';
+        const botToken = '6293735263:AAEvbz-x_dB7NJsrGTYia2K5jYKEDsF5c_Y';
         const bot = new Telegraf(botToken);
 
         const serverRegion: string = req.query.serverRegion as string;
@@ -36,7 +36,6 @@ export const sendRaceCreatedMessage = onRequest(async (req, res) => {
 <b>Lobby Details:</b>
 
 <b>Server Region:</b> ${getServerFromKey(serverRegion)}
-<b>Track:</b> ${getTrackNameFromKey(trackName)}
 <b>Entry Fee:</b> ${formatFee(entryFee)}
 
 GO TAKE THEIR MONEY!
@@ -49,15 +48,8 @@ GO TAKE THEIR MONEY!
 
         // Image
         const images = [
-            'https://uploads-ssl.webflow.com/6441c70b5f87c4179380b545/64728f1208dc67134ce8fcc8_PartyPark.png',
-            'https://uploads-ssl.webflow.com/6441c70b5f87c4179380b545/64728f12b866ec1ee7fe721a_Iceland.png',
+            'https://uploads-ssl.webflow.com/6441c70b5f87c4179380b545/6461ab2552fe54afa425b62b_PK_BANNER.png',
         ]
-
-        let index = 0;
-
-        if (trackName == 'IcelandFestivalRace') {
-            index = 1;
-        }
 
         if (!chatId) {
             throw new Error('Missing chatId');
@@ -71,7 +63,7 @@ GO TAKE THEIR MONEY!
             Markup.button.url(buttonText, buttonUrl),
         ]).reply_markup
 
-        await bot.telegram.sendPhoto(chatId, { url: images[index] }, {
+        await bot.telegram.sendPhoto(chatId, { url: images[0] }, {
             caption: message,
             reply_markup: replyMarkup,
             parse_mode: 'HTML',
@@ -84,16 +76,16 @@ GO TAKE THEIR MONEY!
     }
 });
 
-function getTrackNameFromKey(key: string) {
-    switch (key) {
-        case "RaceTrackRace":
-            return "Party Park";
-        case "IcelandFestivalRace":
-            return "Party in Iceland";
-        default:
-            return "Party Park";
-    }
-}
+// function getTrackNameFromKey(key: string) {
+//     switch (key) {
+//         case "RaceTrackRace":
+//             return "Party Park";
+//         case "IcelandFestivalRace":
+//             return "Party in Iceland";
+//         default:
+//             return "Party Park";
+//     }
+// }
 
 function getServerFromKey(key: string) {
     switch (key) {

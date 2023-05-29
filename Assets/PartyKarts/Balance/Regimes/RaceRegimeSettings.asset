@@ -19,8 +19,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1f9e5f31478f4f41947a387072d07b3, type: 2}
   - {fileID: 11400000, guid: 68d0a29c5dc873e46bdd248870a62876, type: 2}
   m_AiConfog:
-    MaxSpeed: 175
-    MinSpeed: 50
+    MaxSpeed: 235
+    MinSpeed: 100
     AccelSensitivity: 1
     BrakeSensitivity: 1
     ReverceWaitTime: 1.5
