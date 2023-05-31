@@ -70,8 +70,14 @@ public class CameraController :Singleton<CameraController>
 
 			if ((position - target).sqrMagnitude >= SqrMinDistance)
 			{
-				Quaternion rotation = Quaternion.LookRotation (target - position, Vector3.up);
-				ActivePreset.CameraHolder.rotation = Quaternion.Lerp (ActivePreset.CameraHolder.rotation, ActivePresetIndex == 0 ? rotation * Quaternion.Euler(-23, 0, 0) : rotation, Time.deltaTime * ActivePreset.SetRotationSpeed);
+                Quaternion rotation = Quaternion.LookRotation(target - position, Vector3.up);
+
+                if (Input.GetKey(KeyCode.Q)) // Check if the "Q" key is held down
+                {
+                    rotation *= Quaternion.Euler(0, 180, 0); // Look backward by rotating 180 degrees around the y-axis
+                }
+
+                ActivePreset.CameraHolder.rotation = Quaternion.Lerp (ActivePreset.CameraHolder.rotation, ActivePresetIndex == 0 ? rotation * Quaternion.Euler(-23, 0, 0) : rotation, Time.deltaTime * ActivePreset.SetRotationSpeed);
 			}
 		}
 
