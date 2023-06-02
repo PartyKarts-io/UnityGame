@@ -19,7 +19,7 @@ MonoBehaviour:
   m_TrackName: Party Park
   m_TrackIcon: {fileID: 21300000, guid: 87a796e2577ab754a90643fe0259fc20, type: 3}
   m_SceneName: RaceTrack
-  m_GameController: {fileID: 114912712603281610, guid: fbac2616d829f2640a19e0d7cdb49745,
+  m_GameController: {fileID: 114912712603281610, guid: 3fa6f3d0751a945b0b7eaf224aa41412,
     type: 3}
   m_LapsCount: 3
   m_AIsCount: 7

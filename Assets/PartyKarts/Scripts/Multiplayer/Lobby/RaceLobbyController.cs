@@ -1,8 +1,6 @@
 ﻿using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
@@ -10,7 +8,6 @@ using ExitGames.Client.Photon;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using GameBalance;
 using Thirdweb;
-using Unity.VisualScripting;
 using System.Numerics;
 using System.Threading.Tasks;
 using System;
@@ -120,8 +117,10 @@ public class RaceLobbyController : MonoBehaviour, IInRoomCallbacks, IOnEventCall
     public void OnSelectTrack(string selectedTrackName)
     {
         TrackPreset track = B.MultiplayerSettings.AvailableTracksForMultiplayer.Find(t => t.name == selectedTrackName);
-        var hashtable = new Hashtable();
-        hashtable.Add(C.TrackName, track.name);
+        var hashtable = new Hashtable
+        {
+            { C.TrackName, track.name }
+        };
 
         Debug.Log($"Selected Track: {track.name}");
 

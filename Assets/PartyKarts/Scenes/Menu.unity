@@ -56549,7 +56549,7 @@ PrefabInstance:
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
       propertyPath: items.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
@@ -56571,6 +56571,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
+      propertyPath: items.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a8fdf2860f302e14094f799b9d654ad8,
+        type: 3}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
       propertyPath: items.Array.data[0].title
       value: Party Park
       objectReference: {fileID: 0}
@@ -56586,6 +56592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
+      propertyPath: items.Array.data[3].title
+      value: PK Beach Day
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
       propertyPath: items.Array.data[0].titleKey
       value: PartyParkLabel
       objectReference: {fileID: 0}
@@ -56597,6 +56608,11 @@ PrefabInstance:
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
       propertyPath: items.Array.data[2].titleKey
+      value: PartyParkLabel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
+      propertyPath: items.Array.data[3].titleKey
       value: PartyParkLabel
       objectReference: {fileID: 0}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
@@ -56619,6 +56635,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
+      propertyPath: items.Array.data[3].background
+      value: 
+      objectReference: {fileID: 21300000, guid: a247d509ae46b432caca91c04ed850b6,
+        type: 3}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
       propertyPath: items.Array.data[0].onModeSelection.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -56630,6 +56652,11 @@ PrefabInstance:
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
       propertyPath: items.Array.data[2].onModeSelection.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
+      propertyPath: items.Array.data[3].onModeSelection.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
@@ -56649,6 +56676,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
+      propertyPath: items.Array.data[3].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
       propertyPath: items.Array.data[0].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 950995348}
@@ -56660,6 +56692,11 @@ PrefabInstance:
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
       propertyPath: items.Array.data[2].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 950995348}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
+      propertyPath: items.Array.data[3].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 950995348}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
@@ -56679,6 +56716,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
+      propertyPath: items.Array.data[3].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
       propertyPath: items.Array.data[0].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnSelectTrack
       objectReference: {fileID: 0}
@@ -56690,6 +56732,11 @@ PrefabInstance:
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
       propertyPath: items.Array.data[2].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSelectTrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
+      propertyPath: items.Array.data[3].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnSelectTrack
       objectReference: {fileID: 0}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
@@ -56709,6 +56756,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
+      propertyPath: items.Array.data[3].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RaceLobbyController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
       propertyPath: items.Array.data[0].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: RaceTrackRace
       objectReference: {fileID: 0}
@@ -56724,6 +56776,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
+      propertyPath: items.Array.data[3].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: BeachDayRace
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
       propertyPath: items.Array.data[0].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -56735,6 +56792,11 @@ PrefabInstance:
     - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
         type: 3}
       propertyPath: items.Array.data[2].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708790711664061862, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
+        type: 3}
+      propertyPath: items.Array.data[3].onModeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5687120795390677650, guid: 9c2bd19f25cc79f4eb70918bf445e4b2,
@@ -71198,7 +71260,7 @@ MonoBehaviour:
   - chapterID: Iceland Festival
     title: Party in Iceland
     background: {fileID: 21300000, guid: 743aad746c3a348868cdfcac0cf283af, type: 3}
-    description: Queue the dance music and start the party on this frozen track in
+    description: Cue the dance music and start the party on this frozen track in
       Iceland. Last one across the line gets a lump of coal in their stocking.
     defaultState: 1
     titleKey: Chapter1Title
@@ -71241,6 +71303,47 @@ MonoBehaviour:
     background: {fileID: 21300000, guid: 2a4a20903b2654e2ab121a8c9a7b6307, type: 3}
     description: Take in the sights of this hidden oasis, and do your best to escape
       with your dignity intact! Danger lurks around every corner!
+    defaultState: 1
+    titleKey: Chapter1Title
+    descriptionKey: Chapter1Description
+    onContinue:
+      m_PersistentCalls:
+        m_Calls: []
+    onPlay:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1955896822}
+          m_TargetAssemblyTypeName: TrackSelectManager, Assembly-CSharp
+          m_MethodName: SelectTrack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1579231287}
+          m_TargetAssemblyTypeName: Michsky.UI.Reach.PanelManager, Assembly-CSharp
+          m_MethodName: OpenPanel
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Car Select
+            m_BoolArgument: 0
+          m_CallState: 2
+    onReplay:
+      m_PersistentCalls:
+        m_Calls: []
+  - chapterID: PK Beach Day
+    title: PK Beach Day
+    background: {fileID: 21300000, guid: 574d483f020de429b9afeb99371b40ea, type: 3}
+    description: Kick back and relax for a day of sun and fun at the beach! Take
+      in the sights of sunny Southern California for a PK Beach Day!
     defaultState: 1
     titleKey: Chapter1Title
     descriptionKey: Chapter1Description

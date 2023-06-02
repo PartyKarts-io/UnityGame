@@ -26,6 +26,8 @@ public class TrackSelectManager : MonoBehaviour
                 return Tracks.FirstOrDefault(t => t.TrackName == "Iceland Festival");
             case 2:
                 return Tracks.FirstOrDefault(t => t.TrackName == "Epstein Island");
+            case 3:
+                return Tracks.FirstOrDefault(t => t.TrackName == "Beach Day");
             default:
                 return Tracks.FirstOrDefault(t => t.TrackName == "Party Park");
         }
